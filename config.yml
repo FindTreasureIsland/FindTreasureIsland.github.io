@@ -11,21 +11,15 @@ taxonomies:
 
 menu:
     main:
-        - name: Books
-          url: books/
-          weight: 5 
-        - name: Papers
-          url: papers/
+        - name: Projects
+          url: projects/
           weight: 2
-        - name: Courses
-          url: courses/
+        - name: Publication
+          url: publication/
           weight: 3
-        - name: Data
-          url: data/
-          weight: 4 
-        - name: Blog
-          url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
-          weight: 6
+        - name: Home
+          url: /
+          weight: 1
 
 params:
     description: "I am a computational cognitive psychologist."
@@ -43,7 +37,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["books","courses","papers","data"]
+    #MainSections: ["books","courses","papers","data"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -64,8 +58,8 @@ params:
               url: projects/
             - name: Publication
               url: publication/
-            - name: Tags
-              url: tags/
+            #- name: Tags
+            #  url: tags/
 
     socialIcons:
         - name: CV
