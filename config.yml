@@ -48,7 +48,7 @@ params:
     profileMode:
           enabled: true
           title: Giwon Bahg
-          subtitle: "Under construction"
+          subtitle: "Hello! I am a computational cognitive scientist. I am currently a postdoctoral researcher in the Department of Psychology at Vanderbilt University.\n\nI study how humans learn concepts and categories in a dynamic, interactive environment. I am also interested in understanding cognition via modeling brain and behavioral data simultaneously.\n\nYou can find my CV [here](GiwonBahg_CV_08062024.pdf)."
           imageUrl: "picture.jpeg"
           imageWidth: 160
           imageHeight: 160
