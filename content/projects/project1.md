@@ -23,5 +23,3 @@ test
 ## Publications
 
  * test
-
----
