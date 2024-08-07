@@ -3,11 +3,7 @@ title: "Research"
 description: "Ongoing projects"
 ---
 
-## Research Intereset
-
 ## Ongoing Research Projects
-
-### Personalization and Learning
 
 ### Temporal Dynamics of Attention in Visual Search
 
