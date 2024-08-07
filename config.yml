@@ -54,8 +54,8 @@ params:
           imageHeight: 160
           imageTitle: Giwon Bahg
           buttons:
-            - name: Projects
-              url: projects/
+            - name: Research
+              url: research/
             - name: Publication
               url: publication/
             #- name: Tags
