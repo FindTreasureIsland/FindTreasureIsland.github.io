@@ -48,7 +48,7 @@ params:
     profileMode:
           enabled: true
           title: Giwon Bahg
-          subtitle: "Hello! I am a computational cognitive scientist. I am currently a postdoctoral researcher in the Department of Psychology at Vanderbilt University.<br><br>I study how we learn and apply knowledge of concepts and categories in a dynamic, interactive environment. I am also interested in understanding cognition via modeling brain and behavioral data simultaneously.<br><br>You can find my CV [**here** (08/06/2024)](GiwonBahg_CV_08062024.pdf)."
+          subtitle: "(he/him)<br><br>Hello! I am a computational cognitive scientist. I am currently a postdoctoral researcher in the Department of Psychology at Vanderbilt University.<br><br>I study how we learn and apply knowledge of concepts and categories in a dynamic, interactive environment. I am also interested in understanding cognition via modeling brain and behavioral data simultaneously.<br><br>You can find my CV [**here** (08/06/2024)](GiwonBahg_CV_08062024.pdf)."
           imageUrl: "GiwonBahg_picture0.jpg"
           imageWidth: 160
           imageHeight: 160
