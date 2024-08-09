@@ -13,12 +13,13 @@ menu:
     main:
         - name: CV
           url: GiwonBahg_CV.pdf
+          weight: 2
         - name: Research
           url: research/
-          weight: 2
+          weight: 3
         - name: Publication
           url: publication/
-          weight: 3
+          weight: 4
         - name: Home
           url: /
           weight: 1
@@ -50,14 +51,14 @@ params:
     profileMode:
           enabled: true
           title: Giwon Bahg
-          subtitle: "(he/him)<br><br>Hello! I am a computational cognitive scientist. I am currently a postdoctoral researcher in the Department of Psychology at Vanderbilt University.<br><br>I study how we learn and apply knowledge of concepts and categories in a dynamic, interactive environment. I am also interested in understanding cognition via modeling brain and behavioral data simultaneously.<br><br>You can find my CV [**here** (08/06/2024)](GiwonBahg_CV.pdf)."
+          subtitle: "(he/him)<br><br>Hello! I am a computational cognitive scientist. I am currently a postdoctoral researcher in the Department of Psychology at Vanderbilt University.<br><br>I study how we learn and apply knowledge of concepts and categories in a dynamic, interactive environment. I am also interested in understanding cognition via modeling brain and behavioral data simultaneously."
           imageUrl: "GiwonBahg_picture0.jpg"
           imageWidth: 160
           imageHeight: 160
           imageTitle: Giwon Bahg
           buttons:
-            - name: CV
-              url: GiwonBahg_CV.pdf
+            # - name: CV
+            #   url: GiwonBahg_CV.pdf
             - name: Research
               url: research/
             - name: Publication
