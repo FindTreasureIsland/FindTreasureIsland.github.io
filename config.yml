@@ -57,8 +57,8 @@ params:
           imageHeight: 160
           imageTitle: Giwon Bahg
           buttons:
-            # - name: CV
-            #   url: GiwonBahg_CV.pdf
+            - name: CV
+              url: GiwonBahg_CV.pdf
             - name: Research
               url: research/
             - name: Publication
