@@ -22,4 +22,4 @@ description: ""
  * Palestro, J. J., **Bahg, G.**, Sederberg, P. B., Lu, Z.-L., Steyvers, M., \& Turner, B. M. (2018). A Tutorial on Joint Models of Neural and Behavioral Measures of Cognition. *Journal of Mathematical Psychology*, *84*, 20-48. [**Link**](https://www.sciencedirect.com/science/article/pii/S0022249617301335)
 
 ### Book Chapters
- * Turner, B. M., **Bahg, G.**, Galdo, M., \& Liu, Q. (2024). Advancements in joint modeling of neural and behavioral data. In Forstmann, B. U. and Turner, B. M. (Eds.), *An introduction to model-based cognitive neuroscience* (2nd ed., pp. 211-239). Springer: New York.
+ * Turner, B. M., **Bahg, G.**, Galdo, M., \& Liu, Q. (2024). Advancements in joint modeling of neural and behavioral data. In Forstmann, B. U. and Turner, B. M. (Eds.), *An Introduction to Model-based Cognitive Neuroscience* (2nd ed., pp. 211-239). New York: Springer.
