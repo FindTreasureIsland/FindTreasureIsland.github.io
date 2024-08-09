@@ -8,7 +8,7 @@ description: ""
 ### Manuscripts in Progress
  * **Bahg, G.**, Sloutsky, V. M., & Turner, B. M. (under review). Algorithmic personalization of information can cause inaccurate generalization and overconfidence.
  * **Bahg, G.**, Cox, G. E., Logan, G. D., Palmeri, T. J., & Schall, J. D. (under review). A computational model of visual search explains an attention-related event-related potential.
- * Yoo, M., **Bahg, G.**, Turner, B. M., \& Krajbich, I. (under review). People display consistent recency and primacy effects in behavior and neural activity across perceptual and value-based judgments.
+ * Yoo, M., **Bahg, G.**, Turner, B. M., \& Krajbich, I. (submitted). People display consistent recency and primacy effects in behavior and neural activity across perceptual and value-based judgments.
 
 ### Peer-reviewed Journal Articles
 
