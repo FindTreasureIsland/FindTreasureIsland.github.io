@@ -13,9 +13,6 @@ My research focuses on how our thought processes interact with categorical knowl
 ## Skills
  * Programming languages: [R](https://www.r-project.org/), [Python](https://www.python.org/), [Julia](https://julialang.org/), [MATLAB](https://www.mathworks.com/products/matlab.html)
  * Bayesian statistics and data analysis: Stan
- * Computational framework/platforms/libraries
-  * Machine learning and neural network: scikit-learn, TensorFlow
-  * Containerization: Docker, Singularity
 
 ## Teaching
 In general, I am interested in applying teaching methods that guides student to actively explore problems and express their thoughts in writing.
