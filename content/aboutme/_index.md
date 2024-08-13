@@ -13,8 +13,10 @@ My research focuses on how our thought processes interact with categorical knowl
 ## Skills
  * Programming languages: [R](https://www.r-project.org/), [Python](https://www.python.org/), [Julia](https://julialang.org/), [MATLAB](https://www.mathworks.com/products/matlab.html)
  * Bayesian statistics and data analysis: Stan
+ * Machine learning and neural network modeling libraries: scikit-learn, TensorFlow
+ * Containerization: Docker, Singularity
 
 ## Teaching
-In general, I am interested in applying teaching methods that guides student to actively explore problems and express their thoughts in writing.
+In general, I am interested in applying teaching methods that guide students to actively explore problems and express their thoughts in writing.
 
  * **Bayesian inference and statistics**: I have led a five-week hands-on Bayesian inference ([Category Laboratory](http://catlab.psy.vanderbilt.edu/), Vanderbilt University). You can find R markdown notes for the workshop [**here**](https://github.com/giwonbahg/handson-bayes/tree/main).
