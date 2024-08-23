@@ -14,7 +14,7 @@ menu:
         - name: CV
           url: GiwonBahg_CV.pdf
           weight: 2
-        - name: About me
+        - name: About Me
           url: aboutme/
           weight: 3
         - name: Research
