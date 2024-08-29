@@ -12,7 +12,8 @@ This project aims to explain the temporal dynamics of visual search manifested a
 Personalization algorithms produce recommendations on many online services that are fine-tuned to individual users. They have been discussed as a possible reason of intellectual isolation and reinforcement of one's belief. This project aims to study the influence of personalization on category knowledge in a controlled experiment.
 
 ## General Research Interests
- * Concepts, categories, semantics, and their interactions with higher-order cognition
  * Computational cognitive modeling
+ * Concepts, categories, semantics, and their interactions with higher-order cognition
  * Temporal dynamics of learning, decision-making, and inferences
  * Human-algorithm interaction
+ * Active learning
