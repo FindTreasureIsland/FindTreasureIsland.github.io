@@ -23,6 +23,9 @@ menu:
         - name: Publication
           url: publication/
           weight: 5
+        - name: Teaching
+          url: teaching/
+          weight: 4
         - name: Home
           url: /
           weight: 1
@@ -68,6 +71,8 @@ params:
               url: research/
             - name: Publication
               url: publication/
+            - name: Teaching
+            url: teaching/
             #- name: Tags
             #  url: tags/
 
