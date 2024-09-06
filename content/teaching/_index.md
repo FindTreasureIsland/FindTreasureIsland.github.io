@@ -4,8 +4,8 @@ description: ""
 ---
 
 ## Teaching
-In general, I am interested in applying teaching methods guiding students to actively explore and solve problems. The topics and domains of my interest in teaching are as follows:
-
+In general, I am interested in applying teaching methods that guide students to actively explore and solve problems. The topics and domains of my interest in teaching are as follows:
+ 
  * Research methods and experimental design
  * Introductory (Bayesian) statistics
  * Cognitive psychology
