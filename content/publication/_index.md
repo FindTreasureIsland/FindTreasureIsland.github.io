@@ -5,10 +5,10 @@ description: ""
 
 ## Publications
 
-### Manuscripts in Progress and under Review
+### Manuscripts in Progress or Under Review
  * **Bahg, G.**, Sloutsky, V. M., & Turner, B. M. (under review). Algorithmic personalization of information can cause inaccurate generalization and overconfidence.
  * **Bahg, G.**, Cox, G. E., Logan, G. D., Palmeri, T. J., & Schall, J. D. (manuscript being resubmitted). A computational model of visual search explains an attention-related event-related potential.
- * Yoo, M., **Bahg, G.**, Turner, B. M., \& Krajbich, I. (manuscript being resubmitted). People display consistent recency and primacy effects in behavior and neural activity across perceptual and value-based judgments.
+ * Yoo, M., **Bahg, G.**, Turner, B. M., \& Krajbich, I. (under review). People display consistent recency and primacy effects in behavior and neural activity across perceptual and value-based judgments.
  * Boag, R.J., Innes, R.J., Stevenson, N., **Bahg, G.**, Busemeyer, J.R., Cox, G.E., Donkin, C., Frank, M.J., Hawkins, G.E., Heathcote, A., Hedge, C., Lerche, V., Lilburn, S.D., Logan, G.D., Matzke, D., Miletić, S., Osth, A.F., Palmeri, T.J., Sederberg, P.B., Singmann, H., Smith, P.L., Stafford, T., Steyvers, M., Strickland, L., Trueblood, J.S., Tsetsos, J., Turner, B.M., Usher, M., van Maanen, L., van Ravenzwaaij, D., Vandekerckhove, J., Voss, A., Weichart, E.R., Weindel, G., White, C.N., Evans, N.J., Brown, S.D., Forstmann, B.U. (under review). An expert guide to planning experimental tasks for evidence accumulation modeling.
 
 ### Peer-reviewed Journal Articles
