@@ -5,7 +5,7 @@ description: ""
 
 ## Publications
 
-### Manuscripts in Progress or Under Review
+### Manuscripts in Progress
  * **Bahg, G.**, Sloutsky, V. M., & Turner, B. M. (under review). Algorithmic personalization of information can cause inaccurate generalization and overconfidence.
  * **Bahg, G.**, Cox, G. E., Logan, G. D., Palmeri, T. J., & Schall, J. D. (manuscript being resubmitted). A computational model of visual search explains an attention-related event-related potential.
  * Yoo, M., **Bahg, G.**, Turner, B. M., \& Krajbich, I. (under review). People display consistent recency and primacy effects in behavior and neural activity across perceptual and value-based judgments.
