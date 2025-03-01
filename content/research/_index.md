@@ -13,7 +13,7 @@ Personalization algorithms produce recommendations on many online services that 
 
 ## General Research Interests
  * Computational cognitive modeling, model-based cognitive neuroscience
- * Concepts, categories, semantics, and their interactions with higher-order cognition
+ * Concepts, categories, semantics, and their interactions with higher-order thought processes
  * Temporal dynamics of learning, decision-making, and inferences
  * Human-algorithm interaction
  * Active learning
