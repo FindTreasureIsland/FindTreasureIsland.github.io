@@ -5,14 +5,14 @@ lastmod: 2025-03-13
 tags: ["model-based cognitive neuroscience", "attention", "neurophysiology", "event-related potential", "N2pc"]
 author: ["Giwon Bahg"]
 description: "This project aims to bridge the temporal dynamics of visual search between neurophysiology and electrophysiology."
-summary: "This page describes my research on the computational relationship between neural firing and the N2pc component measured in visual search tasks."
-#cover:
-#    image: "personalization_basic.png"
-#    alt: "The idea of personalization and learning"
-#    relative: false
-#editPost:
-#    URL: "https://osf.io/preprints/psyarxiv/yahvf_v1"
-#    Text: "PsyArXiv (old version)"
+summary: "This project aims to explain the computational relationship between neural firing and the N2pc component measured in visual search tasks."
+cover:
+    image: "placeholder.png"
+    alt: "Placeholder"
+    relative: false
+editPost:
+    URL: "https://osf.io/preprints/psyarxiv/yahvf_v1"
+    Text: "PsyArXiv (old version)"
 showToc: true
 disableAnchoredHeadings: false
 
