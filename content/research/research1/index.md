@@ -7,7 +7,7 @@ author: ["Giwon Bahg"]
 description: "This page describes my research on the influence of human-AI interaction in learning."
 summary: "This page describes my research on the influence of human-algorithm interaction in learning."
 cover:
-    image: "personalization_basic.pdf"
+    image: "personalization_basic.png"
     alt: "The idea of personalization and learning"
     relative: false
 editPost:
