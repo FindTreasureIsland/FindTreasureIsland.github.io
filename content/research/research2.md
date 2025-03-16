@@ -7,7 +7,7 @@ author: ["Giwon Bahg"]
 description: "This project aims to bridge the temporal dynamics of visual search between neurophysiology and electrophysiology."
 summary: "This project aims to explain the computational relationship between neural firing and the N2pc component measured in visual search tasks."
 cover:
-    image: "placeholder.png"
+    image: "/placeholder.png"
     alt: "Placeholder"
     relative: false
 editPost:
