@@ -1,13 +1,13 @@
 ---
 title: "Temporal Dynamics of Attention in Visual Search" 
-date: 2025-03-13
-lastmod: 2025-03-13
+date: 2025-03-15
+lastmod: 2025-03-15
 tags: ["model-based cognitive neuroscience", "attention", "neurophysiology", "event-related potential", "N2pc"]
 author: ["Giwon Bahg"]
 description: "This project aims to bridge the temporal dynamics of visual search between neurophysiology and electrophysiology."
 summary: "This project aims to explain the computational relationship between neural firing and the N2pc component measured in visual search tasks."
 cover:
-    image: "placeholder.png"
+    image: "empty_image.png"
     alt: "Placeholder"
     relative: false
 editPost:

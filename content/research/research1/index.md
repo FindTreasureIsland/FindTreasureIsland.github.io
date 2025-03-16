@@ -5,7 +5,7 @@ lastmod: 2025-03-13
 tags: ["personalization", "recommendation algorithm", "human-algorithm interaction", "learning", "categorization"]
 author: ["Giwon Bahg"]
 description: "This page describes my research on the influence of human-AI interaction in learning."
-summary: "This page describes my research on the influence of human-algorithm interaction in learning."
+summary: "This project studies the influence of human-algorithm interaction in learning."
 cover:
     image: "personalization_basic.png"
     alt: "The idea of personalization and learning"
