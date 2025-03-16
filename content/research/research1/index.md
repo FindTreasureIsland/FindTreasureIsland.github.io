@@ -11,9 +11,9 @@ cover:
     alt: "The idea of personalization and learning"
     relative: false
 editPost:
-    URL: "https://github.com/pmichaillat/hugo-website"
-    Text: "Test"
-showToc: false
+    URL: "https://osf.io/preprints/psyarxiv/yahvf_v1"
+    Text: "PsyArXiv (old version)"
+showToc: true
 disableAnchoredHeadings: false
 
 ---
