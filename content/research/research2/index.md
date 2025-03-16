@@ -24,6 +24,7 @@ disableAnchoredHeadings: false
 
 This project aims to explain the temporal dynamics of visual search manifested across multiple levels of neural signals and behavior.
 
+
 ---
 
 ## Publications
