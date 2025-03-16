@@ -11,8 +11,8 @@ cover:
     alt: "Placeholder"
     relative: false
 editPost:
-    URL: "https://osf.io/preprints/psyarxiv/yahvf_v1"
-    Text: "PsyArXiv (old version)"
+    URL: "https://giwonbahg.github.io/research/research2/"
+    Text: "Under review"
 showToc: true
 disableAnchoredHeadings: false
 
@@ -28,4 +28,4 @@ This project aims to explain the temporal dynamics of visual search manifested a
 
 ## Publications
 
-**Bahg, G.**, Cox, G. E., Logan, G. D., Palmeri, T. J., & Schall, J. D. (resubmitted). A neurocomputational model of visual search explains an attention-related event-related potential.
+**Bahg, G.**, Cox, G. E., Logan, G. D., Palmeri, T. J., & Schall, J. D. (under review). A neurocomputational model of visual search explains an attention-related event-related potential.
