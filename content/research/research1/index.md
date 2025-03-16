@@ -22,7 +22,7 @@ disableAnchoredHeadings: false
 
 ## Description
 
-Personalization algorithms produce recommendations on many online services that are fine-tuned to individual users. They have been discussed as a possible reason of intellectual isolation and reinforcement of one’s belief. This project aims to study the influence of personalization on category knowledge in a controlled experiment.
+Personalization algorithms produce recommendations on many online services that are fine-tuned to individual users. They have been discussed as a possible reason of *filter bubbles* that cause intellectual isolation and reinforcement of one’s belief. This project studies the influence of personalization on category knowledge in a controlled experiment.
 
 [^1]: The acknowledged aim of the book is to dwarf all other books in the field.
 [^2]: As a result of such intensive research, the book's length is almost twelve hundred pages.
@@ -31,4 +31,4 @@ Personalization algorithms produce recommendations on many online services that 
 
 ## Citation
 
-Bahg, G., Sloutsky, V. M., \& Turner, B. M. (in press). Algorithmic personalization of information can cause inaccurate generalization and overconfidence. Accepted for publication in Journal of Experimental Psychology: General. Accepted for publication in *Journal of Experimental Psychology: General*. [Preprint (PsyArXiv)](https://osf.io/preprints/psyarxiv/yahvf_v1)
+Bahg, G., Sloutsky, V. M., \& Turner, B. M. (in press). Algorithmic personalization of information can cause inaccurate generalization and overconfidence. Accepted for publication in Journal of Experimental Psychology: General. Accepted for publication in *Journal of Experimental Psychology: General*. [Old preprint (PsyArXiv)](https://osf.io/preprints/psyarxiv/yahvf_v1)
