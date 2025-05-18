@@ -6,7 +6,7 @@ description: ""
 ## Publications
 
 ### Manuscripts in Progress or Under Review
- * **Bahg, G.**, Cox, G. E., Logan, G. D., Palmeri, T. J., & Schall, J. D. (under revision). A neurocomputational model of visual search explains an attention-related event-related potential. 
+ * **Bahg, G.**, Cox, G. E., Logan, G. D., Palmeri, T. J., & Schall, J. D. (under revision). A neurocomputational model of visual search explains an attention-related event-related potential.
 
 ### Peer-reviewed Journal Articles
  * Boag, R. J., Innes, R. J., Stevenson, N., **Bahg, G.**, Busemeyer, J. R., Cox, G. E., Donkin, C., Frank, M. J., Hawkins, G. E., Heathcote, A., Hedge, C., Lerche, V., Lilburn, S. D., Logan, G. D., Matzke, D., Miletić, S., Osth, A. F., Palmeri, T. J., Sederberg, P. B., Singmann, H., Smith, P. L., Stafford, T., Steyvers, M., Strickland, L., Trueblood, J. S., Tsetsos, J., Turner, B. M., Usher, M., van Maanen, L., van Ravenzwaaij, D., Vandekerckhove, J., Voss, A., Weichart, E.R., Weindel, G., White, C.N., Evans, N.J., Brown, S.D., Forstmann, B.U. (in press). An expert guide to planning experimental tasks for evidence accumulation modeling. Accepted for publication in *Advances in Methods and Practices in Psychological Science*.
