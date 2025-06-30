@@ -1,7 +1,7 @@
 ---
 title: "Personalization and Learning" 
 date: 2025-03-13
-lastmod: 2025-03-13
+lastmod: 2025-06-30
 tags: ["personalization", "recommendation algorithm", "human-algorithm interaction", "learning", "categorization"]
 author: ["Giwon Bahg"]
 description: "This page describes my research on the influence of human-AI interaction in learning."
@@ -11,8 +11,8 @@ cover:
     alt: "The idea of personalization and learning"
     relative: false
 editPost:
-    URL: "https://osf.io/preprints/psyarxiv/yahvf_v1"
-    Text: "PsyArXiv (old version)"
+    URL: "https://dx.doi.org/10.1037/xge0001763"
+    Text: "Journal of Experimental Psychology: General"
 showToc: true
 disableAnchoredHeadings: false
 
@@ -24,11 +24,8 @@ disableAnchoredHeadings: false
 
 Personalization algorithms produce recommendations on many online services that are fine-tuned to individual users. They have been discussed as a possible reason of *filter bubbles* that cause intellectual isolation and reinforcement of one’s belief. This project studies the influence of personalization on category knowledge in a controlled experiment.
 
-[^1]: The acknowledged aim of the book is to dwarf all other books in the field.
-[^2]: As a result of such intensive research, the book's length is almost twelve hundred pages.
-
 ---
 
 ## Citation
 
-Bahg, G., Sloutsky, V. M., \& Turner, B. M. (in press). Algorithmic personalization of information can cause inaccurate generalization and overconfidence. Accepted for publication in Journal of Experimental Psychology: General. Accepted for publication in *Journal of Experimental Psychology: General*. [Old preprint (PsyArXiv)](https://osf.io/preprints/psyarxiv/yahvf_v1)
+Bahg, G., Sloutsky, V. M., \& Turner, B. M. (2025). Algorithmic personalization of information can cause inaccurate generalization and overconfidence. Accepted for publication in Journal of Experimental Psychology: General. *Journal of Experimental Psychology: General*. [https://dx.doi.org/10.1037/xge0001763](https://dx.doi.org/10.1037/xge0001763)
