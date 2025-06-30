@@ -28,4 +28,4 @@ Personalization algorithms produce recommendations on many online services that 
 
 ## Citation
 
-Bahg, G., Sloutsky, V. M., \& Turner, B. M. (2025). Algorithmic personalization of information can cause inaccurate generalization and overconfidence. Accepted for publication in Journal of Experimental Psychology: General. *Journal of Experimental Psychology: General*. [https://dx.doi.org/10.1037/xge0001763](https://dx.doi.org/10.1037/xge0001763)
+ * **Bahg, G.**, Sloutsky, V. M., \& Turner, B. M. (2025). Algorithmic personalization of information can cause inaccurate generalization and overconfidence. Accepted for publication in Journal of Experimental Psychology: General. *Journal of Experimental Psychology: General*. [https://dx.doi.org/10.1037/xge0001763](https://dx.doi.org/10.1037/xge0001763)
