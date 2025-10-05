@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>提示词工程化工具：promptfoo - Look4ti,寻找金银岛</title><meta name="Description" content="Look4ti，记录路上的思想"><meta property="og:url" content="http://look4ti.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/">
+  <meta property="og:site_name" content="Look4ti,寻找金银岛">
+  <meta property="og:title" content="提示词工程化工具：promptfoo">
+  <meta property="og:description" content="什么是promptfoo promptfoo 是一个用于评估和红队测试 LLM 应用的 CLI 和库。
+promptfoo的主要功能：
+构建可靠的提示、模型和 RAG，使用针对您用例的基准测试 保障应用安全，通过自动化的红队测试和渗透测试 加速评估，通过缓存、并发和实时重载 自动评分输出，通过定义指标 作为CLI、库或CI/CD使用 使用 OpenAI、Anthropic、Azure、Google、HuggingFace、开源模型如 Llama，或集成自定义 API 提供商以支持任何 LLM API 为什么选择promptfoo 开发者友好：promptfoo 快速，具有实时重载和缓存等生活质量功能。 久经考验：最初为服务于超过 1000 万用户的 LLM 应用构建。我们的工具灵活，可以适应多种设置。 简单、声明式的测试用例：无需编写代码或使用繁重的笔记本即可定义评估。 语言无关：使用 Python、Javascript 或其他任何语言。 共享与协作：内置共享功能和网页查看器，便于与团队合作。 开源：LLM 评估是商品，应由 100% 开源项目提供，无附加条件。 私有：此软件完全本地运行。评估在您的机器上运行，并与 LLM 直接通信。 工作流程和理念 基于TDD的思路，通过测试驱动提示词的调试。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-15T12:50:24+08:00">
+    <meta property="article:modified_time" content="2025-09-15T12:50:24+08:00">
+    <meta property="article:tag" content="提示词">
+    <meta property="article:tag" content="提示词工程">
+    <meta property="article:tag" content="AI工具">
+    <meta property="og:image" content="http://look4ti.github.io/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://look4ti.github.io/">
+  <meta name="twitter:title" content="提示词工程化工具：promptfoo">
+  <meta name="twitter:description" content="什么是promptfoo promptfoo 是一个用于评估和红队测试 LLM 应用的 CLI 和库。
+promptfoo的主要功能：
+构建可靠的提示、模型和 RAG，使用针对您用例的基准测试 保障应用安全，通过自动化的红队测试和渗透测试 加速评估，通过缓存、并发和实时重载 自动评分输出，通过定义指标 作为CLI、库或CI/CD使用 使用 OpenAI、Anthropic、Azure、Google、HuggingFace、开源模型如 Llama，或集成自定义 API 提供商以支持任何 LLM API 为什么选择promptfoo 开发者友好：promptfoo 快速，具有实时重载和缓存等生活质量功能。 久经考验：最初为服务于超过 1000 万用户的 LLM 应用构建。我们的工具灵活，可以适应多种设置。 简单、声明式的测试用例：无需编写代码或使用繁重的笔记本即可定义评估。 语言无关：使用 Python、Javascript 或其他任何语言。 共享与协作：内置共享功能和网页查看器，便于与团队合作。 开源：LLM 评估是商品，应由 100% 开源项目提供，无附加条件。 私有：此软件完全本地运行。评估在您的机器上运行，并与 LLM 直接通信。 工作流程和理念 基于TDD的思路，通过测试驱动提示词的调试。">
+<meta name="application-name" content="Look4ti金银岛">
+<meta name="apple-mobile-web-app-title" content="Look4ti金银岛">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://look4ti.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" /><link rel="prev" href="http://look4ti.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" /><link rel="next" href="http://look4ti.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "提示词工程化工具：promptfoo",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/look4ti.github.io\/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo\/"
+        },"genre": "posts","keywords": "提示词, 提示词工程, AI工具","wordcount":  959 ,
+        "url": "http:\/\/look4ti.github.io\/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo\/","datePublished": "2025-09-15T12:50:24+08:00","dateModified": "2025-09-15T12:50:24+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "CRIO"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'auto';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Look4ti,寻找金银岛"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Look4ti,寻找金银岛"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">提示词工程化工具：promptfoo</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="http://look4ti.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>CRIO</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E5%88%9B%E4%B8%9A/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>创业</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-09-15">2025-09-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;959 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic1.zhimg.com/70/v2-a816141683ff94aa678d757f64f64a96_1440w.avis?source=172ae18b&amp;biz_tag=Post"
+        data-srcset="https://pic1.zhimg.com/70/v2-a816141683ff94aa678d757f64f64a96_1440w.avis?source=172ae18b&amp;biz_tag=Post, https://pic1.zhimg.com/70/v2-a816141683ff94aa678d757f64f64a96_1440w.avis?source=172ae18b&amp;biz_tag=Post 1.5x, https://pic1.zhimg.com/70/v2-a816141683ff94aa678d757f64f64a96_1440w.avis?source=172ae18b&amp;biz_tag=Post 2x"
+        data-sizes="auto"
+        alt="https://pic1.zhimg.com/70/v2-a816141683ff94aa678d757f64f64a96_1440w.avis?source=172ae18b&amp;biz_tag=Post"
+        title="https://pic1.zhimg.com/70/v2-a816141683ff94aa678d757f64f64a96_1440w.avis?source=172ae18b&amp;biz_tag=Post" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是promptfoo">什么是promptfoo</a></li>
+    <li><a href="#为什么选择promptfoo">为什么选择promptfoo</a></li>
+    <li><a href="#工作流程和理念">工作流程和理念</a></li>
+    <li><a href="#promptfoo验证框架demo">promptfoo验证框架Demo</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#配置promptfoo">配置promptfoo：</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据集的生成">数据集的生成</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="什么是promptfoo">什么是promptfoo</h2>
+<p><code>promptfoo</code> 是一个用于评估和红队测试 LLM 应用的 CLI 和库。<br>
+<code>promptfoo</code>的主要功能：</p>
+<ul>
+<li><strong>构建可靠的提示、模型和 RAG</strong>，使用针对您用例的基准测试</li>
+<li><strong>保障应用安全</strong>，通过自动化的<a href="https://link.zhihu.com/?target=https%3A//www.aidoczh.com/promptfoo/docs/red-team/" target="_blank" rel="noopener noreffer ">红队测试</a>和渗透测试</li>
+<li><strong>加速评估</strong>，通过缓存、并发和实时重载</li>
+<li><strong>自动评分输出</strong>，通过定义<a href="https://link.zhihu.com/?target=https%3A//www.aidoczh.com/promptfoo/docs/configuration/expected-outputs/" target="_blank" rel="noopener noreffer ">指标</a></li>
+<li>作为<a href="https://link.zhihu.com/?target=https%3A//www.aidoczh.com/promptfoo/docs/usage/command-line/" target="_blank" rel="noopener noreffer ">CLI</a>、<a href="https://link.zhihu.com/?target=https%3A//www.aidoczh.com/promptfoo/docs/usage/node-package/" target="_blank" rel="noopener noreffer ">库</a>或<a href="https://link.zhihu.com/?target=https%3A//www.aidoczh.com/promptfoo/docs/integrations/github-action/" target="_blank" rel="noopener noreffer ">CI/CD</a>使用</li>
+<li>使用 <a href="https://zhida.zhihu.com/search?content_id=263061277&amp;content_type=Article&amp;match_order=1&amp;q=OpenAI&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">OpenAI</a>、<a href="https://zhida.zhihu.com/search?content_id=263061277&amp;content_type=Article&amp;match_order=1&amp;q=Anthropic&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">Anthropic</a>、<a href="https://zhida.zhihu.com/search?content_id=263061277&amp;content_type=Article&amp;match_order=1&amp;q=Azure&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">Azure</a>、Google、<a href="https://zhida.zhihu.com/search?content_id=263061277&amp;content_type=Article&amp;match_order=1&amp;q=HuggingFace&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">HuggingFace</a>、开源模型如 <a href="https://zhida.zhihu.com/search?content_id=263061277&amp;content_type=Article&amp;match_order=1&amp;q=Llama&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">Llama</a>，或集成自定义 API 提供商以支持<a href="https://link.zhihu.com/?target=https%3A//www.aidoczh.com/promptfoo/docs/providers/" target="_blank" rel="noopener noreffer ">任何 LLM API</a></li>
+</ul>
+<h2 id="为什么选择promptfoo">为什么选择promptfoo</h2>
+<ul>
+<li><strong>开发者友好</strong>：promptfoo 快速，具有实时重载和缓存等生活质量功能。</li>
+<li><strong>久经考验</strong>：最初为服务于超过 1000 万用户的 LLM 应用构建。我们的工具灵活，可以适应多种设置。</li>
+<li><strong>简单、声明式的测试用例</strong>：无需编写代码或使用繁重的笔记本即可定义评估。</li>
+<li><strong>语言无关</strong>：使用 Python、Javascript 或其他任何语言。</li>
+<li><strong>共享与协作</strong>：内置共享功能和网页查看器，便于与团队合作。</li>
+<li><strong>开源</strong>：LLM 评估是商品，应由 100% 开源项目提供，无附加条件。</li>
+<li><strong>私有</strong>：此软件完全本地运行。评估在您的机器上运行，并与 LLM 直接通信。</li>
+</ul>
+<h2 id="工作流程和理念">工作流程和理念</h2>
+<p>基于TDD的思路，通过测试驱动提示词的调试。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://picx.zhimg.com/v2-c612c870697e2ecbddf1cddbfc2dd9d5_1440w.jpg"
+        data-srcset="https://picx.zhimg.com/v2-c612c870697e2ecbddf1cddbfc2dd9d5_1440w.jpg, https://picx.zhimg.com/v2-c612c870697e2ecbddf1cddbfc2dd9d5_1440w.jpg 1.5x, https://picx.zhimg.com/v2-c612c870697e2ecbddf1cddbfc2dd9d5_1440w.jpg 2x"
+        data-sizes="auto"
+        alt="https://picx.zhimg.com/v2-c612c870697e2ecbddf1cddbfc2dd9d5_1440w.jpg"
+        title="https://picx.zhimg.com/v2-c612c870697e2ecbddf1cddbfc2dd9d5_1440w.jpg" /></p>
+<p>工作过程：</p>
+<ul>
+<li>定义测试用例</li>
+<li>配置评估</li>
+<li>运行评估</li>
+<li>分析结果</li>
+</ul>
+<h2 id="promptfoo验证框架demo">promptfoo验证框架Demo</h2>
+<p>可以使用Jupyter Notebook来运行和验证：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic3.zhimg.com/v2-08eb3f8fe695429cc6357e648caea63e_1440w.jpg"
+        data-srcset="https://pic3.zhimg.com/v2-08eb3f8fe695429cc6357e648caea63e_1440w.jpg, https://pic3.zhimg.com/v2-08eb3f8fe695429cc6357e648caea63e_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-08eb3f8fe695429cc6357e648caea63e_1440w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic3.zhimg.com/v2-08eb3f8fe695429cc6357e648caea63e_1440w.jpg"
+        title="https://pic3.zhimg.com/v2-08eb3f8fe695429cc6357e648caea63e_1440w.jpg" /></p>
+<h3 id="安装">安装</h3>
+<ul>
+<li>命令：brew install promptfoo. 说明：在MAC上安装，也可以使用npm、或者npx安装。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic1.zhimg.com/v2-44e6d81fa8412e330e5b2abc846f62a6_1440w.jpg"
+        data-srcset="https://pic1.zhimg.com/v2-44e6d81fa8412e330e5b2abc846f62a6_1440w.jpg, https://pic1.zhimg.com/v2-44e6d81fa8412e330e5b2abc846f62a6_1440w.jpg 1.5x, https://pic1.zhimg.com/v2-44e6d81fa8412e330e5b2abc846f62a6_1440w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic1.zhimg.com/v2-44e6d81fa8412e330e5b2abc846f62a6_1440w.jpg"
+        title="https://pic1.zhimg.com/v2-44e6d81fa8412e330e5b2abc846f62a6_1440w.jpg" /></p>
+<ul>
+<li>验证安装<br>
+通过!promptfoo &ndash;version命令查看安装情况：</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic1.zhimg.com/v2-5611c9a3b256de987b26fb04e25ee4f4_1440w.jpg"
+        data-srcset="https://pic1.zhimg.com/v2-5611c9a3b256de987b26fb04e25ee4f4_1440w.jpg, https://pic1.zhimg.com/v2-5611c9a3b256de987b26fb04e25ee4f4_1440w.jpg 1.5x, https://pic1.zhimg.com/v2-5611c9a3b256de987b26fb04e25ee4f4_1440w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic1.zhimg.com/v2-5611c9a3b256de987b26fb04e25ee4f4_1440w.jpg"
+        title="https://pic1.zhimg.com/v2-5611c9a3b256de987b26fb04e25ee4f4_1440w.jpg" /></p>
+<h3 id="配置promptfoo">配置promptfoo：</h3>
+<p><strong>创建提示词文件</strong></p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-text">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">%%writefile prompts.txt
+</span></span><span class="line"><span class="cl">You&#39;re an ecommerce chat assistant for a shoe company.
+</span></span><span class="line"><span class="cl">Answer this user&#39;s question: {{name}}: &#34;{{question}}&#34;
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">You&#39;re a smart, bubbly chat assistant for a shoe company.
+</span></span><span class="line"><span class="cl">Answer this user&#39;s question: {{name}}: &#34;{{question}}&#34;</span></span></code></pre></div></div>
+<p><strong>完成promptfooconfig.yaml文件的配置</strong></p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-text">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">%%writefile promptfooconfig.yaml
+</span></span><span class="line"><span class="cl">prompts: [prompts.txt]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">providers: 
+</span></span><span class="line"><span class="cl">  - id: deepseek:deepseek-chat
+</span></span><span class="line"><span class="cl">    config:
+</span></span><span class="line"><span class="cl">      temperature: 0.7
+</span></span><span class="line"><span class="cl">      max_tokens: 4000
+</span></span><span class="line"><span class="cl">      apiKey: sk-00d1539cb5894e7daeb23099646c165b
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tests:
+</span></span><span class="line"><span class="cl">  - vars:
+</span></span><span class="line"><span class="cl">      name: Bob
+</span></span><span class="line"><span class="cl">      question: Can you help me find a pair of sandals on your website?
+</span></span><span class="line"><span class="cl">  - vars:
+</span></span><span class="line"><span class="cl">      name: Jane
+</span></span><span class="line"><span class="cl">      question: Do you have any discounts available?
+</span></span><span class="line"><span class="cl">  - vars:
+</span></span><span class="line"><span class="cl">      name: Dave
+</span></span><span class="line"><span class="cl">      question: What are your shipping and return policies?
+</span></span><span class="line"><span class="cl">  - vars:
+</span></span><span class="line"><span class="cl">      name: Jim
+</span></span><span class="line"><span class="cl">      question: Can you provide more info on your hiking boot options?
+</span></span><span class="line"><span class="cl">  - vars:
+</span></span><span class="line"><span class="cl">      name: Alice
+</span></span><span class="line"><span class="cl">      question: What is the latest trend in winter footwear?</span></span></code></pre></div></div>
+<p>这里特别需要注意：</p>
+<ul>
+<li>这个配置文件中，对于空格和对其有很严格的要求。每一行都需要严格缩进2个空哥，不能使用Tab缩进。</li>
+</ul>
+<p><strong>运行和评估</strong></p>
+<ul>
+<li>运行命令行：</li>
+</ul>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-text">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">!npx promptfoo eval -c promptfooconfig.yaml</span></span></code></pre></div></div>
+<ul>
+<li>产生测试报告<br>
+测试结果的总结：</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic1.zhimg.com/v2-b694af73c80fb0f708370a2723a7bb8e_1440w.jpg"
+        data-srcset="https://pic1.zhimg.com/v2-b694af73c80fb0f708370a2723a7bb8e_1440w.jpg, https://pic1.zhimg.com/v2-b694af73c80fb0f708370a2723a7bb8e_1440w.jpg 1.5x, https://pic1.zhimg.com/v2-b694af73c80fb0f708370a2723a7bb8e_1440w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic1.zhimg.com/v2-b694af73c80fb0f708370a2723a7bb8e_1440w.jpg"
+        title="https://pic1.zhimg.com/v2-b694af73c80fb0f708370a2723a7bb8e_1440w.jpg" /></p>
+<p>测试结果的记录：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic2.zhimg.com/v2-c51cbc23227619ac4d42eef975cb8aa7_1440w.jpg"
+        data-srcset="https://pic2.zhimg.com/v2-c51cbc23227619ac4d42eef975cb8aa7_1440w.jpg, https://pic2.zhimg.com/v2-c51cbc23227619ac4d42eef975cb8aa7_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-c51cbc23227619ac4d42eef975cb8aa7_1440w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic2.zhimg.com/v2-c51cbc23227619ac4d42eef975cb8aa7_1440w.jpg"
+        title="https://pic2.zhimg.com/v2-c51cbc23227619ac4d42eef975cb8aa7_1440w.jpg" /></p>
+<p><strong>查看最终的评估报告</strong></p>
+<p>通过命令行查看：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-text">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">!npx promptfoo view</span></span></code></pre></div></div>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://picx.zhimg.com/v2-5762f293972d3a7e71b7b1089c5d9a57_1440w.jpg"
+        data-srcset="https://picx.zhimg.com/v2-5762f293972d3a7e71b7b1089c5d9a57_1440w.jpg, https://picx.zhimg.com/v2-5762f293972d3a7e71b7b1089c5d9a57_1440w.jpg 1.5x, https://picx.zhimg.com/v2-5762f293972d3a7e71b7b1089c5d9a57_1440w.jpg 2x"
+        data-sizes="auto"
+        alt="https://picx.zhimg.com/v2-5762f293972d3a7e71b7b1089c5d9a57_1440w.jpg"
+        title="https://picx.zhimg.com/v2-5762f293972d3a7e71b7b1089c5d9a57_1440w.jpg" /></p>
+<h2 id="数据集的生成">数据集的生成</h2>
+<p>在测试中，测试的数据集是核心，如何可以批量化生成测试集？<br>
+可以通过如下的命令：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-text">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">promptfoo generate dataset -o tests.**yaml**</span></span></code></pre></div></div>
+<p>run_promptfoo_onMAC</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-09-15</span>
+            </div><div id="page-views" class="post-info-mod">
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://look4ti.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" data-title="提示词工程化工具：promptfoo" data-via="https://x.com/splitwrite" data-hashtags="提示词,提示词工程,AI工具"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://look4ti.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" data-title="提示词工程化工具：promptfoo"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://look4ti.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" data-hashtag="提示词"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://look4ti.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" data-title="提示词工程化工具：promptfoo"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://look4ti.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://look4ti.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" data-title="提示词工程化工具：promptfoo"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://look4ti.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" data-title="提示词工程化工具：promptfoo" data-image="https://pic1.zhimg.com/70/v2-a816141683ff94aa678d757f64f64a96_1440w.avis?source=172ae18b&amp;biz_tag=Post"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://look4ti.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" data-title="提示词工程化工具：promptfoo" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flook4ti.github.io%2f%25E6%258F%2590%25E7%25A4%25BA%25E8%25AF%258D%25E5%25B7%25A5%25E7%25A8%258B%25E5%258C%2596%25E5%25B7%25A5%25E5%2585%25B7promptfoo%2f&amp;text=%e6%8f%90%e7%a4%ba%e8%af%8d%e5%b7%a5%e7%a8%8b%e5%8c%96%e5%b7%a5%e5%85%b7%ef%bc%9apromptfoo" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D/">提示词</a>,&nbsp;<a href="/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/">提示词工程</a>,&nbsp;<a href="/tags/ai%E5%B7%A5%E5%85%B7/">AI工具</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" class="prev" rel="prev" title="好奇害死猫系列：Dia系统提示词分析和拆解"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>好奇害死猫系列：Dia系统提示词分析和拆解</a>
+            <a href="/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="next" rel="next" title="提示词工程学习笔记">提示词工程学习笔记<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.151.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.1-DEV"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://look4ti.github.io" target="_blank">CRIO</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/typeit/index.umd.js"></script><script src="/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Look4ti金银岛","id-2":"Look4ti金银岛"},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/js/theme.min.js"></script></body>
+</html>
