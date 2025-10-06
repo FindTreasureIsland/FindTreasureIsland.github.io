@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: http://look4ti.github.io/sitemap.xml
+Sitemap: http://findtreasureisland.github.io/sitemap.xml
