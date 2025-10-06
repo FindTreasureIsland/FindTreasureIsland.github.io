@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Obsidian&#43;Gemini CLI,最佳的写作搭档工具体验 - Look4ti,寻找金银岛</title><meta name="Description" content="Look4ti，记录路上的思想"><meta property="og:url" content="http://look4ti.github.io/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/">
+  <meta property="og:site_name" content="Look4ti,寻找金银岛">
+  <meta property="og:title" content="Obsidian&#43;Gemini CLI,最佳的写作搭档工具体验">
+  <meta property="og:description" content="引子 我以前使用Notion较多，之前对于Obsidian并不是太感冒。但是后来发现Notion很多AI相关功能都要收费，且当时Notion尚不支持离线模式，后来就逐渐开始尝试使用Obsidian来进行Markdown写作。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-05T12:50:24+08:00">
+    <meta property="article:modified_time" content="2025-10-05T12:50:24+08:00">
+    <meta property="article:tag" content="产品分析">
+    <meta property="og:image" content="http://look4ti.github.io/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://look4ti.github.io/">
+  <meta name="twitter:title" content="Obsidian&#43;Gemini CLI,最佳的写作搭档工具体验">
+  <meta name="twitter:description" content="引子 我以前使用Notion较多，之前对于Obsidian并不是太感冒。但是后来发现Notion很多AI相关功能都要收费，且当时Notion尚不支持离线模式，后来就逐渐开始尝试使用Obsidian来进行Markdown写作。">
+<meta name="application-name" content="Look4ti金银岛">
+<meta name="apple-mobile-web-app-title" content="Look4ti金银岛">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://look4ti.github.io/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/" /><link rel="prev" href="http://look4ti.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97anthropic%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Obsidian+Gemini CLI,最佳的写作搭档工具体验",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/look4ti.github.io\/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C\/"
+        },"genre": "posts","keywords": "产品分析","wordcount":  3743 ,
+        "url": "http:\/\/look4ti.github.io\/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C\/","datePublished": "2025-10-05T12:50:24+08:00","dateModified": "2025-10-05T12:50:24+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "CRIO"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'auto';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Look4ti,寻找金银岛"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Look4ti,寻找金银岛"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Obsidian+Gemini CLI,最佳的写作搭档工具体验</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="http://look4ti.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>CRIO</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E4%BA%A7%E5%93%81/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>产品</a>&nbsp;<a href="/categories/%E6%8A%80%E6%9C%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>技术</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-10-05">2025-10-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3743 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic1.zhimg.com/70/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.avis?source=172ae18b&amp;biz_tag=Post"
+        data-srcset="https://pic1.zhimg.com/70/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.avis?source=172ae18b&amp;biz_tag=Post, https://pic1.zhimg.com/70/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.avis?source=172ae18b&amp;biz_tag=Post 1.5x, https://pic1.zhimg.com/70/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.avis?source=172ae18b&amp;biz_tag=Post 2x"
+        data-sizes="auto"
+        alt="https://pic1.zhimg.com/70/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.avis?source=172ae18b&amp;biz_tag=Post"
+        title="https://pic1.zhimg.com/70/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.avis?source=172ae18b&amp;biz_tag=Post" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#引子">引子</a></li>
+        <li><a href="#对obsidian上各种ai插件的吐槽">对Obsidian上各种AI插件的吐槽</a></li>
+        <li><a href="#obsidian分屏模式">Obsidian分屏模式</a></li>
+        <li><a href="#obsidian和gemini-cli的配合使用">Obsidian和Gemini CLI的配合使用</a></li>
+        <li><a href="#obsidiangemini-clihugo的升级玩法">Obsidian+Gemini CLI+Hugo的升级玩法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="引子">引子</h3>
+<p>我以前使用Notion较多，之前对于Obsidian并不是太感冒。但是后来发现Notion很多AI相关功能都要收费，且当时Notion尚不支持离线模式，后来就逐渐开始尝试使用Obsidian来进行Markdown写作。</p>
+<p>用了Obsidian之后，我才逐渐认识到了Obsidian和Notion其实完全是两个不同的产品。从折腾党的角度来看，Obsidian的开放性为其带来了更多的玩法和乐趣。</p>
+<p>最终让我完全放弃Notion，转用Obsidian的原因，是发现了其分屏用法，极大地提升了我的效率，因此现在我已经几乎完全放弃Notion了。</p>
+<p>然而，Obsidian并非没有槽点，其对AI的支持一直是个短板。虽然有很多社区插件可以支持AI写作，但是说实话，其产品的成熟度和用户体验都很糟糕，可能试用一下尚可，但若要重度使用，总感觉功能上仍有不足。</p>
+<p>相比之下，Notion提供的Notion AI则完善许多，且与Notion的诸多工具打通，用户体验的完整性也更佳。奈何Notion太不厚道了，Notion PRO收了一次费，Notion AI还要再收费。</p>
+<p>加之Obsidian的双屏模式在一定程度上弥补了缺少优秀AI插件的遗憾，所以我仍义无反顾地将Obsidian作为了我的主力知识库和写作工具。</p>
+<h3 id="对obsidian上各种ai插件的吐槽">对Obsidian上各种AI插件的吐槽</h3>
+<p>目前Obsidian上的各类AI插件，我基本都尝试过一遍，但使用下来都相当令人失望。</p>
+<p><strong>Text Generator</strong></p>
+<p>Github开源地址：</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//github.com/nhaouari/obsidian-textgenerator-plugin" target="_blank" rel="noopener noreffer ">https://github.com/nhaouari/obsidian-textgenerator-plugin</a></p>
+<p>Text Generator是我在Obsidian上使用的第一个插件，但也是最快放弃的一个。最开始装它的原因就是看到它和OB的融合。Text Generator没有单独的聊天窗口，而是通过斜杠命令或命令面板使用其功能。它融入到用户的写作过程中，可理解为在原有写作中增加了AI能力。</p>
+<p>然而缺点也很明显，Text Generator仅能辅助用户生成文档，且该工具只是对LLM模型进行了简单的套壳，因此内容生成质量平平。插件安装试用后，我便直接卸载了，因为它对我的写作实在没有任何帮助。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic3.zhimg.com/80/v2-81fad99b3149c041571920b2c4e8c1d4_1440w.webp"
+        data-srcset="https://pic3.zhimg.com/80/v2-81fad99b3149c041571920b2c4e8c1d4_1440w.webp, https://pic3.zhimg.com/80/v2-81fad99b3149c041571920b2c4e8c1d4_1440w.webp 1.5x, https://pic3.zhimg.com/80/v2-81fad99b3149c041571920b2c4e8c1d4_1440w.webp 2x"
+        data-sizes="auto"
+        alt="https://pic3.zhimg.com/80/v2-81fad99b3149c041571920b2c4e8c1d4_1440w.webp"
+        title="https://pic3.zhimg.com/80/v2-81fad99b3149c041571920b2c4e8c1d4_1440w.webp" /></p>
+<p><strong>Smart Composer</strong>
+Github开源地址：<br>
+<a href="https://link.zhihu.com/?target=https%3A//github.com/glowingjade/obsidian-smart-composer" target="_blank" rel="noopener noreffer ">https://github.com/glowingjade/obsidian-smart-composer</a></p>
+<p>Smart Composer安装后，在右侧边栏提供了独立的AI交互窗口。Smart Composer在产品形态和使用体验上很像Vibe Coding的Cursor，但可能由于用户可自定义LLM，因此在不同LLM上的体验差异巨大。我通过Deepseek和Openrouter尝试切换了多个大模型，但文档的输出质量同样平平。此外，我发现Obsidian的AI插件普遍存在一些通病：由于仅以插件形式存在，它们难以提供流畅的用户体验。无论是信息流的输出，还是用户操作的交互，都存在不流畅和卡顿的情况。这些小问题最终导致我放弃了这些插件应用，因为若需每日重度使用，我实在无法忍受如此糟糕的用户体验。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic2.zhimg.com/80/v2-8f644051095dea5c0450c9615c73698b_1440w.webp"
+        data-srcset="https://pic2.zhimg.com/80/v2-8f644051095dea5c0450c9615c73698b_1440w.webp, https://pic2.zhimg.com/80/v2-8f644051095dea5c0450c9615c73698b_1440w.webp 1.5x, https://pic2.zhimg.com/80/v2-8f644051095dea5c0450c9615c73698b_1440w.webp 2x"
+        data-sizes="auto"
+        alt="https://pic2.zhimg.com/80/v2-8f644051095dea5c0450c9615c73698b_1440w.webp"
+        title="https://pic2.zhimg.com/80/v2-8f644051095dea5c0450c9615c73698b_1440w.webp" /></p>
+<p><strong>总结</strong></p>
+<p>我也尝试过其他一些AI插件，其实这些插件工具的问题都大同小异。<br>
+通过对这些插件工具的使用，我也在思考为何它们无法满足大家对Obsidian上AI产品的要求，我的理解如下：</p>
+<ul>
+<li>目前Obsidian上的插件基本上都号称可以开放支持各种模型，看起来支持的模型很全面，用户可按需配置。但深入分析便会发现问题很明显：不同模型由于能力差异，其实需要专门的系统提示词和产品设计与之配合，且需进行完备测试后方能开放使用。从这点上可以观察到，目前号称支持多种模型的AI产品，主要是一些简单的Chatbox类工具（尽管像Cursor这类编程工具也号称可以支持，但它们仍以自己推荐的主要模型为主）。对于具有一定复杂性和专业性的产品，反而不适合这种开放模型的方式。</li>
+<li>插件类产品由于仅作为工具的插件存在，很难与产品更好地融合，因此无法提供一体化的用户体验。</li>
+</ul>
+<h3 id="obsidian分屏模式">Obsidian分屏模式</h3>
+<p>在写作中，AI工具其实主要有几个作用：</p>
+<ul>
+<li>
+<p>资料查询；</p>
+</li>
+<li>
+<p>通过和AI对话，辅助梳理写作思路；</p>
+</li>
+<li>
+<p>辅助写作或润色。</p>
+<p>这几个功能其实基本上贯穿了我们写作的整个过程。</p>
+</li>
+</ul>
+<p><strong>资料查询</strong></p>
+<p>由于目前不同的AI各有其擅长方向，因此在查询资料时，往往需要多个AI工具辅助完成。例如，有时我会使用ChatGPT，有时则通过Perplexity来检索资料。</p>
+<p>由于在不同写作场景下，对资料的要求往往不同，因此一个AI工具仍无法完全满足我的需求。加之对于一些我尚不了解的领域，可能也无从知晓如何提问，此时多询问几个AI工具，也更容易补充我的知识盲区。</p>
+<p><strong>整理写作思路</strong></p>
+<p>通过与AI对话，可以很好地梳理和理顺写作逻辑。你可以要求AI从你期望的角度提出一些想法和见解，而这些在以前的写作前期是很难解决的。</p>
+<p><strong>辅助写作和润色</strong></p>
+<p>关于这部分，不同的人可能有不同的看法。有些人喜欢将提纲交给AI，让AI完全代写。而另一些人则享受写作的乐趣，因此这部分会选择自己动手。</p>
+<p>我更倾向于这部分自己去写，因为写作其实是我们学习和思考的过程，这部分我认为才是写作最核心和最重要的环节。我也很乐意写完后，让AI帮我检查，并提出一些写作和改进建议。</p>
+<p><strong>为什么我推荐采用分屏模式</strong></p>
+<p>以前我会打开多个窗口，一个是写作窗口，一个是AI窗口。你会发现这个过程对于写作而言非常割裂。因为实际上在写作中，这几个过程并非线性，而是可能反复并行的动作。</p>
+<ul>
+<li>我在整理思路时，会再去查询一些之前遗漏的资料或素材。</li>
+<li>我在写作中若有新的想法，也会重新整理思路并调整写作大纲，当然这个过程中也可能会再补充查询一些资料。<br>
+所以实际上在整个过程中，我会不断进行工具和窗口的切换。<br>
+而分屏模式则解决了我的这个问题。<br>
+通过分屏，我可以边查边写、边聊边写、边写边聊、边写边查，通过一个界面并行完成多项工作，从而大大提升了我的效率。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic4.zhimg.com/80/v2-a8ecde1131f3bbedb353eb1063db86cb_1440w.webp"
+        data-srcset="https://pic4.zhimg.com/80/v2-a8ecde1131f3bbedb353eb1063db86cb_1440w.webp, https://pic4.zhimg.com/80/v2-a8ecde1131f3bbedb353eb1063db86cb_1440w.webp 1.5x, https://pic4.zhimg.com/80/v2-a8ecde1131f3bbedb353eb1063db86cb_1440w.webp 2x"
+        data-sizes="auto"
+        alt="https://pic4.zhimg.com/80/v2-a8ecde1131f3bbedb353eb1063db86cb_1440w.webp"
+        title="https://pic4.zhimg.com/80/v2-a8ecde1131f3bbedb353eb1063db86cb_1440w.webp" /></p>
+<p>Obsidian分屏+标签页+网页浏览器功能的灵活组合，让Obsidian的生产力一下子得到了最大程度的放大，这也是我义无反顾地放弃Notion，开始使用Obsidian的最大原因。</p>
+<h3 id="obsidian和gemini-cli的配合使用">Obsidian和Gemini CLI的配合使用</h3>
+<p>虽然通过Obsidian的分屏模式+标签页+网页浏览器的功能可以解决AI查询和AI对话的问题，但却无法解决知识库检索+AI辅助写作的问题。</p>
+<p><strong>Obsidian+Cursor模式</strong></p>
+<p>因为Obsidian的Vault实际上就是一个本地文件夹，因此网上有一些采用Cursor+Obsidian的方案。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic2.zhimg.com/80/v2-59cec1ea40c447c49a9ed9c7384a4671_1440w.webp"
+        data-srcset="https://pic2.zhimg.com/80/v2-59cec1ea40c447c49a9ed9c7384a4671_1440w.webp, https://pic2.zhimg.com/80/v2-59cec1ea40c447c49a9ed9c7384a4671_1440w.webp 1.5x, https://pic2.zhimg.com/80/v2-59cec1ea40c447c49a9ed9c7384a4671_1440w.webp 2x"
+        data-sizes="auto"
+        alt="https://pic2.zhimg.com/80/v2-59cec1ea40c447c49a9ed9c7384a4671_1440w.webp"
+        title="https://pic2.zhimg.com/80/v2-59cec1ea40c447c49a9ed9c7384a4671_1440w.webp" /></p>
+<p>但是有两个原因让我对这种方案非常反感：</p>
+<ul>
+<li>
+<p>我好不容易在一个软件里可以完成所有工作，现在却又要我切换到另外的软件，再次在不同软件中来回切换，我很难接受这种方式。</p>
+</li>
+<li>
+<p>Cursor毕竟并非为写作而生，因此其界面非常不适合进行写作。实际上在让AI辅助我写作的过程中，我也需要自己编辑文档，因此我很在意写作体验。</p>
+<p>因此我一直在寻找更优雅的方案。</p>
+</li>
+</ul>
+<p><strong>Obsidian+Gemini CLI模式</strong></p>
+<p>之前我其实一直没有太理解Gemini CLI这类产品的产品逻辑。上周我有一个产品想法，想快速制作一个产品原型Demo，因此开始研究Vibe Coding工具。</p>
+<p>之前我一直使用Cursor或Trae这类工具，但看到网上说Gemini CLI目前每天可有1000次调用机会，且很多人对其编程能力评价很高，因此想体验一番。</p>
+<p>由于Gemini CLI要求Google的OAuth认证，且需要严格的魔法环境，所以经过一番折腾，最终总算安装好了Gemini CLI的工作环境。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic3.zhimg.com/80/v2-9751aed487c78aacc5fb96e04cd6122c_1440w.webp"
+        data-srcset="https://pic3.zhimg.com/80/v2-9751aed487c78aacc5fb96e04cd6122c_1440w.webp, https://pic3.zhimg.com/80/v2-9751aed487c78aacc5fb96e04cd6122c_1440w.webp 1.5x, https://pic3.zhimg.com/80/v2-9751aed487c78aacc5fb96e04cd6122c_1440w.webp 2x"
+        data-sizes="auto"
+        alt="https://pic3.zhimg.com/80/v2-9751aed487c78aacc5fb96e04cd6122c_1440w.webp"
+        title="https://pic3.zhimg.com/80/v2-9751aed487c78aacc5fb96e04cd6122c_1440w.webp" /></p>
+<p><strong>Gemini CLI</strong>绝对是只有工程师才能构思出的AI工具产品。</p>
+<p>我仍记得第一次使用电脑时，那还是386年代，最开始接触的编程其实就是基于Basic的命令编程，当时人机交互主要通过CLI界面。鼠标和Windows发明后，乃至智能手机时代，各种用户友好的GUI已成为人机交互的主流。然而在各类企业级领域，包括服务器后端、数据库开发、网络设备等复杂或专业领域，CLI仍是主流。</p>
+<p>我记得以前我们进行路由器开发时，当时主要的功能开发都是基于CLI完成的。对于大型核心路由器，WebUI或GUI一直处于开发鄙视链的底端。</p>
+<p>所以针对开发人员提供的AI编程工具，推出CLI化的工具就再自然不过了。</p>
+<p>在CLI下，用户可以在任何路径下启用Gemini CLI的功能，这提供了自然的工作上下文，使Gemini CLI能更好地与工程师协同工作。</p>
+<p>鉴于Gemini CLI的特点，因此在Obsidian中，通过Terminal插件便可很好地将其集成进来。</p>
+<p>Obsidian Terminal是一款可在Obsidian中操作Shell的社区插件。</p>
+<p>GitHub地址：<a href="https://link.zhihu.com/?target=https%3A//github.com/polyipseity/obsidian-terminal" target="_blank" rel="noopener noreffer ">https://github.com/polyipseity/obsidian-terminal</a></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic1.zhimg.com/80/v2-70e35609457d79a987f8f3ec7056b50e_1440w.webp"
+        data-srcset="https://pic1.zhimg.com/80/v2-70e35609457d79a987f8f3ec7056b50e_1440w.webp, https://pic1.zhimg.com/80/v2-70e35609457d79a987f8f3ec7056b50e_1440w.webp 1.5x, https://pic1.zhimg.com/80/v2-70e35609457d79a987f8f3ec7056b50e_1440w.webp 2x"
+        data-sizes="auto"
+        alt="https://pic1.zhimg.com/80/v2-70e35609457d79a987f8f3ec7056b50e_1440w.webp"
+        title="https://pic1.zhimg.com/80/v2-70e35609457d79a987f8f3ec7056b50e_1440w.webp" /></p>
+<p>所以使用Obsidian+Terminal+分屏功能，终于可以支持我所期望的Obsidian与AI写作场景了：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic3.zhimg.com/80/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.webp"
+        data-srcset="https://pic3.zhimg.com/80/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.webp, https://pic3.zhimg.com/80/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.webp 1.5x, https://pic3.zhimg.com/80/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.webp 2x"
+        data-sizes="auto"
+        alt="https://pic3.zhimg.com/80/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.webp"
+        title="https://pic3.zhimg.com/80/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.webp" /></p>
+<h3 id="obsidiangemini-clihugo的升级玩法">Obsidian+Gemini CLI+Hugo的升级玩法</h3>
+<p>国庆节在家里继续折腾，在看了很多人通过MD写博客的方法后，也萌生了通过Obsidian进行博客写作和发布的想法。</p>
+<p>最后在GitHub的Page功能中，通过Hugo搭建了一个个人博客网站：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://picx.zhimg.com/80/v2-d6b3416df02eb9f60dfb3dbabafcae9b_1440w.webp"
+        data-srcset="https://picx.zhimg.com/80/v2-d6b3416df02eb9f60dfb3dbabafcae9b_1440w.webp, https://picx.zhimg.com/80/v2-d6b3416df02eb9f60dfb3dbabafcae9b_1440w.webp 1.5x, https://picx.zhimg.com/80/v2-d6b3416df02eb9f60dfb3dbabafcae9b_1440w.webp 2x"
+        data-sizes="auto"
+        alt="https://picx.zhimg.com/80/v2-d6b3416df02eb9f60dfb3dbabafcae9b_1440w.webp"
+        title="https://picx.zhimg.com/80/v2-d6b3416df02eb9f60dfb3dbabafcae9b_1440w.webp" /></p>
+<p>在搭建GitHub个人博客网站时，网站源代码和发布后的文件往往会分别同步到不同的代码仓库。以前大家推荐的方法是通过GitHub的自动化工作流来完成的。</p>
+<p>但现在可以通过集成的Gemini CLI，输入一句话：‘同时同步到两个仓库’，便可搞定。</p>
+<p>此外，还可以在Obsidian中通过Shell Command插件，将这条命令直接整合为一个系统命令或一个快捷键，便可搞定。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-10-05</span>
+            </div><div id="page-views" class="post-info-mod">
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://look4ti.github.io/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/" data-title="Obsidian&#43;Gemini CLI,最佳的写作搭档工具体验" data-via="https://x.com/splitwrite" data-hashtags="产品分析"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://look4ti.github.io/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/" data-title="Obsidian&#43;Gemini CLI,最佳的写作搭档工具体验"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://look4ti.github.io/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/" data-hashtag="产品分析"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://look4ti.github.io/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/" data-title="Obsidian&#43;Gemini CLI,最佳的写作搭档工具体验"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://look4ti.github.io/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://look4ti.github.io/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/" data-title="Obsidian&#43;Gemini CLI,最佳的写作搭档工具体验"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://look4ti.github.io/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/" data-title="Obsidian&#43;Gemini CLI,最佳的写作搭档工具体验" data-image="https://pic1.zhimg.com/70/v2-bda2c57d9737a47e2124afb9139d54d0_1440w.avis?source=172ae18b&amp;biz_tag=Post"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://look4ti.github.io/obsidian-gemini-cli%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/" data-title="Obsidian&#43;Gemini CLI,最佳的写作搭档工具体验" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flook4ti.github.io%2fobsidian-gemini-cli%25E6%259C%2580%25E4%25BD%25B3%25E7%259A%2584%25E5%2586%2599%25E4%25BD%259C%25E6%2590%25AD%25E6%25A1%25A3%25E5%25B7%25A5%25E5%2585%25B7%25E4%25BD%2593%25E9%25AA%258C%2f&amp;text=Obsidian%2bGemini%20CLI%2c%e6%9c%80%e4%bd%b3%e7%9a%84%e5%86%99%e4%bd%9c%e6%90%ad%e6%a1%a3%e5%b7%a5%e5%85%b7%e4%bd%93%e9%aa%8c" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/">产品分析</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97anthropic%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" class="prev" rel="prev" title="好奇害死猫系列：Anthropic系统提示词分析和拆解"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>好奇害死猫系列：Anthropic系统提示词分析和拆解</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.151.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.1-DEV"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://look4ti.github.io" target="_blank">CRIO</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/typeit/index.umd.js"></script><script src="/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Look4ti金银岛","id-2":"Look4ti金银岛"},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/js/theme.min.js"></script></body>
+</html>
