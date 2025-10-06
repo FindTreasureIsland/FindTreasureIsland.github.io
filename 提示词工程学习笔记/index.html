@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>提示词工程学习笔记 - Find TreasureIsland</title><meta name="Description" content="Find TreasureIsland，记录路上的思想"><meta property="og:url" content="http://localhost:1313/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        <title>提示词工程学习笔记 - Find TreasureIsland</title><meta name="Description" content="Find TreasureIsland，记录路上的思想"><meta property="og:url" content="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="Find TreasureIsland">
   <meta property="og:title" content="提示词工程学习笔记">
   <meta property="og:description" content="提示词框架 A.P.E框架 ACTION：行动，定义要完成的工作或者活动； PURPOSE：目的，讨论意图或者目标 EXPECTATION：期望：陈述预期的结果。 B.R.O.K.E框架 BACKGROUND：背景，提供从分的背景信息。 ROLE：角色，我希望 AI 扮演的角色 OBJECTIVES：目标：我希望实现什么 KEY RESULT：关键结果：我要什么具体效果试验并调整 EVOLVE：试验并改进：三种改进方法自由组合。 C.O.A.S.T框架 CONTEXT：上下文，为对话设定舞台 OBJECTIVE：目的，描述目标 ACTION：行动：解释所需要的动作 SCENARIO：方案，描述场景 TASK：任务，描述任务。 T.A.G框架 TASK：任务：定义任务描述 ACTION：行动，需要采取的行为，要做的事情。 GOAL：目标，解释最终的目标 R.I.S.E框架 ROAL：角色，指定 AI 扮演的角色 INPUT：输入，描述信息或者资源 STEPS：步骤，询问详细的步骤 EXPECTATION：期望：描述希望达成的结果。 T.R.A.C.E框架 TASK：定义特定任务 REQUEST：请求，描述你的请求 ACTION：行为，说明你的操作 CONTEXT：上下文，提供上下文或者情况 EXAMPLE：示例，举一个示例来说明你的观点 E.R.A框架 EXPECTATION：预期：希望 AI 输出什么 ROLE：角色 ACTION：行动，指定需要采取的操作 C.A.R.E框架 CONTEXT：上下文，为讨论设置阶段或者上下文 ACTION：行动 RESULT：结果，描述所需要的结果 EXAMPLE：示例：举一个例子来说明你的观点。 R.O.S.E.S框架 ROLE：角色 OBJECTIVE：目标 SCENARIO：方案，描述情况 EXPECTION SOLUTION：解决方案：定义所需要的结果 STEPS：步骤：要求达到解决方案所需要的措施 I.C.I.O框架 INSTRUCITON：指令，要求 AI 执行的具体任务 CONTEXT：给 AI 更多的背景信息 INPUT DATA：输入数据，告知模型需要处理的数据 OUTPUTINDICATION：输出引导：告知我们要输出的类型或者风格。 C.R.I.S.P.E框架 CAPACITY AND ROLE：能力和角色，告诉 AI 需要扮演的角色 INSIGHT：见解，提供见解，背景和上下文 STATEMENT：声明：你要求 CHATGPT 做什么 PERSONALITY：个性：你希望以何种风格、个性和方式回应 EXPERIMENT：实验：请求 AI 为你回复多个示例。 R.A.C.E框架 ROLE：角儿，指定 AI 需要扮演的角色 ACTION：行动，详细说明需要采取什么行动 CONTEXT：提供有关情况和详细细节 EXPECTATION：期望：描述预期结构 OpenAI 官方提示词工程指南 撰写清晰的指令 技巧：">
@@ -16,19 +16,19 @@
     <meta property="article:tag" content="提示词">
     <meta property="article:tag" content="提示词工程">
     <meta property="article:tag" content="AI工具">
-    <meta property="og:image" content="http://localhost:1313/">
+    <meta property="og:image" content="http://findtreasureisland.github.io/blog.html/">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/">
+  <meta name="twitter:image" content="http://findtreasureisland.github.io/blog.html/">
   <meta name="twitter:title" content="提示词工程学习笔记">
   <meta name="twitter:description" content="提示词框架 A.P.E框架 ACTION：行动，定义要完成的工作或者活动； PURPOSE：目的，讨论意图或者目标 EXPECTATION：期望：陈述预期的结果。 B.R.O.K.E框架 BACKGROUND：背景，提供从分的背景信息。 ROLE：角色，我希望 AI 扮演的角色 OBJECTIVES：目标：我希望实现什么 KEY RESULT：关键结果：我要什么具体效果试验并调整 EVOLVE：试验并改进：三种改进方法自由组合。 C.O.A.S.T框架 CONTEXT：上下文，为对话设定舞台 OBJECTIVE：目的，描述目标 ACTION：行动：解释所需要的动作 SCENARIO：方案，描述场景 TASK：任务，描述任务。 T.A.G框架 TASK：任务：定义任务描述 ACTION：行动，需要采取的行为，要做的事情。 GOAL：目标，解释最终的目标 R.I.S.E框架 ROAL：角色，指定 AI 扮演的角色 INPUT：输入，描述信息或者资源 STEPS：步骤，询问详细的步骤 EXPECTATION：期望：描述希望达成的结果。 T.R.A.C.E框架 TASK：定义特定任务 REQUEST：请求，描述你的请求 ACTION：行为，说明你的操作 CONTEXT：上下文，提供上下文或者情况 EXAMPLE：示例，举一个示例来说明你的观点 E.R.A框架 EXPECTATION：预期：希望 AI 输出什么 ROLE：角色 ACTION：行动，指定需要采取的操作 C.A.R.E框架 CONTEXT：上下文，为讨论设置阶段或者上下文 ACTION：行动 RESULT：结果，描述所需要的结果 EXAMPLE：示例：举一个例子来说明你的观点。 R.O.S.E.S框架 ROLE：角色 OBJECTIVE：目标 SCENARIO：方案，描述情况 EXPECTION SOLUTION：解决方案：定义所需要的结果 STEPS：步骤：要求达到解决方案所需要的措施 I.C.I.O框架 INSTRUCITON：指令，要求 AI 执行的具体任务 CONTEXT：给 AI 更多的背景信息 INPUT DATA：输入数据，告知模型需要处理的数据 OUTPUTINDICATION：输出引导：告知我们要输出的类型或者风格。 C.R.I.S.P.E框架 CAPACITY AND ROLE：能力和角色，告诉 AI 需要扮演的角色 INSIGHT：见解，提供见解，背景和上下文 STATEMENT：声明：你要求 CHATGPT 做什么 PERSONALITY：个性：你希望以何种风格、个性和方式回应 EXPERIMENT：实验：请求 AI 为你回复多个示例。 R.A.C.E框架 ROLE：角儿，指定 AI 需要扮演的角色 ACTION：行动，详细说明需要采取什么行动 CONTEXT：提供有关情况和详细细节 EXPECTATION：期望：描述预期结构 OpenAI 官方提示词工程指南 撰写清晰的指令 技巧：">
-<meta name="application-name" content="Find TreasureIsland金银岛">
-<meta name="apple-mobile-web-app-title" content="Find TreasureIsland金银岛">
+<meta name="application-name" content="Find TreasureIsland">
+<meta name="apple-mobile-web-app-title" content="Find TreasureIsland">
 <meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="prev" href="http://localhost:1313/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" /><link rel="next" href="http://localhost:1313/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97notionai%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="prev" href="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" /><link rel="next" href="http://findtreasureisland.github.io/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97notionai%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" /><link rel="stylesheet" href="/blog.html/css/style.min.css"><link rel="preload" href="/blog.html/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/blog.html/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/blog.html/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/blog.html/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -36,9 +36,9 @@
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/localhost:1313\/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/"
+            "@id": "http:\/\/findtreasureisland.github.io\/blog.html\/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/"
         },"genre": "posts","keywords": "提示词, 提示词工程, AI工具","wordcount":  13507 ,
-        "url": "http:\/\/localhost:1313\/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished": "2025-09-18T12:50:24+08:00","dateModified": "2025-09-18T12:50:24+08:00","publisher": {
+        "url": "http:\/\/findtreasureisland.github.io\/blog.html\/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished": "2025-09-18T12:50:24+08:00","dateModified": "2025-09-18T12:50:24+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -62,10 +62,10 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="Find TreasureIsland"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-1" class="typeit"></span></a>
+            <a href="/blog.html/" title="Find TreasureIsland"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-1" class="typeit"></span></a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/blog.html/posts/"> 文章 </a><a class="menu-item" href="/blog.html/tags/"> 标签 </a><a class="menu-item" href="/blog.html/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw" aria-hidden="true"></i>
@@ -85,7 +85,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="Find TreasureIsland"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-2" class="typeit"></span></a>
+                <a href="/blog.html/" title="Find TreasureIsland"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-2" class="typeit"></span></a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -107,7 +107,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/blog.html/posts/" title="">文章</a><a class="menu-item" href="/blog.html/tags/" title="">标签</a><a class="menu-item" href="/blog.html/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
@@ -121,12 +121,12 @@
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">提示词工程学习笔记</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="http://findtreasureisland.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>CRIO</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E5%88%9B%E4%B8%9A/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>创业</a>&nbsp;<a href="/categories/%E6%8A%80%E6%9C%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>技术</a>&nbsp;<a href="/categories/%E4%BA%A7%E5%93%81/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>产品</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="http://findtreasureisland.github.io/blog.html" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>CRIO</a></span>&nbsp;<span class="post-category">included in <a href="/blog.html/categories/%E5%88%9B%E4%B8%9A/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>创业</a>&nbsp;<a href="/blog.html/categories/%E6%8A%80%E6%9C%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>技术</a>&nbsp;<a href="/blog.html/categories/%E4%BA%A7%E5%93%81/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>产品</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-09-18">2025-09-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;13507 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;27 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/70/v2-c1d9a92649a68a8e409ca26409830434_1440w.avis?source=172ae18b&amp;biz_tag=Post"
         data-srcset="https://picx.zhimg.com/70/v2-c1d9a92649a68a8e409ca26409830434_1440w.avis?source=172ae18b&amp;biz_tag=Post, https://picx.zhimg.com/70/v2-c1d9a92649a68a8e409ca26409830434_1440w.avis?source=172ae18b&amp;biz_tag=Post 1.5x, https://picx.zhimg.com/70/v2-c1d9a92649a68a8e409ca26409830434_1440w.avis?source=172ae18b&amp;biz_tag=Post 2x"
         data-sizes="auto"
@@ -425,7 +425,7 @@
 <p>使用测试驱动开发的方式来开发提示词。</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic2.zhimg.com/v2-007ab56685849d4d5e2a4b4c0665af73_1440w.jpg"
         data-srcset="https://pic2.zhimg.com/v2-007ab56685849d4d5e2a4b4c0665af73_1440w.jpg, https://pic2.zhimg.com/v2-007ab56685849d4d5e2a4b4c0665af73_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-007ab56685849d4d5e2a4b4c0665af73_1440w.jpg 2x"
         data-sizes="auto"
@@ -563,7 +563,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/v2-97d0f51fe20cddde98cc7324e20aeba5_1440w.jpg"
         data-srcset="https://picx.zhimg.com/v2-97d0f51fe20cddde98cc7324e20aeba5_1440w.jpg, https://picx.zhimg.com/v2-97d0f51fe20cddde98cc7324e20aeba5_1440w.jpg 1.5x, https://picx.zhimg.com/v2-97d0f51fe20cddde98cc7324e20aeba5_1440w.jpg 2x"
         data-sizes="auto"
@@ -574,7 +574,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic2.zhimg.com/v2-b3bf9944fa815eed640a55cbf7c2dc85_1440w.jpg"
         data-srcset="https://pic2.zhimg.com/v2-b3bf9944fa815eed640a55cbf7c2dc85_1440w.jpg, https://pic2.zhimg.com/v2-b3bf9944fa815eed640a55cbf7c2dc85_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-b3bf9944fa815eed640a55cbf7c2dc85_1440w.jpg 2x"
         data-sizes="auto"
@@ -585,7 +585,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/v2-a0d301138e366b9dc22b255310acf1b5_1440w.jpg"
         data-srcset="https://picx.zhimg.com/v2-a0d301138e366b9dc22b255310acf1b5_1440w.jpg, https://picx.zhimg.com/v2-a0d301138e366b9dc22b255310acf1b5_1440w.jpg 1.5x, https://picx.zhimg.com/v2-a0d301138e366b9dc22b255310acf1b5_1440w.jpg 2x"
         data-sizes="auto"
@@ -654,7 +654,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic1.zhimg.com/v2-8c19cfac5b0a0725730904e7c3bb8e5a_1440w.jpg"
         data-srcset="https://pic1.zhimg.com/v2-8c19cfac5b0a0725730904e7c3bb8e5a_1440w.jpg, https://pic1.zhimg.com/v2-8c19cfac5b0a0725730904e7c3bb8e5a_1440w.jpg 1.5x, https://pic1.zhimg.com/v2-8c19cfac5b0a0725730904e7c3bb8e5a_1440w.jpg 2x"
         data-sizes="auto"
@@ -665,7 +665,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-cbe97919dc6e2f1d6a77cc4c2e1f5b3b_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-cbe97919dc6e2f1d6a77cc4c2e1f5b3b_1440w.jpg, https://pic4.zhimg.com/v2-cbe97919dc6e2f1d6a77cc4c2e1f5b3b_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-cbe97919dc6e2f1d6a77cc4c2e1f5b3b_1440w.jpg 2x"
         data-sizes="auto"
@@ -678,7 +678,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pica.zhimg.com/v2-074784d8f8befcc5a6207c595122bd1a_1440w.jpg"
         data-srcset="https://pica.zhimg.com/v2-074784d8f8befcc5a6207c595122bd1a_1440w.jpg, https://pica.zhimg.com/v2-074784d8f8befcc5a6207c595122bd1a_1440w.jpg 1.5x, https://pica.zhimg.com/v2-074784d8f8befcc5a6207c595122bd1a_1440w.jpg 2x"
         data-sizes="auto"
@@ -687,7 +687,7 @@
 <p>Pormpt 2：(using {{ERRORS}} output from Prompt 1): Double checking that the list is comprehensive</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pica.zhimg.com/v2-80fe6ab909f0543746b732186111d28a_1440w.jpg"
         data-srcset="https://pica.zhimg.com/v2-80fe6ab909f0543746b732186111d28a_1440w.jpg, https://pica.zhimg.com/v2-80fe6ab909f0543746b732186111d28a_1440w.jpg 1.5x, https://pica.zhimg.com/v2-80fe6ab909f0543746b732186111d28a_1440w.jpg 2x"
         data-sizes="auto"
@@ -700,7 +700,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pica.zhimg.com/v2-a1dedff54b1fd231ee30f442d52e7a48_1440w.jpg"
         data-srcset="https://pica.zhimg.com/v2-a1dedff54b1fd231ee30f442d52e7a48_1440w.jpg, https://pica.zhimg.com/v2-a1dedff54b1fd231ee30f442d52e7a48_1440w.jpg 1.5x, https://pica.zhimg.com/v2-a1dedff54b1fd231ee30f442d52e7a48_1440w.jpg 2x"
         data-sizes="auto"
@@ -711,7 +711,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-6aa775b700e1031f80b625f6ec66892b_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-6aa775b700e1031f80b625f6ec66892b_1440w.jpg, https://pic4.zhimg.com/v2-6aa775b700e1031f80b625f6ec66892b_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-6aa775b700e1031f80b625f6ec66892b_1440w.jpg 2x"
         data-sizes="auto"
@@ -732,7 +732,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-3514a40ea302704fe9cca4e5d504bacb_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-3514a40ea302704fe9cca4e5d504bacb_1440w.jpg, https://pic4.zhimg.com/v2-3514a40ea302704fe9cca4e5d504bacb_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-3514a40ea302704fe9cca4e5d504bacb_1440w.jpg 2x"
         data-sizes="auto"
@@ -741,7 +741,7 @@
 <p>输出：</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/v2-31ddb915b456256ccf22c16084b070b5_1440w.jpg"
         data-srcset="https://picx.zhimg.com/v2-31ddb915b456256ccf22c16084b070b5_1440w.jpg, https://picx.zhimg.com/v2-31ddb915b456256ccf22c16084b070b5_1440w.jpg 1.5x, https://picx.zhimg.com/v2-31ddb915b456256ccf22c16084b070b5_1440w.jpg 2x"
         data-sizes="auto"
@@ -758,7 +758,7 @@
 <p>例子：</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic2.zhimg.com/v2-7c29ebae24a5a5685e240fd398e4e127_1440w.jpg"
         data-srcset="https://pic2.zhimg.com/v2-7c29ebae24a5a5685e240fd398e4e127_1440w.jpg, https://pic2.zhimg.com/v2-7c29ebae24a5a5685e240fd398e4e127_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-7c29ebae24a5a5685e240fd398e4e127_1440w.jpg 2x"
         data-sizes="auto"
@@ -784,7 +784,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-a06f903b6a151f095a0ec578e2b955ad_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-a06f903b6a151f095a0ec578e2b955ad_1440w.jpg, https://pic4.zhimg.com/v2-a06f903b6a151f095a0ec578e2b955ad_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-a06f903b6a151f095a0ec578e2b955ad_1440w.jpg 2x"
         data-sizes="auto"
@@ -793,7 +793,7 @@
 <p>Prefilling：</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pica.zhimg.com/v2-46ec16593a996174165ed7384371c90c_1440w.jpg"
         data-srcset="https://pica.zhimg.com/v2-46ec16593a996174165ed7384371c90c_1440w.jpg, https://pica.zhimg.com/v2-46ec16593a996174165ed7384371c90c_1440w.jpg 1.5x, https://pica.zhimg.com/v2-46ec16593a996174165ed7384371c90c_1440w.jpg 2x"
         data-sizes="auto"
@@ -804,7 +804,7 @@
 <p>Claude 可以支持 JSON、XML、HTML、Markdown、CSV 或者用户自己定义的格式。</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/v2-a1b73334982c50905729810502a0a331_1440w.jpg"
         data-srcset="https://picx.zhimg.com/v2-a1b73334982c50905729810502a0a331_1440w.jpg, https://picx.zhimg.com/v2-a1b73334982c50905729810502a0a331_1440w.jpg 1.5x, https://picx.zhimg.com/v2-a1b73334982c50905729810502a0a331_1440w.jpg 2x"
         data-sizes="auto"
@@ -814,7 +814,7 @@
 <p>在 API 调用中的 Assistant 中预填充格式信息。</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/v2-f439a8e03ffe885e9627bdb1f6068eeb_1440w.jpg"
         data-srcset="https://picx.zhimg.com/v2-f439a8e03ffe885e9627bdb1f6068eeb_1440w.jpg, https://picx.zhimg.com/v2-f439a8e03ffe885e9627bdb1f6068eeb_1440w.jpg 1.5x, https://picx.zhimg.com/v2-f439a8e03ffe885e9627bdb1f6068eeb_1440w.jpg 2x"
         data-sizes="auto"
@@ -871,7 +871,7 @@
 <h2 id="提示工程指南">提示工程指南</h2>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/v2-a681d35ad9bfcd9ad36c776282097625_1440w.jpg"
         data-srcset="https://picx.zhimg.com/v2-a681d35ad9bfcd9ad36c776282097625_1440w.jpg, https://picx.zhimg.com/v2-a681d35ad9bfcd9ad36c776282097625_1440w.jpg 1.5x, https://picx.zhimg.com/v2-a681d35ad9bfcd9ad36c776282097625_1440w.jpg 2x"
         data-sizes="auto"
@@ -1045,7 +1045,7 @@
 <p><strong>文本分类</strong></p>
 <p>在提示词中提供输入数据和示例。<br>
 提示词：</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-text">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -1126,7 +1126,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-f70a71e52fd83561a4fc2eb1fea68ac2_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-f70a71e52fd83561a4fc2eb1fea68ac2_1440w.jpg, https://pic3.zhimg.com/v2-f70a71e52fd83561a4fc2eb1fea68ac2_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-f70a71e52fd83561a4fc2eb1fea68ac2_1440w.jpg 2x"
         data-sizes="auto"
@@ -1155,7 +1155,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic2.zhimg.com/v2-e64cf6ebcb69ee8d4d79e7ab7b32f3a1_1440w.jpg"
         data-srcset="https://pic2.zhimg.com/v2-e64cf6ebcb69ee8d4d79e7ab7b32f3a1_1440w.jpg, https://pic2.zhimg.com/v2-e64cf6ebcb69ee8d4d79e7ab7b32f3a1_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-e64cf6ebcb69ee8d4d79e7ab7b32f3a1_1440w.jpg 2x"
         data-sizes="auto"
@@ -1181,7 +1181,7 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/v2-f6ff3543ddcd2579f43521ea8c47b31d_1440w.jpg"
         data-srcset="https://picx.zhimg.com/v2-f6ff3543ddcd2579f43521ea8c47b31d_1440w.jpg, https://picx.zhimg.com/v2-f6ff3543ddcd2579f43521ea8c47b31d_1440w.jpg 1.5x, https://picx.zhimg.com/v2-f6ff3543ddcd2579f43521ea8c47b31d_1440w.jpg 2x"
         data-sizes="auto"
@@ -1193,7 +1193,7 @@
 <p>总体思路：</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic2.zhimg.com/v2-08aa42791d8a87a4d32ef8ec3cd95a73_1440w.jpg"
         data-srcset="https://pic2.zhimg.com/v2-08aa42791d8a87a4d32ef8ec3cd95a73_1440w.jpg, https://pic2.zhimg.com/v2-08aa42791d8a87a4d32ef8ec3cd95a73_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-08aa42791d8a87a4d32ef8ec3cd95a73_1440w.jpg 2x"
         data-sizes="auto"
@@ -1286,7 +1286,7 @@
 <p>原理框架：</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-c2d05bee117ae4ef4f3f1dcb7af6095c_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-c2d05bee117ae4ef4f3f1dcb7af6095c_1440w.jpg, https://pic3.zhimg.com/v2-c2d05bee117ae4ef4f3f1dcb7af6095c_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-c2d05bee117ae4ef4f3f1dcb7af6095c_1440w.jpg 2x"
         data-sizes="auto"
@@ -1308,7 +1308,7 @@
 <p>RAG 把一个信息检索组件和文本生成模型结合在一起。RAG 可以微调，其内部知识的修改方式很高效，不需要对整个模型进行重新训练。</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-36ba0170d12025f0b34948834b5b4e55_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-36ba0170d12025f0b34948834b5b4e55_1440w.jpg, https://pic4.zhimg.com/v2-36ba0170d12025f0b34948834b5b4e55_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-36ba0170d12025f0b34948834b5b4e55_1440w.jpg 2x"
         data-sizes="auto"
@@ -1324,7 +1324,7 @@
 <p>原理：</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-54fa0950d0399791aa0a359d60efac11_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-54fa0950d0399791aa0a359d60efac11_1440w.jpg, https://pic4.zhimg.com/v2-54fa0950d0399791aa0a359d60efac11_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-54fa0950d0399791aa0a359d60efac11_1440w.jpg 2x"
         data-sizes="auto"
@@ -1345,7 +1345,7 @@
 <p><strong>方向性刺激提示</strong></p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pica.zhimg.com/v2-abde5892d83d039d11e696d120ee1592_1440w.jpg"
         data-srcset="https://pica.zhimg.com/v2-abde5892d83d039d11e696d120ee1592_1440w.jpg, https://pica.zhimg.com/v2-abde5892d83d039d11e696d120ee1592_1440w.jpg 1.5x, https://pica.zhimg.com/v2-abde5892d83d039d11e696d120ee1592_1440w.jpg 2x"
         data-sizes="auto"
@@ -1360,7 +1360,7 @@
 原理：</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
+        src="/blog.html/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-fb05b90da284a9829955098c949034f4_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-fb05b90da284a9829955098c949034f4_1440w.jpg, https://pic3.zhimg.com/v2-fb05b90da284a9829955098c949034f4_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-fb05b90da284a9829955098c949034f4_1440w.jpg 2x"
         data-sizes="auto"
@@ -1591,28 +1591,28 @@ Goals：一句话描述 Prompt 目标，让 GPT Attention 聚焦起来</p>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://localhost:1313/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记" data-via="https://x.com/splitwrite" data-hashtags="提示词,提示词工程,AI工具"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://localhost:1313/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-hashtag="提示词"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://localhost:1313/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记" data-image="https://picx.zhimg.com/70/v2-c1d9a92649a68a8e409ca26409830434_1440w.avis?source=172ae18b&amp;biz_tag=Post"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://localhost:1313/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a1313%2f%25E6%258F%2590%25E7%25A4%25BA%25E8%25AF%258D%25E5%25B7%25A5%25E7%25A8%258B%25E5%25AD%25A6%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%2f&amp;text=%e6%8f%90%e7%a4%ba%e8%af%8d%e5%b7%a5%e7%a8%8b%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记" data-via="https://x.com/splitwrite" data-hashtags="提示词,提示词工程,AI工具"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-hashtag="提示词"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记"><i data-svg-src="/blog.html/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记" data-image="https://picx.zhimg.com/70/v2-c1d9a92649a68a8e409ca26409830434_1440w.avis?source=172ae18b&amp;biz_tag=Post"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="提示词工程学习笔记" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2ffindtreasureisland.github.io%2fblog.html%2f%25E6%258F%2590%25E7%25A4%25BA%25E8%25AF%258D%25E5%25B7%25A5%25E7%25A8%258B%25E5%25AD%25A6%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%2f&amp;text=%e6%8f%90%e7%a4%ba%e8%af%8d%e5%b7%a5%e7%a8%8b%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D/">提示词</a>,&nbsp;<a href="/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/">提示词工程</a>,&nbsp;<a href="/tags/ai%E5%B7%A5%E5%85%B7/">AI工具</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog.html/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D/">提示词</a>,&nbsp;<a href="/blog.html/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/">提示词工程</a>,&nbsp;<a href="/blog.html/tags/ai%E5%B7%A5%E5%85%B7/">AI工具</a></section>
         <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog.html/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" class="prev" rel="prev" title="提示词工程化工具：promptfoo"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>提示词工程化工具：promptfoo</a>
-            <a href="/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97notionai%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" class="next" rel="next" title="好奇害死猫系列：NotionAI系统提示词分析和拆解">好奇害死猫系列：NotionAI系统提示词分析和拆解<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" class="prev" rel="prev" title="提示词工程化工具：promptfoo"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>提示词工程化工具：promptfoo</a>
+            <a href="/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97notionai%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" class="next" rel="next" title="好奇害死猫系列：NotionAI系统提示词分析和拆解">好奇害死猫系列：NotionAI系统提示词分析和拆解<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-</article></div>
+<div id="comments"></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.151.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.1-DEV"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://findtreasureisland.github.io" target="_blank">CRIO</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://findtreasureisland.github.io/blog.html" target="_blank">CRIO</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
@@ -1624,5 +1624,5 @@ Goals：一句话描述 Prompt 目标，让 GPT Attention 聚焦起来</p>
         <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/typeit/index.umd.js"></script><script src="/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Find TreasureIsland","id-2":"Find TreasureIsland"},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/blog.html/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/blog.html/lib/cookieconsent/cookieconsent.min.css"><script src="/blog.html/lib/autocomplete/autocomplete.min.js"></script><script src="/blog.html/lib/lunr/lunr.min.js"></script><script src="/blog.html/lib/lazysizes/lazysizes.min.js"></script><script src="/blog.html/lib/lightgallery/lightgallery.min.js"></script><script src="/blog.html/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/blog.html/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script src="/blog.html/lib/clipboard/clipboard.min.js"></script><script src="/blog.html/lib/sharer/sharer.min.js"></script><script src="/blog.html/lib/typeit/index.umd.js"></script><script src="/blog.html/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Find TreasureIsland","id-2":"Find TreasureIsland"},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/blog.html/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/blog.html/js/theme.min.js"></script></body>
 </html>
