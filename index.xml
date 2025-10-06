@@ -1,6 +1,6 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Find TreasureIsland,寻找金银岛</title>
+        <title>Find TreasureIsland</title>
         <link>http://findtreasureisland.github.io/</link>
         <description>Find TreasureIsland，记录路上的思想</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alaiszy@gmail.com (CRIO)</managingEditor>

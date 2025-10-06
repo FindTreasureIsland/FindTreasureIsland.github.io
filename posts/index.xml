@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - Find TreasureIsland,寻找金银岛</title>
+        <title>All Posts - Find TreasureIsland</title>
         <link>http://findtreasureisland.github.io/posts/</link>
-        <description>All Posts | Find TreasureIsland,寻找金银岛</description>
+        <description>All Posts | Find TreasureIsland</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alaiszy@gmail.com (CRIO)</managingEditor>
             <webMaster>alaiszy@gmail.com (CRIO)</webMaster><lastBuildDate>Mon, 06 Oct 2025 09:50:24 &#43;0800</lastBuildDate><atom:link href="http://findtreasureisland.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Obsidian和Gemini CLI-最佳的写作搭档工具体验</title>
