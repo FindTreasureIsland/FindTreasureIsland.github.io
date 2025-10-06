@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>好奇害死猫系列：Dia系统提示词分析和拆解 - Find TreasureIsland</title><meta name="Description" content="Find TreasureIsland，记录路上的思想"><meta property="og:url" content="http://findtreasureisland.github.io/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/">
+        <title>好奇害死猫系列：Dia系统提示词分析和拆解 - Find TreasureIsland</title><meta name="Description" content="Find TreasureIsland，记录路上的思想"><meta property="og:url" content="http://findtreasureisland.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/">
   <meta property="og:site_name" content="Find TreasureIsland">
   <meta property="og:title" content="好奇害死猫系列：Dia系统提示词分析和拆解">
   <meta property="og:description" content="引子 目前我们正在开始分析和开发 splitwriter 的提示词了，在完成第一版的提示词后，激发了我对一些优秀的 AI 工具的提示词长什么样的兴趣。
@@ -22,10 +22,10 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
     <meta property="article:tag" content="提示词">
     <meta property="article:tag" content="提示词工程">
     <meta property="article:tag" content="AI工具">
-    <meta property="og:image" content="http://findtreasureisland.github.io/blog.html/">
+    <meta property="og:image" content="http://findtreasureisland.github.io/">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://findtreasureisland.github.io/blog.html/">
+  <meta name="twitter:image" content="http://findtreasureisland.github.io/">
   <meta name="twitter:title" content="好奇害死猫系列：Dia系统提示词分析和拆解">
   <meta name="twitter:description" content="引子 目前我们正在开始分析和开发 splitwriter 的提示词了，在完成第一版的提示词后，激发了我对一些优秀的 AI 工具的提示词长什么样的兴趣。
 因此一方面是为了满足自己的好奇心，一方面是为了提升了自己的提示词能力。
@@ -38,9 +38,9 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 <meta name="apple-mobile-web-app-title" content="Find TreasureIsland">
 <meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://findtreasureisland.github.io/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" /><link rel="prev" href="http://findtreasureisland.github.io/blog.html/911%E6%97%A5%E8%AE%B0%E8%BE%A9%E8%AF%81%E7%BB%9F%E4%B8%80%E5%92%8C%E6%88%91%E5%BF%83%E4%B8%AD%E6%83%B3%E8%AF%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%9D/" /><link rel="next" href="http://findtreasureisland.github.io/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" /><link rel="stylesheet" href="/blog.html/css/style.min.css"><link rel="preload" href="/blog.html/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/blog.html/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/blog.html/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/blog.html/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://findtreasureisland.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" /><link rel="prev" href="http://findtreasureisland.github.io/911%E6%97%A5%E8%AE%B0%E8%BE%A9%E8%AF%81%E7%BB%9F%E4%B8%80%E5%92%8C%E6%88%91%E5%BF%83%E4%B8%AD%E6%83%B3%E8%AF%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%9D/" /><link rel="next" href="http://findtreasureisland.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -48,9 +48,9 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/findtreasureisland.github.io\/blog.html\/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3\/"
+            "@id": "http:\/\/findtreasureisland.github.io\/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3\/"
         },"genre": "posts","keywords": "提示词, 提示词工程, AI工具","wordcount":  7725 ,
-        "url": "http:\/\/findtreasureisland.github.io\/blog.html\/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3\/","datePublished": "2025-09-14T12:50:24+08:00","dateModified": "2025-09-14T12:50:24+08:00","publisher": {
+        "url": "http:\/\/findtreasureisland.github.io\/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3\/","datePublished": "2025-09-14T12:50:24+08:00","dateModified": "2025-09-14T12:50:24+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -74,10 +74,10 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/blog.html/" title="Find TreasureIsland"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-1" class="typeit"></span></a>
+            <a href="/" title="Find TreasureIsland"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-1" class="typeit"></span></a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/blog.html/posts/"> 文章 </a><a class="menu-item" href="/blog.html/tags/"> 标签 </a><a class="menu-item" href="/blog.html/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw" aria-hidden="true"></i>
@@ -97,7 +97,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/blog.html/" title="Find TreasureIsland"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-2" class="typeit"></span></a>
+                <a href="/" title="Find TreasureIsland"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-2" class="typeit"></span></a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -119,7 +119,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a class="menu-item" href="/blog.html/posts/" title="">文章</a><a class="menu-item" href="/blog.html/tags/" title="">标签</a><a class="menu-item" href="/blog.html/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
@@ -133,12 +133,12 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">好奇害死猫系列：Dia系统提示词分析和拆解</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="http://findtreasureisland.github.io/blog.html" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>CRIO</a></span>&nbsp;<span class="post-category">included in <a href="/blog.html/categories/%E4%BA%A7%E5%93%81/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>产品</a>&nbsp;<a href="/blog.html/categories/%E5%88%9B%E4%B8%9A/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>创业</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="http://findtreasureisland.github.io/blog.html" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>CRIO</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E4%BA%A7%E5%93%81/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>产品</a>&nbsp;<a href="/categories/%E5%88%9B%E4%B8%9A/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>创业</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-09-14">2025-09-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;7725 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;16 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/70/v2-a1e4ae47ecc8713a3735fb5040b46ef9_1440w.avis?source=172ae18b&amp;biz_tag=Post"
         data-srcset="https://picx.zhimg.com/70/v2-a1e4ae47ecc8713a3735fb5040b46ef9_1440w.avis?source=172ae18b&amp;biz_tag=Post, https://picx.zhimg.com/70/v2-a1e4ae47ecc8713a3735fb5040b46ef9_1440w.avis?source=172ae18b&amp;biz_tag=Post 1.5x, https://picx.zhimg.com/70/v2-a1e4ae47ecc8713a3735fb5040b46ef9_1440w.avis?source=172ae18b&amp;biz_tag=Post 2x"
         data-sizes="auto"
@@ -187,7 +187,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-7b421e663cdcff3c2d0b53a56ef7b0b7_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-7b421e663cdcff3c2d0b53a56ef7b0b7_1440w.jpg, https://pic4.zhimg.com/v2-7b421e663cdcff3c2d0b53a56ef7b0b7_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-7b421e663cdcff3c2d0b53a56ef7b0b7_1440w.jpg 2x"
         data-sizes="auto"
@@ -213,7 +213,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 <p><strong>操作验证</strong></p>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-86616b220a641e665b06ea4e88d76cfa_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-86616b220a641e665b06ea4e88d76cfa_1440w.jpg, https://pic3.zhimg.com/v2-86616b220a641e665b06ea4e88d76cfa_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-86616b220a641e665b06ea4e88d76cfa_1440w.jpg 2x"
         data-sizes="auto"
@@ -307,7 +307,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-656a5a3f895c6ca6c55c8b461309208b_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-656a5a3f895c6ca6c55c8b461309208b_1440w.jpg, https://pic4.zhimg.com/v2-656a5a3f895c6ca6c55c8b461309208b_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-656a5a3f895c6ca6c55c8b461309208b_1440w.jpg 2x"
         data-sizes="auto"
@@ -318,7 +318,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-ecdf5486d99e8b26c994a549e90d84e9_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-ecdf5486d99e8b26c994a549e90d84e9_1440w.jpg, https://pic4.zhimg.com/v2-ecdf5486d99e8b26c994a549e90d84e9_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-ecdf5486d99e8b26c994a549e90d84e9_1440w.jpg 2x"
         data-sizes="auto"
@@ -329,7 +329,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-966000381994c148f4c3d8388c0e7818_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-966000381994c148f4c3d8388c0e7818_1440w.jpg, https://pic3.zhimg.com/v2-966000381994c148f4c3d8388c0e7818_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-966000381994c148f4c3d8388c0e7818_1440w.jpg 2x"
         data-sizes="auto"
@@ -341,7 +341,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/v2-d991106da3b3d380a5bcede6f6ff1049_1440w.jpg"
         data-srcset="https://picx.zhimg.com/v2-d991106da3b3d380a5bcede6f6ff1049_1440w.jpg, https://picx.zhimg.com/v2-d991106da3b3d380a5bcede6f6ff1049_1440w.jpg 1.5x, https://picx.zhimg.com/v2-d991106da3b3d380a5bcede6f6ff1049_1440w.jpg 2x"
         data-sizes="auto"
@@ -352,7 +352,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-e4d504a36b4cbbe6f503a54cba5baf6f_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-e4d504a36b4cbbe6f503a54cba5baf6f_1440w.jpg, https://pic4.zhimg.com/v2-e4d504a36b4cbbe6f503a54cba5baf6f_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-e4d504a36b4cbbe6f503a54cba5baf6f_1440w.jpg 2x"
         data-sizes="auto"
@@ -363,7 +363,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-f75f80449e355371b2d5330317dbb75a_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-f75f80449e355371b2d5330317dbb75a_1440w.jpg, https://pic3.zhimg.com/v2-f75f80449e355371b2d5330317dbb75a_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-f75f80449e355371b2d5330317dbb75a_1440w.jpg 2x"
         data-sizes="auto"
@@ -375,7 +375,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-878a4dfcce8f717ae3e57830fd3f1f47_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-878a4dfcce8f717ae3e57830fd3f1f47_1440w.jpg, https://pic4.zhimg.com/v2-878a4dfcce8f717ae3e57830fd3f1f47_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-878a4dfcce8f717ae3e57830fd3f1f47_1440w.jpg 2x"
         data-sizes="auto"
@@ -386,7 +386,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-7ce6d38d9cfdec8a0eae5efb2ebba6cf_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-7ce6d38d9cfdec8a0eae5efb2ebba6cf_1440w.jpg, https://pic4.zhimg.com/v2-7ce6d38d9cfdec8a0eae5efb2ebba6cf_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-7ce6d38d9cfdec8a0eae5efb2ebba6cf_1440w.jpg 2x"
         data-sizes="auto"
@@ -397,7 +397,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic1.zhimg.com/v2-27b7eeb5bbf5ed3571f3131aae4f4302_1440w.jpg"
         data-srcset="https://pic1.zhimg.com/v2-27b7eeb5bbf5ed3571f3131aae4f4302_1440w.jpg, https://pic1.zhimg.com/v2-27b7eeb5bbf5ed3571f3131aae4f4302_1440w.jpg 1.5x, https://pic1.zhimg.com/v2-27b7eeb5bbf5ed3571f3131aae4f4302_1440w.jpg 2x"
         data-sizes="auto"
@@ -427,7 +427,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/v2-81e2dbf30e35d3409ecff42a939aab9d_1440w.jpg"
         data-srcset="https://picx.zhimg.com/v2-81e2dbf30e35d3409ecff42a939aab9d_1440w.jpg, https://picx.zhimg.com/v2-81e2dbf30e35d3409ecff42a939aab9d_1440w.jpg 1.5x, https://picx.zhimg.com/v2-81e2dbf30e35d3409ecff42a939aab9d_1440w.jpg 2x"
         data-sizes="auto"
@@ -477,7 +477,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 <p><strong>操作验证</strong></p>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-f6dadf776ebeffa8e844a99fc44711ab_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-f6dadf776ebeffa8e844a99fc44711ab_1440w.jpg, https://pic4.zhimg.com/v2-f6dadf776ebeffa8e844a99fc44711ab_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-f6dadf776ebeffa8e844a99fc44711ab_1440w.jpg 2x"
         data-sizes="auto"
@@ -508,7 +508,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic2.zhimg.com/v2-599ca33f731a65f2c4018e8c8e7b06a7_1440w.jpg"
         data-srcset="https://pic2.zhimg.com/v2-599ca33f731a65f2c4018e8c8e7b06a7_1440w.jpg, https://pic2.zhimg.com/v2-599ca33f731a65f2c4018e8c8e7b06a7_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-599ca33f731a65f2c4018e8c8e7b06a7_1440w.jpg 2x"
         data-sizes="auto"
@@ -519,7 +519,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic2.zhimg.com/v2-c2901e5d87df97c36b91d59388b098ef_1440w.jpg"
         data-srcset="https://pic2.zhimg.com/v2-c2901e5d87df97c36b91d59388b098ef_1440w.jpg, https://pic2.zhimg.com/v2-c2901e5d87df97c36b91d59388b098ef_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-c2901e5d87df97c36b91d59388b098ef_1440w.jpg 2x"
         data-sizes="auto"
@@ -530,7 +530,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic1.zhimg.com/v2-0fd68c4868fecce706a980370db23232_1440w.jpg"
         data-srcset="https://pic1.zhimg.com/v2-0fd68c4868fecce706a980370db23232_1440w.jpg, https://pic1.zhimg.com/v2-0fd68c4868fecce706a980370db23232_1440w.jpg 1.5x, https://pic1.zhimg.com/v2-0fd68c4868fecce706a980370db23232_1440w.jpg 2x"
         data-sizes="auto"
@@ -541,7 +541,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic2.zhimg.com/v2-3715c44c32fa4c9183c5e21fbcbf056b_1440w.jpg"
         data-srcset="https://pic2.zhimg.com/v2-3715c44c32fa4c9183c5e21fbcbf056b_1440w.jpg, https://pic2.zhimg.com/v2-3715c44c32fa4c9183c5e21fbcbf056b_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-3715c44c32fa4c9183c5e21fbcbf056b_1440w.jpg 2x"
         data-sizes="auto"
@@ -584,7 +584,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic1.zhimg.com/v2-dbb2789874ae6ef2a89cf75bc12313f8_1440w.jpg"
         data-srcset="https://pic1.zhimg.com/v2-dbb2789874ae6ef2a89cf75bc12313f8_1440w.jpg, https://pic1.zhimg.com/v2-dbb2789874ae6ef2a89cf75bc12313f8_1440w.jpg 1.5x, https://pic1.zhimg.com/v2-dbb2789874ae6ef2a89cf75bc12313f8_1440w.jpg 2x"
         data-sizes="auto"
@@ -595,7 +595,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-eef6845522a556e5be4402a3e397758e_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-eef6845522a556e5be4402a3e397758e_1440w.jpg, https://pic3.zhimg.com/v2-eef6845522a556e5be4402a3e397758e_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-eef6845522a556e5be4402a3e397758e_1440w.jpg 2x"
         data-sizes="auto"
@@ -636,7 +636,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic1.zhimg.com/v2-c61986612893add3939b98aec77ca5c6_1440w.jpg"
         data-srcset="https://pic1.zhimg.com/v2-c61986612893add3939b98aec77ca5c6_1440w.jpg, https://pic1.zhimg.com/v2-c61986612893add3939b98aec77ca5c6_1440w.jpg 1.5x, https://pic1.zhimg.com/v2-c61986612893add3939b98aec77ca5c6_1440w.jpg 2x"
         data-sizes="auto"
@@ -647,7 +647,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic2.zhimg.com/v2-afa0c16037f32bc0a6836bc504f8d2d7_1440w.jpg"
         data-srcset="https://pic2.zhimg.com/v2-afa0c16037f32bc0a6836bc504f8d2d7_1440w.jpg, https://pic2.zhimg.com/v2-afa0c16037f32bc0a6836bc504f8d2d7_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-afa0c16037f32bc0a6836bc504f8d2d7_1440w.jpg 2x"
         data-sizes="auto"
@@ -658,7 +658,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic2.zhimg.com/v2-75171e6f5e06273940927244437f27d9_1440w.jpg"
         data-srcset="https://pic2.zhimg.com/v2-75171e6f5e06273940927244437f27d9_1440w.jpg, https://pic2.zhimg.com/v2-75171e6f5e06273940927244437f27d9_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-75171e6f5e06273940927244437f27d9_1440w.jpg 2x"
         data-sizes="auto"
@@ -669,7 +669,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pica.zhimg.com/v2-7975194d4b6e03de7f8b7afb87cd7b48_1440w.jpg"
         data-srcset="https://pica.zhimg.com/v2-7975194d4b6e03de7f8b7afb87cd7b48_1440w.jpg, https://pica.zhimg.com/v2-7975194d4b6e03de7f8b7afb87cd7b48_1440w.jpg 1.5x, https://pica.zhimg.com/v2-7975194d4b6e03de7f8b7afb87cd7b48_1440w.jpg 2x"
         data-sizes="auto"
@@ -688,7 +688,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 <strong>验证结果：</strong></p>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pica.zhimg.com/v2-8a4243542967138a3b25badba311dbd8_1440w.jpg"
         data-srcset="https://pica.zhimg.com/v2-8a4243542967138a3b25badba311dbd8_1440w.jpg, https://pica.zhimg.com/v2-8a4243542967138a3b25badba311dbd8_1440w.jpg 1.5x, https://pica.zhimg.com/v2-8a4243542967138a3b25badba311dbd8_1440w.jpg 2x"
         data-sizes="auto"
@@ -726,7 +726,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-2bd9e3ae3ec075ef03f8992f46b6ee3a_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-2bd9e3ae3ec075ef03f8992f46b6ee3a_1440w.jpg, https://pic3.zhimg.com/v2-2bd9e3ae3ec075ef03f8992f46b6ee3a_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-2bd9e3ae3ec075ef03f8992f46b6ee3a_1440w.jpg 2x"
         data-sizes="auto"
@@ -737,7 +737,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-a9975d04c97094e1d6f6bdc5a7b9f404_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-a9975d04c97094e1d6f6bdc5a7b9f404_1440w.jpg, https://pic3.zhimg.com/v2-a9975d04c97094e1d6f6bdc5a7b9f404_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-a9975d04c97094e1d6f6bdc5a7b9f404_1440w.jpg 2x"
         data-sizes="auto"
@@ -748,7 +748,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic1.zhimg.com/v2-9724d72058b92699993843edd92ba738_1440w.jpg"
         data-srcset="https://pic1.zhimg.com/v2-9724d72058b92699993843edd92ba738_1440w.jpg, https://pic1.zhimg.com/v2-9724d72058b92699993843edd92ba738_1440w.jpg 1.5x, https://pic1.zhimg.com/v2-9724d72058b92699993843edd92ba738_1440w.jpg 2x"
         data-sizes="auto"
@@ -759,7 +759,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pica.zhimg.com/v2-2054d97fe91d722b94abf1f91e07872a_1440w.jpg"
         data-srcset="https://pica.zhimg.com/v2-2054d97fe91d722b94abf1f91e07872a_1440w.jpg, https://pica.zhimg.com/v2-2054d97fe91d722b94abf1f91e07872a_1440w.jpg 1.5x, https://pica.zhimg.com/v2-2054d97fe91d722b94abf1f91e07872a_1440w.jpg 2x"
         data-sizes="auto"
@@ -793,7 +793,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-1eb47c56d69eda8fb7517c9957fe3f90_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-1eb47c56d69eda8fb7517c9957fe3f90_1440w.jpg, https://pic3.zhimg.com/v2-1eb47c56d69eda8fb7517c9957fe3f90_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-1eb47c56d69eda8fb7517c9957fe3f90_1440w.jpg 2x"
         data-sizes="auto"
@@ -804,7 +804,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pica.zhimg.com/v2-b49f2bc2be3f566320382416c8a5d54a_1440w.jpg"
         data-srcset="https://pica.zhimg.com/v2-b49f2bc2be3f566320382416c8a5d54a_1440w.jpg, https://pica.zhimg.com/v2-b49f2bc2be3f566320382416c8a5d54a_1440w.jpg 1.5x, https://pica.zhimg.com/v2-b49f2bc2be3f566320382416c8a5d54a_1440w.jpg 2x"
         data-sizes="auto"
@@ -815,7 +815,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pica.zhimg.com/v2-30652cd17d7e84e20fb0263678a65b9c_1440w.jpg"
         data-srcset="https://pica.zhimg.com/v2-30652cd17d7e84e20fb0263678a65b9c_1440w.jpg, https://pica.zhimg.com/v2-30652cd17d7e84e20fb0263678a65b9c_1440w.jpg 1.5x, https://pica.zhimg.com/v2-30652cd17d7e84e20fb0263678a65b9c_1440w.jpg 2x"
         data-sizes="auto"
@@ -846,7 +846,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-1916ceafbd7cb7a05b97ac4af205fd86_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-1916ceafbd7cb7a05b97ac4af205fd86_1440w.jpg, https://pic3.zhimg.com/v2-1916ceafbd7cb7a05b97ac4af205fd86_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-1916ceafbd7cb7a05b97ac4af205fd86_1440w.jpg 2x"
         data-sizes="auto"
@@ -898,7 +898,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic2.zhimg.com/v2-d5c982359d7609fce30688d22fcf756d_1440w.jpg"
         data-srcset="https://pic2.zhimg.com/v2-d5c982359d7609fce30688d22fcf756d_1440w.jpg, https://pic2.zhimg.com/v2-d5c982359d7609fce30688d22fcf756d_1440w.jpg 1.5x, https://pic2.zhimg.com/v2-d5c982359d7609fce30688d22fcf756d_1440w.jpg 2x"
         data-sizes="auto"
@@ -909,7 +909,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic1.zhimg.com/v2-961ddf2de9919fee90f65be5b5c79d4c_1440w.jpg"
         data-srcset="https://pic1.zhimg.com/v2-961ddf2de9919fee90f65be5b5c79d4c_1440w.jpg, https://pic1.zhimg.com/v2-961ddf2de9919fee90f65be5b5c79d4c_1440w.jpg 1.5x, https://pic1.zhimg.com/v2-961ddf2de9919fee90f65be5b5c79d4c_1440w.jpg 2x"
         data-sizes="auto"
@@ -920,7 +920,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-0a9aad97aaf29aace6cfa4f98e830860_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-0a9aad97aaf29aace6cfa4f98e830860_1440w.jpg, https://pic3.zhimg.com/v2-0a9aad97aaf29aace6cfa4f98e830860_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-0a9aad97aaf29aace6cfa4f98e830860_1440w.jpg 2x"
         data-sizes="auto"
@@ -997,7 +997,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/v2-c047b8add471c33707f7826d42f20cff_1440w.jpg"
         data-srcset="https://picx.zhimg.com/v2-c047b8add471c33707f7826d42f20cff_1440w.jpg, https://picx.zhimg.com/v2-c047b8add471c33707f7826d42f20cff_1440w.jpg 1.5x, https://picx.zhimg.com/v2-c047b8add471c33707f7826d42f20cff_1440w.jpg 2x"
         data-sizes="auto"
@@ -1008,7 +1008,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://picx.zhimg.com/v2-a2536a702d8e4cb06f4b875f0c12de3f_1440w.jpg"
         data-srcset="https://picx.zhimg.com/v2-a2536a702d8e4cb06f4b875f0c12de3f_1440w.jpg, https://picx.zhimg.com/v2-a2536a702d8e4cb06f4b875f0c12de3f_1440w.jpg 1.5x, https://picx.zhimg.com/v2-a2536a702d8e4cb06f4b875f0c12de3f_1440w.jpg 2x"
         data-sizes="auto"
@@ -1046,7 +1046,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-38acf6666fbf45ec2cf595b6b75240ce_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-38acf6666fbf45ec2cf595b6b75240ce_1440w.jpg, https://pic3.zhimg.com/v2-38acf6666fbf45ec2cf595b6b75240ce_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-38acf6666fbf45ec2cf595b6b75240ce_1440w.jpg 2x"
         data-sizes="auto"
@@ -1104,7 +1104,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 <strong>实验结果：</strong></p>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic3.zhimg.com/v2-3b4245ec8c261a0549d6373edb1a1300_1440w.jpg"
         data-srcset="https://pic3.zhimg.com/v2-3b4245ec8c261a0549d6373edb1a1300_1440w.jpg, https://pic3.zhimg.com/v2-3b4245ec8c261a0549d6373edb1a1300_1440w.jpg 1.5x, https://pic3.zhimg.com/v2-3b4245ec8c261a0549d6373edb1a1300_1440w.jpg 2x"
         data-sizes="auto"
@@ -1126,7 +1126,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-f73d56c8037e1642956622bbbc2f2247_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-f73d56c8037e1642956622bbbc2f2247_1440w.jpg, https://pic4.zhimg.com/v2-f73d56c8037e1642956622bbbc2f2247_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-f73d56c8037e1642956622bbbc2f2247_1440w.jpg 2x"
         data-sizes="auto"
@@ -1137,7 +1137,7 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
 </ul>
 <p><img
         class="lazyload"
-        src="/blog.html/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://pic4.zhimg.com/v2-8189bfcc92e74d7bebdb7e5b8a5d2f45_1440w.jpg"
         data-srcset="https://pic4.zhimg.com/v2-8189bfcc92e74d7bebdb7e5b8a5d2f45_1440w.jpg, https://pic4.zhimg.com/v2-8189bfcc92e74d7bebdb7e5b8a5d2f45_1440w.jpg 1.5x, https://pic4.zhimg.com/v2-8189bfcc92e74d7bebdb7e5b8a5d2f45_1440w.jpg 2x"
         data-sizes="auto"
@@ -1209,23 +1209,23 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://findtreasureisland.github.io/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解" data-via="https://x.com/splitwrite" data-hashtags="提示词,提示词工程,AI工具"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://findtreasureisland.github.io/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://findtreasureisland.github.io/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-hashtag="提示词"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://findtreasureisland.github.io/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://findtreasureisland.github.io/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://findtreasureisland.github.io/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解"><i data-svg-src="/blog.html/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://findtreasureisland.github.io/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解" data-image="https://picx.zhimg.com/70/v2-a1e4ae47ecc8713a3735fb5040b46ef9_1440w.avis?source=172ae18b&amp;biz_tag=Post"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://findtreasureisland.github.io/blog.html/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2ffindtreasureisland.github.io%2fblog.html%2f%25E5%25A5%25BD%25E5%25A5%2587%25E5%25AE%25B3%25E6%25AD%25BB%25E7%258C%25AB%25E7%25B3%25BB%25E5%2588%2597dia%25E7%25B3%25BB%25E7%25BB%259F%25E6%258F%2590%25E7%25A4%25BA%25E8%25AF%258D%25E5%2588%2586%25E6%259E%2590%25E5%2592%258C%25E6%258B%2586%25E8%25A7%25A3%2f&amp;text=%e5%a5%bd%e5%a5%87%e5%ae%b3%e6%ad%bb%e7%8c%ab%e7%b3%bb%e5%88%97%ef%bc%9aDia%e7%b3%bb%e7%bb%9f%e6%8f%90%e7%a4%ba%e8%af%8d%e5%88%86%e6%9e%90%e5%92%8c%e6%8b%86%e8%a7%a3" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://findtreasureisland.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解" data-via="https://x.com/splitwrite" data-hashtags="提示词,提示词工程,AI工具"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://findtreasureisland.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://findtreasureisland.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-hashtag="提示词"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://findtreasureisland.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://findtreasureisland.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://findtreasureisland.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://findtreasureisland.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解" data-image="https://picx.zhimg.com/70/v2-a1e4ae47ecc8713a3735fb5040b46ef9_1440w.avis?source=172ae18b&amp;biz_tag=Post"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://findtreasureisland.github.io/%E5%A5%BD%E5%A5%87%E5%AE%B3%E6%AD%BB%E7%8C%AB%E7%B3%BB%E5%88%97dia%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%86%E6%9E%90%E5%92%8C%E6%8B%86%E8%A7%A3/" data-title="好奇害死猫系列：Dia系统提示词分析和拆解" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2ffindtreasureisland.github.io%2f%25E5%25A5%25BD%25E5%25A5%2587%25E5%25AE%25B3%25E6%25AD%25BB%25E7%258C%25AB%25E7%25B3%25BB%25E5%2588%2597dia%25E7%25B3%25BB%25E7%25BB%259F%25E6%258F%2590%25E7%25A4%25BA%25E8%25AF%258D%25E5%2588%2586%25E6%259E%2590%25E5%2592%258C%25E6%258B%2586%25E8%25A7%25A3%2f&amp;text=%e5%a5%bd%e5%a5%87%e5%ae%b3%e6%ad%bb%e7%8c%ab%e7%b3%bb%e5%88%97%ef%bc%9aDia%e7%b3%bb%e7%bb%9f%e6%8f%90%e7%a4%ba%e8%af%8d%e5%88%86%e6%9e%90%e5%92%8c%e6%8b%86%e8%a7%a3" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog.html/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D/">提示词</a>,&nbsp;<a href="/blog.html/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/">提示词工程</a>,&nbsp;<a href="/blog.html/tags/ai%E5%B7%A5%E5%85%B7/">AI工具</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D/">提示词</a>,&nbsp;<a href="/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/">提示词工程</a>,&nbsp;<a href="/tags/ai%E5%B7%A5%E5%85%B7/">AI工具</a></section>
         <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog.html/">Home</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/blog.html/911%E6%97%A5%E8%AE%B0%E8%BE%A9%E8%AF%81%E7%BB%9F%E4%B8%80%E5%92%8C%E6%88%91%E5%BF%83%E4%B8%AD%E6%83%B3%E8%AF%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%9D/" class="prev" rel="prev" title="911日记：辩证统一和我心中想说的一些话"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>911日记：辩证统一和我心中想说的一些话</a>
-            <a href="/blog.html/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" class="next" rel="next" title="提示词工程化工具：promptfoo">提示词工程化工具：promptfoo<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/911%E6%97%A5%E8%AE%B0%E8%BE%A9%E8%AF%81%E7%BB%9F%E4%B8%80%E5%92%8C%E6%88%91%E5%BF%83%E4%B8%AD%E6%83%B3%E8%AF%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%9D/" class="prev" rel="prev" title="911日记：辩证统一和我心中想说的一些话"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>911日记：辩证统一和我心中想说的一些话</a>
+            <a href="/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B7%A5%E5%85%B7promptfoo/" class="next" rel="next" title="提示词工程化工具：promptfoo">提示词工程化工具：promptfoo<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"></div></article></div>
             </main><footer class="footer">
@@ -1242,5 +1242,5 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/dia/P
         <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/blog.html/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/blog.html/lib/cookieconsent/cookieconsent.min.css"><script src="/blog.html/lib/autocomplete/autocomplete.min.js"></script><script src="/blog.html/lib/lunr/lunr.min.js"></script><script src="/blog.html/lib/lazysizes/lazysizes.min.js"></script><script src="/blog.html/lib/lightgallery/lightgallery.min.js"></script><script src="/blog.html/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/blog.html/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script src="/blog.html/lib/clipboard/clipboard.min.js"></script><script src="/blog.html/lib/sharer/sharer.min.js"></script><script src="/blog.html/lib/typeit/index.umd.js"></script><script src="/blog.html/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Find TreasureIsland","id-2":"Find TreasureIsland"},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/blog.html/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/blog.html/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/typeit/index.umd.js"></script><script src="/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Find TreasureIsland","id-2":"Find TreasureIsland"},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/js/theme.min.js"></script></body>
 </html>
