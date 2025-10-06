@@ -1,4 +1,4 @@
-# Obsidian+Gemini CLI,最佳的写作搭档工具体验
+# Obsidian和Gemini CLI-最佳的写作搭档工具体验
 
 ### 引子
 
