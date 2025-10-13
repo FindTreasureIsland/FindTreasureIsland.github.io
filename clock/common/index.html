@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+        <meta name="keywords" content="在线时钟，数字时钟，翻页时钟">
+        <meta name="description"
+              content="在线翻页时钟，展示翻页的数字时钟。支持背景色，全屏，计时模式等参数设置。">
+    
+    
+    <title>在线翻页时钟</title>
+    
+    <link rel="stylesheet" href="https://staticfile.lddgo.net/layui/css/layui.css?v=20230628221500" media="all">
+    <link rel="stylesheet" href="https://staticfile.lddgo.net/css/main.css?v=20250421120000" type="text/css">
+
+    <link rel="stylesheet" href="../js/third/tool/flip-clock/flipclock-a94d2a962314208f8a4f8fae3e8d010b.css"
+          type="text/css">
+    
+    <link rel="icon" href="../img/icon.png">
+    
+    <script type="text/javascript" src="../js/base/common_util-3d7b0ae428c1551040a18e4c8a419f89.js" charset="UTF-8"></script>
+
+    <style type="text/css">
+        #clockContainer {
+            /* 居中显示：水平和垂直 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 全屏居中区域 */
+            min-height: 100vh;
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding: 0 20px;
+            /* 容器背景透明 */
+            background: transparent !important;
+            background-color: transparent !important;
+        }
+
+        @media screen and (min-width: 1024px) {
+            #clockContainer:fullscreen #clock {
+                transform: scale(1.5);
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            #clock {
+                /*min-width: 550px;*/
+                transform: scale(0.5);
+            }
+
+            .no_second_12_hour {
+                min-width: 350px;
+            }
+
+            .second_24_hour {
+                min-width: 470px;
+            }
+
+            .second_12_hour {
+                min-width: 530px;
+            }
+
+            .second_timer {
+                min-width: 470px;
+            }
+        }
+
+        /* 强制时钟及其父容器背景透明 */
+        #clockContainer > div,
+        #clock {
+            background: transparent !important;
+            background-color: transparent !important;
+        }
+
+        /* 紧凑透明控件样式 */
+        .compact-inline { width: auto; }
+        .compact-control {
+            background: transparent !important;
+            color: inherit;
+            height: 28px;
+            line-height: 28px;
+            padding: 0 6px;
+            font-size: 12px;
+            border: 1px solid rgba(0,0,0,0.25);
+            border-radius: 4px;
+        }
+        select.compact-control { width: 100px; min-width: 100px; }
+        input.compact-control { width: 100px; min-width: 100px; }
+        .layui-form-pane,
+        .layui-form-item,
+        .layui-input-inline { background: transparent !important; }
+
+        /* LayUI 渲染后的下拉选择框透明化 */
+        .layui-form-select,
+        .layui-form-select .layui-select-title,
+        .layui-form-select .layui-select-title input,
+        .layui-form-select dl,
+        .layui-form-select dl dd {
+            background: transparent !important;
+            background-color: transparent !important;
+        }
+        .layui-form-select .layui-select-title input {
+            height: 28px;
+            line-height: 28px;
+            font-size: 12px;
+            padding: 0 6px;
+            color: inherit;
+            border: 1px solid rgba(0,0,0,0.25);
+            border-radius: 4px;
+            width: 100px;
+        }
+        .layui-form-select dl {
+            border: 1px solid rgba(0,0,0,0.25);
+        }
+
+        /* 顶部居中控件容器 */
+        .top-center-controls {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            z-index: 9999;
+            background: transparent !important;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .top-center-controls:hover,
+        .top-center-controls:focus-within { opacity: 1; }
+        .top-center-controls .layui-form-item { margin-bottom: 0; }
+        .top-center-controls .layui-inline { margin: 0 4px; }
+    </style>
+</head>
+
+<body class="layui-layout-body" style="height:100%; overflow:auto;">
+<div class="layui-layout layui-layout-admin" style="height:100%">
+    <div class="main_content" style="min-height: calc(100% - 20px)">
+        <div>
+
+            <div style="overflow-x: hidden;">
+                <div id="clockContainer">
+                    <div>
+                        <div id="clock"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form layui-form-pane top-center-controls" lay-filter="clockForm">
+
+                <div class="layui-form-item">
+
+                    <div class="layui-inline">
+                        <div class="layui-input-inline compact-inline">
+                            <select name="mode" id="mode" lay-filter="mode" class="compact-control">
+                                <option value="24" selected>24小时制</option>
+                                <option value="12">12小时制</option>
+                                <option value="timer">计时器</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <div class="layui-input-inline compact-inline">
+                            <select name="background" id="background" lay-filter="background" class="compact-control">
+                                <option value="transparent" selected>透明</option>
+                                <option value="#4c8045">翠微</option>
+                                <option value="#b2b6b6">月魄</option>
+                                <option value="#bfc1a9">草白</option>
+                                <option value="#a8bf8f">苍葭</option>
+                                <option value="#779649">碧山</option>
+                                <option value="#778a77">青梅</option>
+                                <option value="#709bc8">挼蓝</option>
+                                <option value="#246eab">景泰</option>
+                                <option value="#ecd354">缃叶</option>
+                                <option value="#da9b32">黄不老</option>
+                                <option value="#cd5c20">光明砂</option>
+                                <option value="#c9adc4">凤信</option>
+                                <option value="#8c6abe">紫藤</option>
+                                <option value="#843e87">桔梗</option>
+                                <option value="#ad6593">豆蔻</option>
+                                <option value="#090b0c">墨黑</option>
+                                <option value="#ffc0cb">樱花粉</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- <div class="layui-inline">
+                        <label class="layui-form-label">秒钟</label>
+                        <div class="layui-input-inline" style="width:unset;">
+                            <input lay-filter="secondShow" id="secondShow" type="checkbox" name="second[show]"
+                                   title="显示"
+                                   checked>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="layui-inline">
+                        <label class="layui-form-label">标签</label>
+                        <div class="layui-input-inline" style="width:unset;">
+                            <input lay-filter="titleShow" id="titleShow" type="checkbox" name="title[show]"
+                                   title="显示"
+                                   checked>
+                        </div>
+                    </div> -->
+
+                    <div class="layui-inline">
+                        <div class="layui-input-inline compact-inline">
+                            <input type="number" name="scale" id="scale" required lay-verify="required" value="2.5"
+                                   min="0" max="100"
+                                   lay-reqText="必填项不能为空"
+                                   autocomplete="off" class="layui-input compact-control">
+                        </div>
+                    </div>
+
+                </div>
+
+            <!-- 默认参数：隐藏但保持为 true，供脚本读取 -->
+            <div style="display: none;">
+                <input lay-filter="secondShow" id="secondShow" type="checkbox" name="second[show]" checked>
+                <input lay-filter="titleShow" id="titleShow" type="checkbox" name="title[show]" checked>
+            </div>
+            </div>
+
+            <div style="margin-bottom: 30px;"></div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="https://staticfile.lddgo.net/layui/layui.all.js?v=20230628221500" charset="UTF-8"></script>
+<script type="text/javascript" src="../js/tool/common/more/digital_clock-106bf2d73a6074f44f7f25990b2e5cfd.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    var jQuery = layui.$;
+</script>
+<script type="text/javascript" src="../js/third/tool/flip-clock/flipclock-bf11352a456fb98662c5f62867ac0986.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    registerDigitalClockEvent();
+</script>
+<script type="text/javascript">
+    // 背景色与缩放逻辑：透明选项应用到页面整体背景；缩放应用到时钟容器
+    (function(){
+        function applyBackground(){
+            try{
+                var select = document.getElementById('background');
+                if(!select){ return; }
+                var val = select.value || 'transparent';
+                var bg = (val === 'transparent') ? 'transparent' : val;
+                // 将选中的颜色（含透明）应用到页面整体背景
+                document.documentElement.style.setProperty('background', bg, 'important');
+                document.documentElement.style.setProperty('background-color', bg, 'important');
+                document.body.style.setProperty('background', bg, 'important');
+                document.body.style.setProperty('background-color', bg, 'important');
+            }catch(e){ console.log(e); }
+        }
+        function bindBackgroundChange(){
+            try{
+                var select = document.getElementById('background');
+                if(!select){ return; }
+                ['change','input'].forEach(function(evt){ select.addEventListener(evt, applyBackground); });
+            }catch(e){ console.log(e); }
+        }
+
+        function bindLayuiBackground(){
+            try{
+                if (window.layui && layui.form) {
+                    var form = layui.form;
+                    form.on('select(background)', function(){
+                        applyBackground();
+                    });
+                } else if (window.layui) {
+                    layui.use(['form'], function(){
+                        var form = layui.form;
+                        form.on('select(background)', function(){
+                            applyBackground();
+                        });
+                    });
+                }
+            }catch(e){ console.log(e); }
+        }
+
+        function applyClockScale(){
+            try{
+                var clock = document.getElementById('clock');
+                var scaleInput = document.getElementById('scale');
+                if(!clock || !scaleInput){ return; }
+                var val = parseFloat(scaleInput.value);
+                if(isNaN(val) || val <= 0){ val = 1; }
+                clock.style.setProperty('transform', 'scale(' + val + ')', 'important');
+                clock.style.setProperty('transform-origin', 'center center', 'important');
+            }catch(e){ console.log(e); }
+        }
+        function bindScaleChange(){
+            try{
+                var scaleInput = document.getElementById('scale');
+                if(!scaleInput){ return; }
+                ['input','change'].forEach(function(evt){
+                    scaleInput.addEventListener(evt, applyClockScale);
+                });
+            }catch(e){ console.log(e); }
+        }
+
+        if (document.readyState === 'complete' || document.readyState === 'interactive'){
+            applyBackground();
+            bindBackgroundChange();
+            bindLayuiBackground();
+            applyClockScale();
+            bindScaleChange();
+        } else {
+            document.addEventListener('DOMContentLoaded', function(){
+                applyBackground();
+                bindBackgroundChange();
+                bindLayuiBackground();
+                applyClockScale();
+                bindScaleChange();
+            });
+        }
+    })();
+</script>
+</body>
+
+</html>
