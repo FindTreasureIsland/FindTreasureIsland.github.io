@@ -57,6 +57,17 @@
 </p>]]></description>
 </item>
 <item>
+    <title>特斯拉创始人之争：一场关于梦想与现实的创业课</title>
+    <link>http://findtreasureisland.github.io/%E7%89%B9%E6%96%AF%E6%8B%89%E5%88%9B%E5%A7%8B%E4%BA%BA%E4%B9%8B%E4%BA%89%E4%B8%80%E5%9C%BA%E5%85%B3%E4%BA%8E%E6%A2%A6%E6%83%B3%E4%B8%8E%E7%8E%B0%E5%AE%9E%E7%9A%84%E5%88%9B%E4%B8%9A%E8%AF%BE/</link>
+    <pubDate>Sat, 21 Mar 2026 00:00:00 &#43;0800</pubDate>
+    <author>alaiszy@gmail.com (CRIO)</author>
+    <guid>http://findtreasureisland.github.io/%E7%89%B9%E6%96%AF%E6%8B%89%E5%88%9B%E5%A7%8B%E4%BA%BA%E4%B9%8B%E4%BA%89%E4%B8%80%E5%9C%BA%E5%85%B3%E4%BA%8E%E6%A2%A6%E6%83%B3%E4%B8%8E%E7%8E%B0%E5%AE%9E%E7%9A%84%E5%88%9B%E4%B8%9A%E8%AF%BE/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/1-15.jpeg" referrerpolicy="no-referrer">
+            </div><p>说实话，看完特斯拉早期的这段历史，我心里挺不是滋味的。</p>
+<p>2008年，当特斯拉的Roadster终于开始交付，马斯克的名字开始和&quot;硅谷钢铁侠&quot;画上等号时，很少有人记得马丁·艾伯哈德这个名字。但如果没有他，可能根本不会有特斯拉。</p>]]></description>
+</item>
+<item>
     <title>Obsidian和Gemini CLI-最佳的写作搭档工具体验</title>
     <link>http://findtreasureisland.github.io/obsidian%E5%92%8Cgemini-cli-%E6%9C%80%E4%BD%B3%E7%9A%84%E5%86%99%E4%BD%9C%E6%90%AD%E6%A1%A3%E5%B7%A5%E5%85%B7%E4%BD%93%E9%AA%8C/</link>
     <pubDate>Mon, 06 Oct 2025 09:50:24 &#43;0800</pubDate>
@@ -129,105 +140,6 @@
 确实通过拆解和分析其他产品的系统提示词，给了我们产品在提示词设计上很多很好的借鉴和学习的榜样。<br>
 本周，我们开了半周的会讨论了产品的总体架构和设计，也基本上形成了提示词的整体设计思路。<br>
 因此在开始进行提示词开发前，我也计划在分析和拆解一些其他产品的提示词，继续对比和分析，学习和成长。</p>]]></description>
-</item>
-<item>
-    <title>提示词工程学习笔记</title>
-    <link>http://findtreasureisland.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-    <pubDate>Thu, 18 Sep 2025 12:50:24 &#43;0800</pubDate>
-    <author>alaiszy@gmail.com (CRIO)</author>
-    <guid>http://findtreasureisland.github.io/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://picx.zhimg.com/70/v2-c1d9a92649a68a8e409ca26409830434_1440w.avis?source=172ae18b&amp;biz_tag=Post" referrerpolicy="no-referrer">
-            </div><h2 id="提示词框架">提示词框架</h2>
-<h3 id="ape框架"><a href="https://zhida.zhihu.com/search?content_id=263237111&amp;content_type=Article&amp;match_order=1&amp;q=A.P.E%E6%A1%86%E6%9E%B6&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">A.P.E框架</a></h3>
-<ul>
-<li>ACTION：行动，定义要完成的工作或者活动；</li>
-<li>PURPOSE：目的，讨论意图或者目标</li>
-<li>EXPECTATION：期望：陈述预期的结果。</li>
-</ul>
-<h3 id="broke框架"><a href="https://zhida.zhihu.com/search?content_id=263237111&amp;content_type=Article&amp;match_order=1&amp;q=B.R.O.K.E%E6%A1%86%E6%9E%B6&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">B.R.O.K.E框架</a></h3>
-<ul>
-<li>BACKGROUND：背景，提供从分的背景信息。</li>
-<li>ROLE：角色，我希望 AI 扮演的角色</li>
-<li>OBJECTIVES：目标：我希望实现什么</li>
-<li>KEY RESULT：关键结果：我要什么具体效果试验并调整</li>
-<li>EVOLVE：试验并改进：三种改进方法自由组合。</li>
-</ul>
-<h3 id="coast框架"><a href="https://zhida.zhihu.com/search?content_id=263237111&amp;content_type=Article&amp;match_order=1&amp;q=C.O.A.S.T%E6%A1%86%E6%9E%B6&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">C.O.A.S.T框架</a></h3>
-<ul>
-<li>CONTEXT：上下文，为对话设定舞台</li>
-<li>OBJECTIVE：目的，描述目标</li>
-<li>ACTION：行动：解释所需要的动作</li>
-<li>SCENARIO：方案，描述场景</li>
-<li>TASK：任务，描述任务。</li>
-</ul>
-<h3 id="tag框架"><a href="https://zhida.zhihu.com/search?content_id=263237111&amp;content_type=Article&amp;match_order=1&amp;q=T.A.G%E6%A1%86%E6%9E%B6&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">T.A.G框架</a></h3>
-<ul>
-<li>TASK：任务：定义任务描述</li>
-<li>ACTION：行动，需要采取的行为，要做的事情。</li>
-<li>GOAL：目标，解释最终的目标</li>
-</ul>
-<h3 id="rise框架"><a href="https://zhida.zhihu.com/search?content_id=263237111&amp;content_type=Article&amp;match_order=1&amp;q=R.I.S.E%E6%A1%86%E6%9E%B6&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">R.I.S.E框架</a></h3>
-<ul>
-<li>ROAL：角色，指定 AI 扮演的角色</li>
-<li>INPUT：输入，描述信息或者资源</li>
-<li>STEPS：步骤，询问详细的步骤</li>
-<li>EXPECTATION：期望：描述希望达成的结果。</li>
-</ul>
-<h3 id="trace框架"><a href="https://zhida.zhihu.com/search?content_id=263237111&amp;content_type=Article&amp;match_order=1&amp;q=T.R.A.C.E%E6%A1%86%E6%9E%B6&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">T.R.A.C.E框架</a></h3>
-<ul>
-<li>TASK：定义特定任务</li>
-<li>REQUEST：请求，描述你的请求</li>
-<li>ACTION：行为，说明你的操作</li>
-<li>CONTEXT：上下文，提供上下文或者情况</li>
-<li>EXAMPLE：示例，举一个示例来说明你的观点</li>
-</ul>
-<h3 id="era框架">E.R.A框架</h3>
-<ul>
-<li>EXPECTATION：预期：希望 AI 输出什么</li>
-<li>ROLE：角色</li>
-<li>ACTION：行动，指定需要采取的操作</li>
-</ul>
-<h3 id="care框架"><a href="https://zhida.zhihu.com/search?content_id=263237111&amp;content_type=Article&amp;match_order=1&amp;q=C.A.R.E%E6%A1%86%E6%9E%B6&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">C.A.R.E框架</a></h3>
-<ul>
-<li>CONTEXT：上下文，为讨论设置阶段或者上下文</li>
-<li>ACTION：行动</li>
-<li>RESULT：结果，描述所需要的结果</li>
-<li>EXAMPLE：示例：举一个例子来说明你的观点。</li>
-</ul>
-<h3 id="roses框架"><a href="https://zhida.zhihu.com/search?content_id=263237111&amp;content_type=Article&amp;match_order=1&amp;q=R.O.S.E.S%E6%A1%86%E6%9E%B6&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">R.O.S.E.S框架</a></h3>
-<ul>
-<li>ROLE：角色</li>
-<li>OBJECTIVE：目标</li>
-<li>SCENARIO：方案，描述情况</li>
-<li>EXPECTION SOLUTION：解决方案：定义所需要的结果</li>
-<li>STEPS：步骤：要求达到解决方案所需要的措施</li>
-</ul>
-<h3 id="icio框架"><a href="https://zhida.zhihu.com/search?content_id=263237111&amp;content_type=Article&amp;match_order=1&amp;q=I.C.I.O%E6%A1%86%E6%9E%B6&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">I.C.I.O框架</a></h3>
-<ul>
-<li>INSTRUCITON：指令，要求 AI 执行的具体任务</li>
-<li>CONTEXT：给 AI 更多的背景信息</li>
-<li>INPUT DATA：输入数据，告知模型需要处理的数据</li>
-<li>OUTPUTINDICATION：输出引导：告知我们要输出的类型或者风格。</li>
-</ul>
-<h3 id="crispe框架"><a href="https://zhida.zhihu.com/search?content_id=263237111&amp;content_type=Article&amp;match_order=1&amp;q=C.R.I.S.P.E%E6%A1%86%E6%9E%B6&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">C.R.I.S.P.E框架</a></h3>
-<ul>
-<li>CAPACITY AND ROLE：能力和角色，告诉 AI 需要扮演的角色</li>
-<li>INSIGHT：见解，提供见解，背景和上下文</li>
-<li>STATEMENT：声明：你要求 CHATGPT 做什么</li>
-<li>PERSONALITY：个性：你希望以何种风格、个性和方式回应</li>
-<li>EXPERIMENT：实验：请求 AI 为你回复多个示例。</li>
-</ul>
-<h3 id="race框架">R.A.C.E框架</h3>
-<ul>
-<li>ROLE：角儿，指定 AI 需要扮演的角色</li>
-<li>ACTION：行动，详细说明需要采取什么行动</li>
-<li>CONTEXT：提供有关情况和详细细节</li>
-<li>EXPECTATION：期望：描述预期结构</li>
-</ul>
-<h2 id="openai-官方提示词工程指南"><a href="https://zhida.zhihu.com/search?content_id=263237111&amp;content_type=Article&amp;match_order=1&amp;q=OpenAI&#43;%E5%AE%98%E6%96%B9%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E6%8C%87%E5%8D%97&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">OpenAI 官方提示词工程指南</a></h2>
-<h3 id="撰写清晰的指令">撰写清晰的指令</h3>
-<p>技巧：</p>]]></description>
 </item>
 </channel>
 </rss>
