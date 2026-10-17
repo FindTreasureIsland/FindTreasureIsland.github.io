@@ -134,4 +134,10 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>http://findtreasureisland.github.io/%E5%86%99%E7%BB%99%E6%9D%BF%E5%84%BF%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1/</loc>
+    <lastmod>2009-08-01T00:00:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
