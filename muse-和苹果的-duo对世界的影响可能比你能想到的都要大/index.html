@@ -1,142 +1,890 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！ - Find TreasureIsland</title><meta name="Description" content="本文从 Meta 的个人 AI Agent 产品 Muse 和苹果首款折叠屏手机 Duo 出发，重新审视已经存在四十多年的个人计算机。作者认为，这一轮真正的变化不是手机更强或折叠屏更大，而是人可能不再是计算机的主要操作者——Agent 开始拥有运行在云端的计算机，人的角色也从 Operator（操作者）变成 Supervisor（监督者）。由此，PC 可能从一台物理机器变成一份属于个人的计算环境，走向 Personal Computer 的云化；Duo 的定位也不再是能变成电脑的手机，而是 Personal Agent Terminal（个人 Agent 终端）。文章进一步推演了操作系统从 Human Interface 转向 Agent Runtime、应用从 App 变成 Agent 可调用的 Tool，以及硬件、软件与工作方式可能发生的连锁变化。"><meta property="og:url" content="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/">
-  <meta property="og:site_name" content="Find TreasureIsland">
-  <meta property="og:title" content="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！">
-  <meta property="og:description" content="本文从 Meta 的个人 AI Agent 产品 Muse 和苹果首款折叠屏手机 Duo 出发，重新审视已经存在四十多年的个人计算机。作者认为，这一轮真正的变化不是手机更强或折叠屏更大，而是人可能不再是计算机的主要操作者——Agent 开始拥有运行在云端的计算机，人的角色也从 Operator（操作者）变成 Supervisor（监督者）。由此，PC 可能从一台物理机器变成一份属于个人的计算环境，走向 Personal Computer 的云化；Duo 的定位也不再是能变成电脑的手机，而是 Personal Agent Terminal（个人 Agent 终端）。文章进一步推演了操作系统从 Human Interface 转向 Agent Runtime、应用从 App 变成 Agent 可调用的 Tool，以及硬件、软件与工作方式可能发生的连锁变化。">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-09-30T17:37:00+08:00">
-    <meta property="article:modified_time" content="2026-09-30T21:34:00+08:00">
-    <meta property="article:tag" content="知乎">
-    <meta property="article:tag" content="AI-Agent">
-    <meta property="article:tag" content="个人计算机">
-    <meta property="og:image" content="http://findtreasureisland.github.io/">
+<!doctype html>
+<html
+  lang="zh-CN"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="zh-CN">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://findtreasureisland.github.io/">
-  <meta name="twitter:title" content="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！">
-  <meta name="twitter:description" content="本文从 Meta 的个人 AI Agent 产品 Muse 和苹果首款折叠屏手机 Duo 出发，重新审视已经存在四十多年的个人计算机。作者认为，这一轮真正的变化不是手机更强或折叠屏更大，而是人可能不再是计算机的主要操作者——Agent 开始拥有运行在云端的计算机，人的角色也从 Operator（操作者）变成 Supervisor（监督者）。由此，PC 可能从一台物理机器变成一份属于个人的计算环境，走向 Personal Computer 的云化；Duo 的定位也不再是能变成电脑的手机，而是 Personal Agent Terminal（个人 Agent 终端）。文章进一步推演了操作系统从 Human Interface 转向 Agent Runtime、应用从 App 变成 Agent 可调用的 Tool，以及硬件、软件与工作方式可能发生的连锁变化。">
-<meta name="application-name" content="Find TreasureIsland">
-<meta name="apple-mobile-web-app-title" content="Find TreasureIsland">
-<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/" /><link rel="prev" href="http://findtreasureisland.github.io/%E7%89%B9%E6%96%AF%E6%8B%89%E5%88%9B%E5%A7%8B%E4%BA%BA%E4%B9%8B%E4%BA%89%E4%B8%80%E5%9C%BA%E5%85%B3%E4%BA%8E%E6%A2%A6%E6%83%B3%E4%B8%8E%E7%8E%B0%E5%AE%9E%E7%9A%84%E5%88%9B%E4%B8%9A%E8%AF%BE/" /><link rel="next" href="http://findtreasureisland.github.io/%E4%BB%8E%E6%8E%A7%E5%88%B6%E5%88%B0%E4%BF%A1%E4%BB%BBpersonal-agent-%E6%88%98%E4%BA%89%E7%9A%84%E8%83%9C%E8%B4%9F%E6%89%8B%E4%B8%8D%E6%98%AF%E6%99%BA%E8%83%BD/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！",
-        "inLanguage": "zh-CN",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "http:\/\/findtreasureisland.github.io\/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7\/"
-        },"genre": "posts","keywords": "知乎, AI-Agent, 个人计算机","wordcount":  6902 ,
-        "url": "http:\/\/findtreasureisland.github.io\/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7\/","datePublished": "2026-09-30T17:37:00+08:00","dateModified": "2026-09-30T21:34:00+08:00","publisher": {
-            "@type": "Organization",
-            "name": ""},"author": {
-                "@type": "Person",
-                "name": "CRIO"
-            },"description": "本文从 Meta 的个人 AI Agent 产品 Muse 和苹果首款折叠屏手机 Duo 出发，重新审视已经存在四十多年的个人计算机。作者认为，这一轮真正的变化不是手机更强或折叠屏更大，而是人可能不再是计算机的主要操作者——Agent 开始拥有运行在云端的计算机，人的角色也从 Operator（操作者）变成 Supervisor（监督者）。由此，PC 可能从一台物理机器变成一份属于个人的计算环境，走向 Personal Computer 的云化；Duo 的定位也不再是能变成电脑的手机，而是 Personal Agent Terminal（个人 Agent 终端）。文章进一步推演了操作系统从 Human Interface 转向 Agent Runtime、应用从 App 变成 Agent 可调用的 Tool，以及硬件、软件与工作方式可能发生的连锁变化。"
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
-          const query = window.matchMedia('(prefers-color-scheme: dark)');
-          function applyTheme() {
-            let theme = window.localStorage?.getItem('theme') || 'auto';
-            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
-            document.body.setAttribute('theme', isDark? 'dark' : 'light');
-            document.body.setAttribute('cfg-theme', theme);
-          }
+  
+  
+    <title>Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！ &middot; Find TreasureIsland</title>
+    <meta name="title" content="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！ &middot; Find TreasureIsland">
+  
 
-          applyTheme();
-          query.addEventListener('change', applyTheme);
-        </script>
+  
+  
+  
+  
+  
+    
+  
+    
+  
+    
+  
+  
+    <meta name="description" content="本文从 Meta 的个人 AI Agent 产品 Muse 和苹果首款折叠屏手机 Duo 出发，重新审视已经存在四十多年的个人计算机。作者认为，这一轮真正的变化不是手机更强或折叠屏更大，而是人可能不再是计算机的主要操作者——Agent 开始拥有运行在云端的计算机，人的角色也从 Operator（操作者）变成 Supervisor（监督者）。由此，PC 可能从一台物理机器变成一份属于个人的计算环境，走向 Personal Computer 的云化；Duo 的定位也不再是能变成电脑的手机，而是 Personal Agent Terminal（个人 Agent 终端）。文章进一步推演了操作系统从 Human Interface 转向 Agent Runtime、应用从 App 变成 Agent 可调用的 Tool，以及硬件、软件与工作方式可能发生的连锁变化。">
+  
+  
+    <meta name="keywords" content="知乎,AI-Agent,个人计算机,">
+  
+  
+  
+  <link rel="canonical" href="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/">
+  
+  
+  
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="Find TreasureIsland"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+  
+  
+    <meta name="author" content="CRIO">
+  
+  
+    
+      
+        
+          <link href="https://github.com/FindTreasureIsland" rel="me">
+        
+      
+    
+  
+
+  
+  <meta property="og:url" content="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/">
+	<meta property="og:site_name" content="Find TreasureIsland">
+	<meta property="og:title" content="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！">
+	<meta property="og:description" content="本文从 Meta 的个人 AI Agent 产品 Muse 和苹果首款折叠屏手机 Duo 出发，重新审视已经存在四十多年的个人计算机。作者认为，这一轮真正的变化不是手机更强或折叠屏更大，而是人可能不再是计算机的主要操作者——Agent 开始拥有运行在云端的计算机，人的角色也从 Operator（操作者）变成 Supervisor（监督者）。由此，PC 可能从一台物理机器变成一份属于个人的计算环境，走向 Personal Computer 的云化；Duo 的定位也不再是能变成电脑的手机，而是 Personal Agent Terminal（个人 Agent 终端）。文章进一步推演了操作系统从 Human Interface 转向 Agent Runtime、应用从 App 变成 Agent 可调用的 Tool，以及硬件、软件与工作方式可能发生的连锁变化。">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-09-30T17:37:00+08:00">
+		<meta property="article:modified_time" content="2026-09-30T21:34:00+08:00">
+		<meta property="article:tag" content="知乎">
+		<meta property="article:tag" content="AI-Agent">
+		<meta property="article:tag" content="个人计算机">
+
+  
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！">
+	<meta name="twitter:description" content="本文从 Meta 的个人 AI Agent 产品 Muse 和苹果首款折叠屏手机 Duo 出发，重新审视已经存在四十多年的个人计算机。作者认为，这一轮真正的变化不是手机更强或折叠屏更大，而是人可能不再是计算机的主要操作者——Agent 开始拥有运行在云端的计算机，人的角色也从 Operator（操作者）变成 Supervisor（监督者）。由此，PC 可能从一台物理机器变成一份属于个人的计算环境，走向 Personal Computer 的云化；Duo 的定位也不再是能变成电脑的手机，而是 Personal Agent Terminal（个人 Agent 终端）。文章进一步推演了操作系统从 Human Interface 转向 Agent Runtime、应用从 App 变成 Agent 可调用的 Tool，以及硬件、软件与工作方式可能发生的连锁变化。">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.d69ab9f3742b9ee2a2896d2c8951a5a6c17a4b86894ee79b15820e010cb5435272b55ac61f88b48162105a01246e0c06f177c73a6f9605537904e7078b7fe208.css"
+    integrity="sha512-1pq583QrnuKiiW0siVGlpsF6S4aJTuebFYIOAQy1Q1JytVrGH4i0gWIQWgEkbgwG8XfHOm&#43;WBVN5BOcHi3/iCA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.11183536302aa30e374452803c0154673009b5a4995c7f6559d1c935544cc591b599a5f2adfaeda41e1cc865bd62bdace9b0672a75294ce49d185f0f82b98cbe.js"
+    integrity="sha512-ERg1NjAqow43RFKAPAFUZzAJtaSZXH9lWdHJNVRMxZG1maXyrfrtpB4cyGW9Yr2s6bBnKnUpTOSdGF8PgrmMvg=="></script>
+  
+
+
+  
+  
+  
+  
+  
+  
+    
+    <script defer src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+    
+    <script defer src="/js/medium-zoom.67b71ecf7eecce38673a92244d1ffd93edb5f1aeedd12e725d0f67fe901828fa3562f6a6d64ad290b36b7d7034b8ea16e63486d75d957bcf6a2732923e5d46e6.js" integrity="sha512-Z7cez37szjhnOpIkTR/9k&#43;218a7t0S5yXQ9n/pAYKPo1Yvam1krSkLNrfXA0uOoW5jSG112Ve89qJzKSPl1G5g=="></script>
+  
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+    
+    
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.17b3d3bbe00602f12ed247330588c186dd330147642a44a8aca5159f5905a7a6e0a70abb06315b581aef2c4f6d0e4d4bac82dbc1b0916818b057f9ad42c4aae6.js"
+      integrity="sha512-F7PTu&#43;AGAvEu0kczBYjBht0zAUdkKkSorKUVn1kFp6bgpwq7BjFbWBrvLE9tDk1LrILbwbCRaBiwV/mtQsSq5g=="
+      data-copy="复制"
+      data-copied="已复制"></script>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "文章",
+    "name": "Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！",
+    "headline": "Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！",
+    "description": "本文从 Meta 的个人 AI Agent 产品 Muse 和苹果首款折叠屏手机 Duo 出发，重新审视已经存在四十多年的个人计算机。作者认为，这一轮真正的变化不是手机更强或折叠屏更大，而是人可能不再是计算机的主要操作者——Agent 开始拥有运行在云端的计算机，人的角色也从 Operator（操作者）变成 Supervisor（监督者）。由此，PC 可能从一台物理机器变成一份属于个人的计算环境，走向 Personal Computer 的云化；Duo 的定位也不再是能变成电脑的手机，而是 Personal Agent Terminal（个人 Agent 终端）。文章进一步推演了操作系统从 Human Interface 转向 Agent Runtime、应用从 App 变成 Agent 可调用的 Tool，以及硬件、软件与工作方式可能发生的连锁变化。",
+    "inLanguage": "zh-CN",
+    "url" : "http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/",
+    "author" : {
+      "@type": "Person",
+      "name": "CRIO",
+      "sameAs": ["https://github.com/FindTreasureIsland"]
+    },
+    "copyrightYear": "2026",
+    "dateCreated": "2026-09-30T17:37:00\u002b08:00",
+    "datePublished": "2026-09-30T17:37:00\u002b08:00",
+    
+    "dateModified": "2026-09-30T21:34:00\u002b08:00",
+    
+    "keywords": ["知乎","AI-Agent","个人计算机"],
+    
+    "mainEntityOfPage": "http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/",
+    "wordCount":  6914 
+  }]
+  </script>
+
+
+
+  
+  
+    
+
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral bf-scrollbar">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        跳过正文
+      </a>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="Find TreasureIsland"><span class="header-title-pre"><img src="/images/logoicon.png"  alt="Logo" style="width: 48px; height: auto;vertical-align:middle;"></span><span id="id-2" class="typeit"></span></a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
+    <header>
+      
+      
+        <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
+  
+  
+    <a href="/" class="text-base font-medium truncate min-w-0 shrink">
+      Find TreasureIsland
+    </a>
+  
+  <div class="flex items-center ms-auto">
+    <div class="hidden md:flex">
+      <nav aria-label="" class="flex items-center gap-x-5 h-12">
+  
+    
+      
+  
+    <a
+      href="/posts/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="文章"
+      title="文章">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          文章
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/categories/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="分类"
+      title="分类">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          分类
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/tags/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="标签"
+      title="标签">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          标签
+        </span>
+      
+    </a>
+  
+
+    
+  
+
+  
+
+  
+
+  
+    <div class="flex items-center">
+      <button
+        id="appearance-switcher"
+        aria-label="切换为深色模式"
+        type="button"
+        class="text-sm bf-icon-color-hover"
+        title="切换为深色模式">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
         </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
     </div>
-</header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
+  
+
+  
+    <button
+      id="search-button"
+      aria-label="搜索 (/)"
+      class="flex items-center gap-2 rounded-lg border bf-border-color bf-border-color-hover bg-neutral-100/50 px-2 py-1 text-sm text-neutral-500 transition-colors hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral-400 dark:hover:text-primary-400"
+      title="搜索 (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      <kbd
+        id="search-shortcut-hint"
+        class="pointer-events-none font-sans text-xs text-neutral-500 dark:text-neutral-400"
+        aria-hidden="true">
+        ⌘K
+      </kbd>
+    </button>
+  
+</nav>
+
+
+
     </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="http://findtreasureisland.github.io/blog.html" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>CRIO</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E6%8A%80%E6%9C%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>技术</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-09-30">2026-09-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;6902 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;14 minutes&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/1-14.jpeg"
-        data-srcset="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/1-14.jpeg, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/1-14.jpeg 1.5x, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/1-14.jpeg 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/1-14.jpeg"
-        title="本文从 Meta 的个人 AI Agent 产品 Muse 和苹果首款折叠屏手机 Duo 出发，重新审视已经存在四十多年的个人计算机。作者认为，这一轮真正的变化不是手机更强或折叠屏更大，而是人可能不再是计算机的主要操作者——Agent 开始拥有运行在云端的计算机，人的角色也从 Operator（操作者）变成 Supervisor（监督者）。由此，PC 可能从一台物理机器变成一份属于个人的计算环境，走向 Personal Computer 的云化；Duo 的定位也不再是能变成电脑的手机，而是 Personal Agent Terminal（个人 Agent 终端）。文章进一步推演了操作系统从 Human Interface 转向 Agent Runtime、应用从 App 变成 Agent 可调用的 Tool，以及硬件、软件与工作方式可能发生的连锁变化。" /></div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div class="flex md:hidden">
+      
+<div class="mobile-header-row relative flex items-center h-14 gap-4">
+  
+
+  
+    <button
+      id="appearance-switcher-mobile"
+      type="button"
+      aria-label="切换为深色模式"
+      title="切换为深色模式"
+      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
+      <div class="dark:hidden">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+      </div>
+      <div class="hidden dark:block">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+      </div>
+    </button>
+  
+
+  
+    <button
+      id="search-button-mobile"
+      aria-label="搜索 (/)"
+      class="flex items-center justify-center bf-icon-color-hover"
+      title="搜索 (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
+    <label
+      for="mobile-menu-toggle"
+      tabindex="0"
+      role="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu-dialog"
+      aria-label=""
+      class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+    </label>
+
+    <div
+      id="mobile-menu-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label=""
+      style="scrollbar-gutter: stable;"
+      class="z-50 invisible overflow-y-auto opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100
+      
+        fixed inset-0 px-6 py-20 bg-neutral-50/97 dark:bg-neutral-900/99
+      
+      bf-scrollbar">
+      <label
+        for="mobile-menu-toggle"
+        tabindex="0"
+        role="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu-dialog"
+        class="fixed end-8 top-5 z-50 h-12 w-12 rounded-full flex items-center justify-center cursor-pointer select-none bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        <span class="sr-only"></span>
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </label>
+      <nav
+        aria-label=""
+        class="mx-auto max-w-md space-y-6">
+        
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/posts/"
+          aria-label="文章"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="文章" class="text-2xl font-bold tracking-tight">
+            文章
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/categories/"
+          aria-label="分类"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="分类" class="text-2xl font-bold tracking-tight">
+            分类
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/tags/"
+          aria-label="标签"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="标签" class="text-2xl font-bold tracking-tight">
+            标签
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+
+        
+  
+
+        
+  
+
+      </nav>
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+      
+    </header>
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  
+  
+  
+  <article>
+    
+    
+      
+      
+      
+      
+        
+
+
+
+
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  <figure>
+    <img
+      src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/1-14.jpeg"
+      alt="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="w-full rounded-lg single_hero_round nozoom"
+       />
+    
+  </figure>
+
+
+      
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2026-09-30T17:37:00&#43;08:00">2026-09-30</time><span class="px-2 text-primary-500">&middot;</span><span>6914 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">14 分钟</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/categories/%E6%8A%80%E6%9C%AF/">
+                  
+                  <span class="flex cursor-pointer">
+  
+  
+  
+    
+    
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    技术
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/%E7%9F%A5%E4%B9%8E/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    知乎
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/ai-agent/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    AI-Agent
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/%E4%B8%AA%E4%BA%BA%E8%AE%A1%E7%AE%97%E6%9C%BA/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    个人计算机
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+      
+      
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        作者
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        CRIO
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">寻找金银岛，记录我们一路上的所思所想。</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
+    
+      
+        
+        <a
+          class=" hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/FindTreasureIsland"
+          
+          target="_blank"
+          aria-label="Github"
+          title="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+    
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents" aria-label="目录">
   <ul>
     <li><a href="#引子">引子</a></li>
     <li><a href="#从大型机到-pc再到云计算">从大型机到 PC，再到云计算</a></li>
@@ -151,26 +899,76 @@
     <li><a href="#personal-computer-可能正在发生一次真正的词义变化">Personal Computer 可能正在发生一次真正的词义变化</a></li>
     <li><a href="#pc-不一定消失但-pc-赖以存在的前提正在发生变化">PC 不一定消失，但 PC 赖以存在的前提正在发生变化</a></li>
   </ul>
-</nav></div>
-            </div><div class="content" id="content"><h2 id="引子">引子</h2>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContentsMobile" aria-label="目录">
+  <ul>
+    <li><a href="#引子">引子</a></li>
+    <li><a href="#从大型机到-pc再到云计算">从大型机到 PC，再到云计算</a></li>
+    <li><a href="#为什么智能手机始终没有杀死-pc">为什么智能手机始终没有杀死 PC？</a></li>
+    <li><a href="#agent-真正改变的是谁在操作计算机">Agent 真正改变的，是“谁在操作计算机”</a></li>
+    <li><a href="#为什么偏偏是现在">为什么偏偏是现在？</a></li>
+    <li><a href="#muse-可能代表的是-personal-computer-的云化">Muse 可能代表的，是 Personal Computer 的云化</a></li>
+    <li><a href="#duo-真正的意义可能不是让手机变成电脑">Duo 真正的意义，可能不是让手机变成电脑</a></li>
+    <li><a href="#pc-时代要求人连续工作agent-时代可能把工作变成随机检查">PC 时代要求人连续工作，Agent 时代可能把工作变成“随机检查”</a></li>
+    <li><a href="#下一代-personal-computing-的结构可能已经隐约出现">下一代 Personal Computing 的结构可能已经隐约出现</a></li>
+    <li><a href="#如果这件事情真的发生被改变的就绝不仅仅是-pc">如果这件事情真的发生，被改变的就绝不仅仅是 PC</a></li>
+    <li><a href="#personal-computer-可能正在发生一次真正的词义变化">Personal Computer 可能正在发生一次真正的词义变化</a></li>
+    <li><a href="#pc-不一定消失但-pc-赖以存在的前提正在发生变化">PC 不一定消失，但 PC 赖以存在的前提正在发生变化</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h2 class="relative group">引子
+    <div id="引子" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%bc%95%e5%ad%90" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>2026年9月8日，Meta 正式发布了个人AI Agent 产品，Muse。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181436951.png"
-        data-srcset="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181436951.png, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181436951.png 1.5x, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181436951.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181436951.png"
-        title="image.png" /></p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="image.png"
+    src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181436951.png"
+    ></figure>
+</p>
 <p>2026年9月9日，苹果发布了它的首款折叠屏手机 Duo，市场一片好评。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181228956.png"
-        data-srcset="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181228956.png, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181228956.png 1.5x, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181228956.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181228956.png"
-        title="image.png" /></p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="image.png"
+    src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930181228956.png"
+    ></figure>
+</p>
 <p>这两个看起来貌似没有太大关系的产品，却让我开始重新思考一个已经存在了四十多年的东西：个人计算机。</p>
 <p>前者代表的是一种越来越清晰的 Agent 形态：Agent 不只是和你聊天，而是拥有一台运行在云端的计算机。它可以使用浏览器、操作文件、运行程序，甚至像一个真正的人一样使用各种软件。后者看起来则只是一台屏幕更大的手机。</p>
 <p>但如果把这两件事情放在一起看，一个非常有意思的问题就出现了：<strong>我们以后真的还需要一台个人电脑吗？</strong></p>
@@ -178,17 +976,26 @@
 <p>所以这一次有什么不同？</p>
 <p>我认为真正的变化既不是手机性能更强了，也不是折叠屏终于足够大了，而是一个过去从来没有发生过的变化正在出现：<strong>人可能不再是计算机的主要操作者了。</strong></p>
 <p>如果这个变化真的发生，那么 Muse 和 Duo 所代表的就不仅仅是两个新的产品，而可能是一次关于“Personal Computer”本身的重新定义。</p>
-<h2 id="从大型机到-pc再到云计算">从大型机到 PC，再到云计算</h2>
+
+<h2 class="relative group">从大型机到 PC，再到云计算
+    <div id="从大型机到-pc再到云计算" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bb%8e%e5%a4%a7%e5%9e%8b%e6%9c%ba%e5%88%b0-pc%e5%86%8d%e5%88%b0%e4%ba%91%e8%ae%a1%e7%ae%97" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>回头看计算机的发展历史，会发现计算能力其实一直在“集中”和“分散”之间摆动。</p>
 <p>最早的大型机时代，计算能力高度集中。一台昂贵的大型计算机服务很多人，普通用户只是通过终端连接它。后来个人计算机出现，计算能力第一次真正从中心下放到了个人。每个人都可以拥有自己的 CPU、内存、硬盘和操作系统。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182003788.png"
-        data-srcset="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182003788.png, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182003788.png 1.5x, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182003788.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182003788.png"
-        title="image.png" /></p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="image.png"
+    src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182003788.png"
+    ></figure>
 <p>这件事情的意义非常深远，因为从那以后，我们不再只是“使用计算资源”，而是开始“拥有一台计算机”。PC 也因此成为过去几十年信息产业最重要的基础设施之一。</p>
 <p>互联网出现以后，服务器越来越多，然后又出现了云计算。AWS、Azure 这些云计算平台，本质上做了一件非常重要的事情：<strong>把服务器重新集中起来。</strong></p>
 <p>过去企业需要自己购买服务器、建设机房、安装操作系统、维护硬件。云计算出现以后，服务器逐渐变成了一种可以随时购买、随时释放的计算资源。需要 2 核就用 2 核，需要 64 核就用 64 核，需要 GPU 就临时增加 GPU。</p>
@@ -197,7 +1004,16 @@
 <p>这件事情其实很奇怪。因为今天绝大多数个人电脑在绝大多数时间里，计算能力都是闲置的。我们为了偶尔剪一次视频购买更强的 CPU，为了偶尔运行一些 AI 程序购买 GPU，为了偶尔处理大型文件购买 32GB、64GB 内存。但一天 24 小时里面，这些硬件绝大部分时间并没有真正发挥能力。</p>
 <p>服务器早已经从“购买机器”变成了“购买计算能力”，为什么个人计算机仍然停留在几十年前的模式——每个人购买一套固定配置的 CPU、GPU、内存和存储，然后把它放在自己的桌子上？</p>
 <p>原因可能并不是技术做不到，而是过去始终存在另外一个问题：<strong>人必须操作它。</strong></p>
-<h2 id="为什么智能手机始终没有杀死-pc">为什么智能手机始终没有杀死 PC？</h2>
+
+<h2 class="relative group">为什么智能手机始终没有杀死 PC？
+    <div id="为什么智能手机始终没有杀死-pc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%99%ba%e8%83%bd%e6%89%8b%e6%9c%ba%e5%a7%8b%e7%bb%88%e6%b2%a1%e6%9c%89%e6%9d%80%e6%ad%bb-pc" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>过去几十年，试图挑战 PC 的产品其实非常多。</p>
 <p>瘦终端试过，VDI 试过，Cloud PC 试过；智能手机出现以后，手机 PC Mode 试过；iPad 和各种平板电脑试过；后来折叠屏又试了一次。英伟达等公司甚至通过云游戏证明，高性能 GPU 本身也不一定非要放在用户身边。</p>
 <p>但这些产品最后都没有真正取代 PC。</p>
@@ -212,19 +1028,28 @@
 <p>这也是为什么 Cloud PC 长期面临一个非常现实的问题——延迟。鼠标移动以后晚 100 毫秒才有反应，人会觉得难受；拖动窗口不流畅，人会觉得难受；画面卡顿，人也会觉得难受。因为人的操作是实时的。</p>
 <p>所以过去几十年，我们其实早就拥有了把“计算”搬到云端的技术，却始终很难把“个人计算机”真正搬到云端。</p>
 <p>直到 Agent 出现。</p>
-<h2 id="agent-真正改变的是谁在操作计算机">Agent 真正改变的，是“谁在操作计算机”</h2>
+
+<h2 class="relative group">Agent 真正改变的，是“谁在操作计算机”
+    <div id="agent-真正改变的是谁在操作计算机" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#agent-%e7%9c%9f%e6%ad%a3%e6%94%b9%e5%8f%98%e7%9a%84%e6%98%af%e8%b0%81%e5%9c%a8%e6%93%8d%e4%bd%9c%e8%ae%a1%e7%ae%97%e6%9c%ba" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>我认为这是这一轮 AI 革命中一个非常容易被低估的变化。</p>
 <p>过去我们使用 ChatGPT，本质上仍然是在和 AI 对话。AI 告诉你怎么做，然后你去做。但 Agent 开始不一样了，它不只是告诉你应该怎么做，而是开始替你做。</p>
 <p>它可以自己打开浏览器，搜索资料，下载文件，写代码，运行程序，整理数据，制作文档，甚至操作一整套软件。</p>
 <p>于是一个存在了几十年的关系开始改变。过去是 <strong>Human → Computer</strong>，人操作计算机；未来可能变成 <strong>Human → Agent → Computer</strong>，Agent 操作计算机。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182455974.png"
-        data-srcset="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182455974.png, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182455974.png 1.5x, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182455974.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182455974.png"
-        title="image.png" /></p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="image.png"
+    src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182455974.png"
+    ></figure>
 <p>看起来只是中间多了一层，但这一层可能会动摇 PC 存在几十年的根基。</p>
 <p>比如我要做一份新能源汽车行业研究报告。过去我要坐在电脑前，打开浏览器、搜索资料、下载 PDF、建立文件夹、整理数据，再打开 Excel 做分析，最后打开 PowerPoint 写内容、找图片、排版、修改、导出。</p>
 <p>整个过程中，真正消耗我大量时间的其实不是“思考新能源汽车行业”，而是<strong>操作计算机完成这些事情</strong>。</p>
@@ -236,7 +1061,16 @@
 <p>在这个过程中，我真正做的事情只有几个：<strong>提出目标、检查结果、进行判断、提出修改和最终批准。</strong></p>
 <p>人的角色已经从 <strong>Operator——计算机操作者</strong>，逐渐变成了 <strong>Supervisor——Agent 的监督者</strong>。</p>
 <p>这才是 Agent 对 PC 真正危险的地方。</p>
-<h2 id="为什么偏偏是现在">为什么偏偏是现在？</h2>
+
+<h2 class="relative group">为什么偏偏是现在？
+    <div id="为什么偏偏是现在" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%81%8f%e5%81%8f%e6%98%af%e7%8e%b0%e5%9c%a8" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>如果云端计算机这么合理，为什么十年前没有发生？如果手机真的能够成为个人计算终端，为什么 iPhone 出现近二十年以后 PC 仍然存在？</p>
 <p>因为过去始终缺少几块关键拼图，而它们直到最近才开始同时出现。</p>
 <p>第一块拼图是大模型终于提供了一种足够通用的人机接口。</p>
@@ -254,25 +1088,43 @@
 <p><strong>AI 可以理解人的目标，Agent 可以操作计算机，云端可以低成本提供计算资源，而人手里已经有了一台全天在线、随身携带的大屏终端。</strong></p>
 <p>过去缺任何一块，这个模式都很难成立。</p>
 <p>现在，它们第一次开始拼到了一起。</p>
-<h2 id="muse-可能代表的是-personal-computer-的云化">Muse 可能代表的，是 Personal Computer 的云化</h2>
+
+<h2 class="relative group">Muse 可能代表的，是 Personal Computer 的云化
+    <div id="muse-可能代表的是-personal-computer-的云化" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#muse-%e5%8f%af%e8%83%bd%e4%bb%a3%e8%a1%a8%e7%9a%84%e6%98%af-personal-computer-%e7%9a%84%e4%ba%91%e5%8c%96" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>如果从这个角度来看 Muse，就会发现它真正值得关注的并不只是“又一个 AI Agent”。</p>
 <p>真正重要的是，<strong>Agent 开始拥有自己的 Computer。</strong></p>
 <p>过去我们默认一个基本关系：人拥有一台电脑，然后人在电脑里面运行软件。但 Muse 这种模式开始变成：Agent 拥有一个运行在云端的计算环境，然后 Agent 在里面完成工作。</p>
 <p>浏览器在那里，文件在那里，程序在那里运行，工作环境也在那里。</p>
 <p>过去二十年 AWS 完成的是 <strong>Server → Cloud Server</strong>，而 Agent 时代可能正在开始另外一场迁移：</p>
 <p><strong>PC → Cloud Personal Computer。</strong></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182752879.png"
-        data-srcset="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182752879.png, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182752879.png 1.5x, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182752879.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182752879.png"
-        title="image.png" /></p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="image.png"
+    src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930182752879.png"
+    ></figure>
 <p>Manus 的肖弘曾经说过一句很值得琢磨的话：“越来越觉得卖 Manus，越来越像卖计算机。”</p>
 <p>这句话如果放到今天来看，可能比它表面上的意思更加重要。</p>
 <p>未来所谓的“个人计算机”，可能真的不再是一台放在桌子上的机器，而是一套属于你的、运行在云端、可以随时创建、扩展和销毁的计算环境。</p>
-<h2 id="duo-真正的意义可能不是让手机变成电脑">Duo 真正的意义，可能不是让手机变成电脑</h2>
+
+<h2 class="relative group">Duo 真正的意义，可能不是让手机变成电脑
+    <div id="duo-真正的意义可能不是让手机变成电脑" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#duo-%e7%9c%9f%e6%ad%a3%e7%9a%84%e6%84%8f%e4%b9%89%e5%8f%af%e8%83%bd%e4%b8%8d%e6%98%af%e8%ae%a9%e6%89%8b%e6%9c%ba%e5%8f%98%e6%88%90%e7%94%b5%e8%84%91" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>如果只有云端 Agent Computer，其实还不够，因为人仍然需要一个终端。</p>
 <p>我们需要查看 Agent 在做什么，需要阅读报告、检查 PPT、查看图片、确认代码运行结果，需要授权，需要纠偏。</p>
 <p>这个时候，Duo 这样的设备就变得非常有意思。</p>
@@ -288,7 +1140,16 @@
 <p>而折叠屏恰恰非常适合这种需求：合起来足够便携，展开以后足够检查复杂内容，始终联网，并且随时可以介入 Agent 的工作。</p>
 <p>所以 Duo 真正值得想象的定位，可能不是“一台可以变成电脑的手机”，而是：</p>
 <p><strong>Personal Agent Terminal——个人 Agent 终端。</strong></p>
-<h2 id="pc-时代要求人连续工作agent-时代可能把工作变成随机检查">PC 时代要求人连续工作，Agent 时代可能把工作变成“随机检查”</h2>
+
+<h2 class="relative group">PC 时代要求人连续工作，Agent 时代可能把工作变成“随机检查”
+    <div id="pc-时代要求人连续工作agent-时代可能把工作变成随机检查" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#pc-%e6%97%b6%e4%bb%a3%e8%a6%81%e6%b1%82%e4%ba%ba%e8%bf%9e%e7%bb%ad%e5%b7%a5%e4%bd%9cagent-%e6%97%b6%e4%bb%a3%e5%8f%af%e8%83%bd%e6%8a%8a%e5%b7%a5%e4%bd%9c%e5%8f%98%e6%88%90%e9%9a%8f%e6%9c%ba%e6%a3%80%e6%9f%a5" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>这里还会带来另外一个非常有意思的变化：我们的工作方式本身可能发生改变。</p>
 <p>PC 时代的工作通常具有很强的连续性。你来到办公室，坐到电脑前，打开各种软件，然后连续工作两三个小时。因为你就是任务的执行者，一旦离开电脑，工作往往也就停止了。</p>
 <p>Agent 完全不同。</p>
@@ -298,17 +1159,26 @@
 <p>过去我们必须“坐在电脑前工作”，未来可能变成“Agent 一直在工作，人随时进行检查”。</p>
 <p>如果这种工作方式真的普及，那么移动设备相对于 PC 的价值会进一步提高。因为监督并不要求你一直坐在一个固定的位置，它要求的是：<strong>Agent 需要你的时候，你可以随时出现。</strong></p>
 <p>这可能是 Duo 和 Agent 组合以后真正具有颠覆性的地方。</p>
-<h2 id="下一代-personal-computing-的结构可能已经隐约出现">下一代 Personal Computing 的结构可能已经隐约出现</h2>
+
+<h2 class="relative group">下一代 Personal Computing 的结构可能已经隐约出现
+    <div id="下一代-personal-computing-的结构可能已经隐约出现" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%b8%8b%e4%b8%80%e4%bb%a3-personal-computing-%e7%9a%84%e7%bb%93%e6%9e%84%e5%8f%af%e8%83%bd%e5%b7%b2%e7%bb%8f%e9%9a%90%e7%ba%a6%e5%87%ba%e7%8e%b0" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>如果把 Muse 和 Duo 放在一起，一个新的个人计算架构其实已经隐约出现：</p>
 <p><strong>Human → Duo / Phone / Glasses → Personal Agent → Cloud Computer → Browser / Files / Apps / API / Other Agents。</strong></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183137457.png"
-        data-srcset="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183137457.png, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183137457.png 1.5x, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183137457.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183137457.png"
-        title="image.png" /></p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="image.png"
+    src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183137457.png"
+    ></figure>
 <p>手机负责人与 AI 的交互，Agent 负责理解目标和执行任务，Cloud Computer 负责真正的计算，而人在这个体系中的主要职责变成目标、判断、检查和授权。</p>
 <p>这和今天的计算机体系完全不同。</p>
 <p>今天是 <strong>Human → Windows/macOS → Application</strong>。我们需要学习 Windows，学习 macOS，学习 Excel，学习 Photoshop，学习各种软件。</p>
@@ -317,7 +1187,16 @@
 <p>你不会说“打开 Excel”，而会说“分析一下这些销售数据”；不会说“打开 Photoshop”，而会说“把这 50 张照片处理成统一风格”；不会说“打开 PowerPoint”，而只是说“帮我做一份融资路演”。</p>
 <p>用户真正购买的不再是软件，而是<strong>能力</strong>。</p>
 <p>于是 Application 也可能逐渐从 <strong>App</strong> 变成 <strong>Tool</strong>——从给人操作的产品，变成 Agent 可以调用的能力。</p>
-<h2 id="如果这件事情真的发生被改变的就绝不仅仅是-pc">如果这件事情真的发生，被改变的就绝不仅仅是 PC</h2>
+
+<h2 class="relative group">如果这件事情真的发生，被改变的就绝不仅仅是 PC
+    <div id="如果这件事情真的发生被改变的就绝不仅仅是-pc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%a6%82%e6%9e%9c%e8%bf%99%e4%bb%b6%e4%ba%8b%e6%83%85%e7%9c%9f%e7%9a%84%e5%8f%91%e7%94%9f%e8%a2%ab%e6%94%b9%e5%8f%98%e7%9a%84%e5%b0%b1%e7%bb%9d%e4%b8%8d%e4%bb%85%e4%bb%85%e6%98%af-pc" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>首先被改变的是个人电脑硬件。</p>
 <p>今天我们讨论 Intel 还是 AMD，M5 还是 M6，16GB 还是 32GB，RTX 还是集成显卡。未来普通用户可能越来越不关心这些事情。</p>
 <p>因为计算开始从 <strong>Buy Compute</strong> 变成 <strong>Consume Compute</strong>。</p>
@@ -331,7 +1210,16 @@
 <p>未来软件公司可能需要面对完全不同的问题：<strong>怎样让 Agent 更容易调用我的能力？</strong></p>
 <p>GUI 的重要性可能下降，而 API、权限、结构化数据、Agent Interface 的重要性会越来越高。</p>
 <p>所以如果这场变化真的发生，它影响的不会只是戴尔、惠普、联想或者 Mac，而是 CPU、GPU、操作系统、Office、Adobe、SaaS、云计算甚至整个软件产业。</p>
-<h2 id="personal-computer-可能正在发生一次真正的词义变化">Personal Computer 可能正在发生一次真正的词义变化</h2>
+
+<h2 class="relative group">Personal Computer 可能正在发生一次真正的词义变化
+    <div id="personal-computer-可能正在发生一次真正的词义变化" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#personal-computer-%e5%8f%af%e8%83%bd%e6%ad%a3%e5%9c%a8%e5%8f%91%e7%94%9f%e4%b8%80%e6%ac%a1%e7%9c%9f%e6%ad%a3%e7%9a%84%e8%af%8d%e4%b9%89%e5%8f%98%e5%8c%96" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>过去四十多年，Personal Computer 意味着“一台属于我的电脑”。</p>
 <p>我的 CPU，我的内存，我的硬盘，我的操作系统，我的文件。</p>
 <p>未来 Personal Computer 的定义可能变成：</p>
@@ -342,21 +1230,30 @@
 <p>于是未来甚至可能出现一个非常有意思的悖论：</p>
 <p><strong>传统 PC 的销量可能下降，但每个人实际使用的“Computer”数量反而可能暴增。</strong></p>
 <p>过去我们努力做到的是“一人一台电脑”，未来可能变成“一个人同时指挥几十台电脑”。</p>
-<h2 id="pc-不一定消失但-pc-赖以存在的前提正在发生变化">PC 不一定消失，但 PC 赖以存在的前提正在发生变化</h2>
+
+<h2 class="relative group">PC 不一定消失，但 PC 赖以存在的前提正在发生变化
+    <div id="pc-不一定消失但-pc-赖以存在的前提正在发生变化" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#pc-%e4%b8%8d%e4%b8%80%e5%ae%9a%e6%b6%88%e5%a4%b1%e4%bd%86-pc-%e8%b5%96%e4%bb%a5%e5%ad%98%e5%9c%a8%e7%9a%84%e5%89%8d%e6%8f%90%e6%ad%a3%e5%9c%a8%e5%8f%91%e7%94%9f%e5%8f%98%e5%8c%96" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>当然，这并不意味着 PC 明天就会消失。</p>
 <p>专业设计、游戏、工程、实时创作、极低延迟工作、本地隐私计算，以及很多需要高精度交互的场景，都会长期需要本地计算设备。</p>
 <p>所以真正值得讨论的问题，并不是“Duo 会不会取代 MacBook”。</p>
 <p>这个问题其实太小了。</p>
 <p>真正的问题是：</p>
 <p><strong>当人不再是计算机的主要操作者，我们为什么还需要为人设计一台如此复杂的计算机？</strong></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183732719.png"
-        data-srcset="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183732719.png, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183732719.png 1.5x, https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183732719.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183732719.png"
-        title="image.png" /></p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="image.png"
+    src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/20260930183732719.png"
+    ></figure>
 <p>过去几十年，我们一直在问：手机能不能取代 PC？平板能不能取代 PC？折叠屏能不能取代 PC？</p>
 <p>这些问题可能从一开始就问错了。</p>
 <p>因为它们都有一个共同的前提——<strong>人仍然需要亲自操作计算机。</strong></p>
@@ -375,47 +1272,172 @@
 <p><strong>原创申明：</strong><br>
 本文作者：菜花自留地<br>
 欢迎一切非商业行为的转载，请标明文章出处。</p>
-</div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2026-09-30</span>
-            </div><div id="page-views" class="post-info-mod">
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/" data-title="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！" data-via="https://x.com/splitwrite" data-hashtags="知乎,AI-Agent,个人计算机"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/" data-title="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/" data-hashtag="知乎"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/" data-title="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/" data-title="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/" data-title="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！" data-image="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/1-14.jpeg"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://findtreasureisland.github.io/muse-%E5%92%8C%E8%8B%B9%E6%9E%9C%E7%9A%84-duo%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8F%AF%E8%83%BD%E6%AF%94%E4%BD%A0%E8%83%BD%E6%83%B3%E5%88%B0%E7%9A%84%E9%83%BD%E8%A6%81%E5%A4%A7/" data-title="Muse 和苹果的 Duo，对世界的影响可能比你能想到的都要大！" data-description="本文从 Meta 的个人 AI Agent 产品 Muse 和苹果首款折叠屏手机 Duo 出发，重新审视已经存在四十多年的个人计算机。作者认为，这一轮真正的变化不是手机更强或折叠屏更大，而是人可能不再是计算机的主要操作者——Agent 开始拥有运行在云端的计算机，人的角色也从 Operator（操作者）变成 Supervisor（监督者）。由此，PC 可能从一台物理机器变成一份属于个人的计算环境，走向 Personal Computer 的云化；Duo 的定位也不再是能变成电脑的手机，而是 Personal Agent Terminal（个人 Agent 终端）。文章进一步推演了操作系统从 Human Interface 转向 Agent Runtime、应用从 App 变成 Agent 可调用的 Tool，以及硬件、软件与工作方式可能发生的连锁变化。"><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2ffindtreasureisland.github.io%2fmuse-%25E5%2592%258C%25E8%258B%25B9%25E6%259E%259C%25E7%259A%2584-duo%25E5%25AF%25B9%25E4%25B8%2596%25E7%2595%258C%25E7%259A%2584%25E5%25BD%25B1%25E5%2593%258D%25E5%258F%25AF%25E8%2583%25BD%25E6%25AF%2594%25E4%25BD%25A0%25E8%2583%25BD%25E6%2583%25B3%25E5%2588%25B0%25E7%259A%2584%25E9%2583%25BD%25E8%25A6%2581%25E5%25A4%25A7%2f&amp;text=Muse%20%e5%92%8c%e8%8b%b9%e6%9e%9c%e7%9a%84%20Duo%ef%bc%8c%e5%af%b9%e4%b8%96%e7%95%8c%e7%9a%84%e5%bd%b1%e5%93%8d%e5%8f%af%e8%83%bd%e6%af%94%e4%bd%a0%e8%83%bd%e6%83%b3%e5%88%b0%e7%9a%84%e9%83%bd%e8%a6%81%e5%a4%a7%ef%bc%81" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
-            </div>
+
+          
+          
+          
         </div>
-    </div>
+        
+        
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E7%9F%A5%E4%B9%8E/">知乎</a>,&nbsp;<a href="/tags/ai-agent/">AI-Agent</a>,&nbsp;<a href="/tags/%E4%B8%AA%E4%BA%BA%E8%AE%A1%E7%AE%97%E6%9C%BA/">个人计算机</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
+        
 
-    <div class="post-nav"><a href="/%E7%89%B9%E6%96%AF%E6%8B%89%E5%88%9B%E5%A7%8B%E4%BA%BA%E4%B9%8B%E4%BA%89%E4%B8%80%E5%9C%BA%E5%85%B3%E4%BA%8E%E6%A2%A6%E6%83%B3%E4%B8%8E%E7%8E%B0%E5%AE%9E%E7%9A%84%E5%88%9B%E4%B8%9A%E8%AF%BE/" class="prev" rel="prev" title="特斯拉创始人之争：一场关于梦想与现实的创业课"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>特斯拉创始人之争：一场关于梦想与现实的创业课</a>
-            <a href="/%E4%BB%8E%E6%8E%A7%E5%88%B6%E5%88%B0%E4%BF%A1%E4%BB%BBpersonal-agent-%E6%88%98%E4%BA%89%E7%9A%84%E8%83%9C%E8%B4%9F%E6%89%8B%E4%B8%8D%E6%98%AF%E6%99%BA%E8%83%BD/" class="next" rel="next" title="从控制到信任：Personal Agent 战争的胜负手不是智能！">从控制到信任：Personal Agent 战争的胜负手不是智能！<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+        
+
+      </div>
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/%E7%89%B9%E6%96%AF%E6%8B%89%E5%88%9B%E5%A7%8B%E4%BA%BA%E4%B9%8B%E4%BA%89%E4%B8%80%E5%9C%BA%E5%85%B3%E4%BA%8E%E6%A2%A6%E6%83%B3%E4%B8%8E%E7%8E%B0%E5%AE%9E%E7%9A%84%E5%88%9B%E4%B8%9A%E8%AF%BE/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;特斯拉创始人之争：一场关于梦想与现实的创业课
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2026-03-21T00:00:00&#43;08:00">2026-03-21</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+            <a
+              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/%E4%BB%8E%E6%8E%A7%E5%88%B6%E5%88%B0%E4%BF%A1%E4%BB%BBpersonal-agent-%E6%88%98%E4%BA%89%E7%9A%84%E8%83%9C%E8%B4%9F%E6%89%8B%E4%B8%8D%E6%98%AF%E6%99%BA%E8%83%BD/">
+              <span class="leading-6">
+                从控制到信任：Personal Agent 战争的胜负手不是智能！&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+              </span>
+            </a>
+            
+              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2026-10-04T00:00:00&#43;08:00">2026-10-04</time>
+              </span>
+            
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="返回顶部"
+    title="返回顶部">
+    &uarr;
+  </a>
 </div>
-<div id="comments"></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.151.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.1-DEV"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://findtreasureisland.github.io/blog.html" target="_blank">CRIO</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-        </div>
-    </footer></div>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a>
-        </div>
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2026
+          CRIO
+      </p>
+    
 
-        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/typeit/index.umd.js"></script><script src="/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Find TreasureIsland","id-2":"Find TreasureIsland"},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/js/theme.min.js"></script></body>
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 强力驱动
+      </p>
+    
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  role="dialog"
+  aria-modal="true"
+  aria-label="搜索"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          aria-label="搜索"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="搜索"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="关闭 (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+    
+    
+  </body>
+  
+  
 </html>
