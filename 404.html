@@ -117,8 +117,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.f5e731933f85bf924ac339e48721f879421c0dbabd0cd2b547140730e097e2d44de08bd3bee3831174dc41ed3d40fee8198c058f43f0606c275ac39c15cf74db.css"
-    integrity="sha512-9ecxkz&#43;Fv5JKwznkhyH4eUIcDbq9DNK1RxQHMOCX4tRN4IvTvuODEXTcQe09QP7oGYwFj0PwYGwnWsOcFc902w==">
+    href="/css/main.bundle.min.015ccbec11fefe24cf061cc4726844ff8d692c07036373070acf2e827aaf1fb01e04f027c0f312149fde7c73c3d1f5c6ea413d8261332e09a49cbb66ff8acfd5.css"
+    integrity="sha512-AVzL7BH&#43;/iTPBhzEcmhE/41pLAcDY3MHCs8ugnqvH7AeBPAnwPMSFJ/efHPD0fXG6kE9gmEzLgmknLtm/4rP1Q==">
 
   
   
@@ -400,22 +400,6 @@
 
     
   
-  
-    <button
-      id="search-button"
-      aria-label="搜索 (/)"
-      class="flex items-center gap-2 rounded-lg border bf-border-color bf-border-color-hover bg-neutral-100/50 px-2 py-1 text-sm text-neutral-500 transition-colors hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral-400 dark:hover:text-primary-400"
-      title="搜索 (/)">
-      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
-</span>
-      <kbd
-        id="search-shortcut-hint"
-        class="pointer-events-none font-sans text-xs text-neutral-500 dark:text-neutral-400"
-        aria-hidden="true">
-        ⌘K
-      </kbd>
-    </button>
-  
 </nav>
 
 
@@ -591,7 +575,7 @@
 
 
     </div>
-    <div class="hidden md:flex items-center">
+    <div class="hidden md:flex items-center gap-4">
       <button
         id="appearance-switcher"
         aria-label="切换为深色模式"
@@ -607,6 +591,22 @@
 </span>
         </div>
       </button>
+      
+        <button
+          id="search-button"
+          aria-label="搜索 (/)"
+          class="flex items-center gap-2 rounded-lg border px-2 py-1 text-sm transition-colors"
+          title="搜索 (/)">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+          <kbd
+            id="search-shortcut-hint"
+            class="pointer-events-none font-sans text-xs"
+            aria-hidden="true">
+            ⌘K
+          </kbd>
+        </button>
+      
     </div>
   </div>
 </div>
