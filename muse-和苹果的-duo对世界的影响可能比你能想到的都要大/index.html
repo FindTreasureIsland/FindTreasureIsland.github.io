@@ -600,6 +600,23 @@
         </div>
       </button>
       
+      <button
+        id="music-toggle"
+        type="button"
+        aria-label="背景音乐"
+        title="背景音乐"
+        aria-pressed="true"
+        class="text-sm bf-icon-color-hover">
+        <span class="music-on flex items-center justify-center">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path fill="currentColor" d="M511.1 367.1c0 44.18-42.98 80-95.1 80s-95.1-35.82-95.1-79.1c0-44.18 42.98-79.1 95.1-79.1c11.28 0 21.95 1.92 32.01 4.898V148.1L192 224l-.0023 208.1C191.1 476.2 149 512 95.1 512S0 476.2 0 432c0-44.18 42.98-79.1 95.1-79.1c11.28 0 21.95 1.92 32 4.898V126.5c0-12.97 10.06-26.63 22.41-30.52l319.1-94.49C472.1 .6615 477.3 0 480 0c17.66 0 31.97 14.34 32 31.99L511.1 367.1z"/></svg></span>
+        </span>
+        <span class="music-off items-center justify-center" style="display:none">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path fill="currentColor" d="M511.1 367.1c0 44.18-42.98 80-95.1 80s-95.1-35.82-95.1-79.1c0-44.18 42.98-79.1 95.1-79.1c11.28 0 21.95 1.92 32.01 4.898V148.1L192 224l-.0023 208.1C191.1 476.2 149 512 95.1 512S0 476.2 0 432c0-44.18 42.98-79.1 95.1-79.1c11.28 0 21.95 1.92 32 4.898V126.5c0-12.97 10.06-26.63 22.41-30.52l319.1-94.49C472.1 .6615 477.3 0 480 0c17.66 0 31.97 14.34 32 31.99L511.1 367.1z"/></svg></span>
+        </span>
+      </button>
+      
         <button
           id="search-button"
           aria-label="搜索 (/)"
@@ -1352,6 +1369,85 @@
     
   </div>
   
+  
+    
+<audio id="bg-music" src="/backsound.mp3" loop preload="auto"></audio>
+<script>
+  (function () {
+    var audio = document.getElementById("bg-music");
+    var toggle = document.getElementById("music-toggle");
+    if (!audio || !toggle) return;
+
+    var KEY = "bg-music-enabled";
+    
+    var enabled = localStorage.getItem(KEY) !== "false";
+
+    function updateIcon() {
+      var on = toggle.querySelector(".music-on");
+      var off = toggle.querySelector(".music-off");
+      if (!on || !off) return;
+      on.style.display = enabled ? "" : "none";
+      off.style.display = enabled ? "none" : "";
+      toggle.setAttribute("aria-pressed", String(enabled));
+      toggle.title = enabled ? "关闭背景音乐" : "开启背景音乐";
+      toggle.setAttribute("aria-label", toggle.title);
+    }
+
+    function play() {
+      if (!enabled) return;
+      var p = audio.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+
+    function pause() {
+      audio.pause();
+    }
+
+    updateIcon();
+    if (enabled) {
+      
+      var started = false;
+      var tryStart = function () {
+        if (started || !enabled) return;
+        var p = audio.play();
+        if (!p || !p.catch) { started = true; return; }
+        p.then(function () { started = true; }).catch(function () {});
+      };
+      tryStart();
+      ["click", "touchstart", "keydown", "scroll"].forEach(function (evt) {
+        document.addEventListener(evt, function () {
+          if (!started) tryStart();
+        }, { once: false, passive: true });
+      });
+    }
+
+    toggle.addEventListener("click", function () {
+      enabled = !enabled;
+      localStorage.setItem(KEY, String(enabled));
+      updateIcon();
+      if (enabled) play(); else pause();
+    });
+  })();
+</script>
+<style>
+   
+  #music-toggle .music-off .icon svg {
+    opacity: 0.55;
+  }
+  #music-toggle[aria-pressed="false"] {
+    position: relative;
+  }
+  #music-toggle[aria-pressed="false"]::after {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 50%;
+    border-top: 1.5px solid currentColor;
+    transform: rotate(-45deg);
+  }
+</style>
+
   
 </footer>
 <div
