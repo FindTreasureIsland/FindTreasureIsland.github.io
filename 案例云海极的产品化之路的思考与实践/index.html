@@ -1361,6 +1361,9 @@ ToB或者ToG信息化项目合作伙伴的售前或者<a href="https://zhida.zhi
     var toggle = document.getElementById("music-toggle");
     if (!audio || !toggle) return;
 
+    
+    audio.volume = 0.3;
+
     var KEY = "bg-music-enabled";
     
     var enabled = localStorage.getItem(KEY) !== "false";

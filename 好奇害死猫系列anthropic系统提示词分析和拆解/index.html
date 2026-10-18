@@ -1475,6 +1475,9 @@ Claude 是由前 OpenAI 员工创立的 AI 安全公司 Anthropic 开发的大�
     var toggle = document.getElementById("music-toggle");
     if (!audio || !toggle) return;
 
+    
+    audio.volume = 0.3;
+
     var KEY = "bg-music-enabled";
     
     var enabled = localStorage.getItem(KEY) !== "false";

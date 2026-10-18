@@ -1893,6 +1893,9 @@ Notion 中可以通过语法{color=&ldquo;Color&rdquo;}来设定 markdown 中 bl
     var toggle = document.getElementById("music-toggle");
     if (!audio || !toggle) return;
 
+    
+    audio.volume = 0.3;
+
     var KEY = "bg-music-enabled";
     
     var enabled = localStorage.getItem(KEY) !== "false";

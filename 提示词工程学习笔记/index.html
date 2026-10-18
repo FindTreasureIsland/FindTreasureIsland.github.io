@@ -2824,6 +2824,9 @@ Goals：一句话描述 Prompt 目标，让 GPT Attention 聚焦起来</p>
     var toggle = document.getElementById("music-toggle");
     if (!audio || !toggle) return;
 
+    
+    audio.volume = 0.3;
+
     var KEY = "bg-music-enabled";
     
     var enabled = localStorage.getItem(KEY) !== "false";

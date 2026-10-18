@@ -2268,6 +2268,9 @@ https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/Anthr
     var toggle = document.getElementById("music-toggle");
     if (!audio || !toggle) return;
 
+    
+    audio.volume = 0.3;
+
     var KEY = "bg-music-enabled";
     
     var enabled = localStorage.getItem(KEY) !== "false";
