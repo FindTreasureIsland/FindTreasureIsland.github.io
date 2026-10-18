@@ -1,0 +1,1171 @@
+<!doctype html>
+<html
+  lang="zh-CN"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="zh-CN">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>海极：关于对如何做一个有用的数字孪生应用的思考与实践（一） &middot; Find TreasureIsland</title>
+    <meta name="title" content="海极：关于对如何做一个有用的数字孪生应用的思考与实践（一） &middot; Find TreasureIsland">
+  
+
+  
+  
+  
+  
+  
+    
+  
+    
+  
+    
+  
+  
+    <meta name="description" content="「 前言 」掐指一算，我们投身于数字孪生这个赛道，已经快五年了。其实我们并不是主动进入这个赛道的。当初公司成立，我们怀着“用有趣的技术重构数字世界”的愿景，期望用游戏化的技术去做ToB业务的美好愿望，也…">
+  
+  
+    <meta name="keywords" content="clippings,知乎,">
+  
+  
+  
+  <link rel="canonical" href="http://findtreasureisland.github.io/%E6%B5%B7%E6%9E%81%E5%85%B3%E4%BA%8E%E5%AF%B9%E5%A6%82%E4%BD%95%E5%81%9A%E4%B8%80%E4%B8%AA%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%97%E5%AD%AA%E7%94%9F%E5%BA%94%E7%94%A8%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E5%AE%9E%E8%B7%B5%E4%B8%80/">
+  
+  
+  
+
+  
+  
+    <meta name="author" content="CRIO SONGO">
+  
+  
+    
+      
+        
+          <link href="https://github.com/FindTreasureIsland" rel="me">
+        
+      
+    
+      
+        
+      
+    
+  
+
+  
+  <meta property="og:url" content="http://findtreasureisland.github.io/%E6%B5%B7%E6%9E%81%E5%85%B3%E4%BA%8E%E5%AF%B9%E5%A6%82%E4%BD%95%E5%81%9A%E4%B8%80%E4%B8%AA%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%97%E5%AD%AA%E7%94%9F%E5%BA%94%E7%94%A8%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E5%AE%9E%E8%B7%B5%E4%B8%80/">
+	<meta property="og:site_name" content="Find TreasureIsland">
+	<meta property="og:title" content="海极：关于对如何做一个有用的数字孪生应用的思考与实践（一）">
+	<meta property="og:description" content="「 前言 」掐指一算，我们投身于数字孪生这个赛道，已经快五年了。其实我们并不是主动进入这个赛道的。当初公司成立，我们怀着“用有趣的技术重构数字世界”的愿景，期望用游戏化的技术去做ToB业务的美好愿望，也…">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2024-09-01T00:00:00+08:00">
+		<meta property="article:modified_time" content="2024-09-01T00:00:00+08:00">
+		<meta property="article:tag" content="Clippings">
+		<meta property="article:tag" content="知乎">
+
+  
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="海极：关于对如何做一个有用的数字孪生应用的思考与实践（一）">
+	<meta name="twitter:description" content="「 前言 」掐指一算，我们投身于数字孪生这个赛道，已经快五年了。其实我们并不是主动进入这个赛道的。当初公司成立，我们怀着“用有趣的技术重构数字世界”的愿景，期望用游戏化的技术去做ToB业务的美好愿望，也…">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.f5e731933f85bf924ac339e48721f879421c0dbabd0cd2b547140730e097e2d44de08bd3bee3831174dc41ed3d40fee8198c058f43f0606c275ac39c15cf74db.css"
+    integrity="sha512-9ecxkz&#43;Fv5JKwznkhyH4eUIcDbq9DNK1RxQHMOCX4tRN4IvTvuODEXTcQe09QP7oGYwFj0PwYGwnWsOcFc902w==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.11183536302aa30e374452803c0154673009b5a4995c7f6559d1c935544cc591b599a5f2adfaeda41e1cc865bd62bdace9b0672a75294ce49d185f0f82b98cbe.js"
+    integrity="sha512-ERg1NjAqow43RFKAPAFUZzAJtaSZXH9lWdHJNVRMxZG1maXyrfrtpB4cyGW9Yr2s6bBnKnUpTOSdGF8PgrmMvg=="></script>
+  
+
+
+  
+  
+  
+  
+  
+  
+    
+    <script defer src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+    
+    <script defer src="/js/medium-zoom.67b71ecf7eecce38673a92244d1ffd93edb5f1aeedd12e725d0f67fe901828fa3562f6a6d64ad290b36b7d7034b8ea16e63486d75d957bcf6a2732923e5d46e6.js" integrity="sha512-Z7cez37szjhnOpIkTR/9k&#43;218a7t0S5yXQ9n/pAYKPo1Yvam1krSkLNrfXA0uOoW5jSG112Ve89qJzKSPl1G5g=="></script>
+  
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.be4a11c293f9b8ab20ab872f73c6b0c584fcba4a0df2c8ef7f414a5805c0ddab955ac23bec4a6d92a06087498d445cb2bf26a6602a27981980efe2bda70104a4.js"
+      integrity="sha512-vkoRwpP5uKsgq4cvc8awxYT8ukoN8sjvf0FKWAXA3auVWsI77EptkqBgh0mNRFyyvyamYConmBmA7&#43;K9pwEEpA=="
+      data-copy="复制"
+      data-copied="已复制"></script>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "文章",
+    "name": "海极：关于对如何做一个有用的数字孪生应用的思考与实践（一）",
+    "headline": "海极：关于对如何做一个有用的数字孪生应用的思考与实践（一）",
+    "description": "「 前言 」掐指一算，我们投身于数字孪生这个赛道，已经快五年了。其实我们并不是主动进入这个赛道的。当初公司成立，我们怀着“用有趣的技术重构数字世界”的愿景，期望用游戏化的技术去做ToB业务的美好愿望，也…",
+    "inLanguage": "zh-CN",
+    "url" : "http://findtreasureisland.github.io/%E6%B5%B7%E6%9E%81%E5%85%B3%E4%BA%8E%E5%AF%B9%E5%A6%82%E4%BD%95%E5%81%9A%E4%B8%80%E4%B8%AA%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%97%E5%AD%AA%E7%94%9F%E5%BA%94%E7%94%A8%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E5%AE%9E%E8%B7%B5%E4%B8%80/",
+    "author" : {
+      "@type": "Person",
+      "name": "CRIO SONGO",
+      "image": "http://findtreasureisland.github.io/images/avatar.png",
+      "sameAs": ["https://github.com/FindTreasureIsland"]
+    },
+    "copyrightYear": "2024",
+    "dateCreated": "2024-09-01T00:00:00\u002b08:00",
+    "datePublished": "2024-09-01T00:00:00\u002b08:00",
+    
+    "dateModified": "2024-09-01T00:00:00\u002b08:00",
+    
+    "keywords": ["clippings","知乎"],
+    
+    "mainEntityOfPage": "http://findtreasureisland.github.io/%E6%B5%B7%E6%9E%81%E5%85%B3%E4%BA%8E%E5%AF%B9%E5%A6%82%E4%BD%95%E5%81%9A%E4%B8%80%E4%B8%AA%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%97%E5%AD%AA%E7%94%9F%E5%BA%94%E7%94%A8%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E5%AE%9E%E8%B7%B5%E4%B8%80/",
+    "wordCount":  4113 
+  }]
+  </script>
+
+
+
+  
+  
+    
+
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral bf-scrollbar">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        跳过正文
+      </a>
+    </div>
+    <header>
+      
+      
+        <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
+  
+  <a href="https://findtreasureisland.github.io/" class="flex items-center gap-2 shrink-0" aria-label="Find TreasureIsland">
+    <img
+      src="/images/logoicon.png"
+      alt=""
+      class="nozoom h-9 w-9 object-contain"
+      width="36"
+      height="36">
+    <span class="text-base font-medium truncate min-w-0">Find TreasureIsland</span>
+  </a>
+
+  
+  <div class="flex items-center gap-3 ms-auto">
+    <div class="hidden md:flex">
+      <nav aria-label="" class="flex items-center gap-x-6 h-12">
+  
+    
+      
+  
+    <a
+      href="/blog.html"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="首页"
+      title="">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          首页
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/posts/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="文章"
+      title="文章">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          文章
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/categories/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="分类"
+      title="分类">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          分类
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/tags/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="标签"
+      title="标签">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          标签
+        </span>
+      
+    </a>
+  
+
+    
+  
+  
+    <button
+      id="search-button"
+      aria-label="搜索 (/)"
+      class="flex items-center gap-2 rounded-lg border bf-border-color bf-border-color-hover bg-neutral-100/50 px-2 py-1 text-sm text-neutral-500 transition-colors hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral-400 dark:hover:text-primary-400"
+      title="搜索 (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      <kbd
+        id="search-shortcut-hint"
+        class="pointer-events-none font-sans text-xs text-neutral-500 dark:text-neutral-400"
+        aria-hidden="true">
+        ⌘K
+      </kbd>
+    </button>
+  
+</nav>
+
+
+
+    </div>
+    <div class="flex md:hidden">
+      
+<div class="mobile-header-row relative flex items-center h-14 gap-4">
+  
+
+  
+    <button
+      id="appearance-switcher-mobile"
+      type="button"
+      aria-label="切换为深色模式"
+      title="切换为深色模式"
+      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
+      <div class="dark:hidden">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+      </div>
+      <div class="hidden dark:block">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+      </div>
+    </button>
+  
+
+  
+    <button
+      id="search-button-mobile"
+      aria-label="搜索 (/)"
+      class="flex items-center justify-center bf-icon-color-hover"
+      title="搜索 (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
+    <label
+      for="mobile-menu-toggle"
+      tabindex="0"
+      role="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu-dialog"
+      aria-label=""
+      class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+    </label>
+
+    <div
+      id="mobile-menu-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label=""
+      style="scrollbar-gutter: stable;"
+      class="z-50 invisible overflow-y-auto opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100
+      
+        fixed inset-0 px-6 py-20 bg-neutral-50/97 dark:bg-neutral-900/99
+      
+      bf-scrollbar">
+      <label
+        for="mobile-menu-toggle"
+        tabindex="0"
+        role="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu-dialog"
+        class="fixed end-8 top-5 z-50 h-12 w-12 rounded-full flex items-center justify-center cursor-pointer select-none bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        <span class="sr-only"></span>
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </label>
+      <nav
+        aria-label=""
+        class="mx-auto max-w-md space-y-6">
+        
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/blog.html"
+          aria-label="首页"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="" class="text-2xl font-bold tracking-tight">
+            首页
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/posts/"
+          aria-label="文章"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="文章" class="text-2xl font-bold tracking-tight">
+            文章
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/categories/"
+          aria-label="分类"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="分类" class="text-2xl font-bold tracking-tight">
+            分类
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/tags/"
+          aria-label="标签"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="标签" class="text-2xl font-bold tracking-tight">
+            标签
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+
+        
+  
+
+        
+  
+
+      </nav>
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+    <div class="hidden md:flex items-center">
+      <button
+        id="appearance-switcher"
+        aria-label="切换为深色模式"
+        type="button"
+        class="text-sm bf-icon-color-hover"
+        title="切换为深色模式">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+      
+    </header>
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  
+  
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        海极：关于对如何做一个有用的数字孪生应用的思考与实践（一）
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2024-09-01T00:00:00&#43;08:00">2024-09-01</time><span class="px-2 text-primary-500">&middot;</span><span>4113 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">9 分钟</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+      
+      
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+      
+      
+        
+        
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"
+        width="96"
+        height="96"
+        alt="CRIO SONGO"
+        src="/images/avatar_hu_bb4ea3f551bb1ce6.png"
+        data-zoom-src="/images/avatar_hu_bebdeb42ede9ed26.png">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        作者
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        CRIO SONGO
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">一个不断寻找的产品人。关注 AI Agent、个人计算机的增长与信任。</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
+    
+      
+        
+        <a
+          class=" hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/FindTreasureIsland"
+          
+          target="_blank"
+          aria-label="Github"
+          title="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></span></a
+        >
+      
+    
+      
+        
+        <a
+          class="email-link hover:text-primary-700 dark:hover:text-primary-400"
+          href="#"
+          
+            data-email="bWFpbHRvOmFsYWlzenlAZ21haWwuY29t"
+          
+          target="_blank"
+          aria-label="Email"
+          title="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+</span></span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+    
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents" aria-label="目录">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-前言-">「 前言 」</a></li>
+        <li><a href="#-数字孪生的江湖流-">「 数字孪生的江湖流 」</a></li>
+        <li><a href="#gis流"><strong>GIS流</strong></a></li>
+        <li><a href="#游戏流"><strong>游戏流</strong></a></li>
+        <li><a href="#仿真流"><strong>仿真流</strong></a></li>
+        <li><a href="#不入流"><strong>不入流</strong></a></li>
+        <li><a href="#-总结-">「 总结 」</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContentsMobile" aria-label="目录">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-前言-">「 前言 」</a></li>
+        <li><a href="#-数字孪生的江湖流-">「 数字孪生的江湖流 」</a></li>
+        <li><a href="#gis流"><strong>GIS流</strong></a></li>
+        <li><a href="#游戏流"><strong>游戏流</strong></a></li>
+        <li><a href="#仿真流"><strong>仿真流</strong></a></li>
+        <li><a href="#不入流"><strong>不入流</strong></a></li>
+        <li><a href="#-总结-">「 总结 」</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h3 class="relative group">「 前言 」
+    <div id="-前言-" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#-%e5%89%8d%e8%a8%80-" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>掐指一算，我们投身于<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=%E6%95%B0%E5%AD%97%E5%AD%AA%E7%94%9F&amp;zhida_source=entity"  target="_blank" rel="noreferrer">数字孪生</a>这个赛道，已经快五年了。其实我们并不是主动进入这个赛道的。当初公司成立，我们怀着“用有趣的技术重构数字世界”的愿景，期望用游戏化的技术去做ToB业务的美好愿望，也是在时代趋势洪流的裹挟之下，误打误撞的进入了这个赛道。</p>
+<p>　　我们公司名字叫海极，其实完全是因为当时由于从事了智慧城市业务的原因，接触了<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=GIS%E5%8F%AF%E8%A7%86%E5%8C%96%E5%A4%A7%E5%B1%8F&amp;zhida_source=entity"  target="_blank" rel="noreferrer">GIS可视化大屏</a>，然后正好和做技术的小伙伴一拍即合，然后又很“华为”化的把我们第一代平台命名为了<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=HiGIS&amp;zhida_source=entity"  target="_blank" rel="noreferrer">HiGIS</a>，然后很偷懒的取了这么一个名字。不知道是公司运气好，还是运气背，一成立，我们就遇到了世纪疫情，我们顽强的挺过了疫情，心怀挺过黎明前的黑暗，就能够见到光明的乐观心态，却迎来了这两年来大环境下的更加艰难。小草虽小，但是很顽强。在“打不死的小强才是真的强”的信念下，我们在这条道路上仍在继续前行。</p>
+<p>「 关于数字孪生 」</p>
+<p>从2020年起，关于<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=%E5%85%83%E5%AE%87%E5%AE%99&amp;zhida_source=entity"  target="_blank" rel="noreferrer">元宇宙</a>的概念开始风起云涌，尤其是Facebook公司把公司名字改为Meta，小扎同学梭哈All in元宇宙的推波助澜，让彼时元宇宙的概念一时风起。当时各种各种元宇宙层出不穷，旅游元宇宙、园区元宇宙、文博元宇宙、展会元宇宙&hellip;&hellip;.。我们办公所在地的天府五街的创业大厦，也应景地改名为了元宇宙大厦。每次上班，总是感到好像进入了另外一个次元，然后下班的时候看着元宇宙大厦那橘色的灯光，颇有一些赛博朋克的意味。那个时候如果参加创业聚会，好像穿越到了漫威的复仇者联盟，因为在那里可以实现在多个宇宙之间的跳跃自由。</p>
+<p>　　现在想起来，我们那个时候算是比较胆小的，因为我们总是觉得公司太小，无法托起一个宇宙的重量，在对外宣传的时候，只会宣传我们最多是做“数字孪生”的一个技术小公司。</p>
+<p>　　眼见他起高楼，眼见他宴宾客，眼见他楼塌了。</p>
+<p>　　在资本世界中快速的概念炒作中，元宇宙没过两年的时间，就从人见人爱快速沦落为了一个过气的小媳妇，而现在那个花枝招展的小媳妇则换为了AI大模型了。作为云宇宙底层技术的数字孪生，而我们仍然坚守在这条赛道上，用爱发电。如果你问我们对元宇宙的态度，我们仍然相信它是未来，只是时候未到，正如我们在我们公司介绍的PPT中写的那样：</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    src="https://raw.githubusercontent.com/FindTreasureIsland/imagebed/master/05a57e32a2-v2-3b6d4052a853b439ec6ab49f6fdac0f0_1440w.jpg"
+    ></figure>
+<p>　　所以我们仍然坚守在数字孪生这条赛道上，不离不弃。公司虽小，但是我们一直都持续保持着对国内外行业公司和相关行业态势的关注，随着我们坚持的时间越久，我们也对数字孪生也形成了一些自己的看法。比起很多数字孪生专家而言，我们只能算是行动派，没有长篇大论的理论分析，我们只是想通过这篇文章，回顾和总结我们这么多年来在这条赛道上的一些实践和自己的理解，仅限一家之言，无论对错。</p>
+
+<h3 class="relative group">「 数字孪生的江湖流 」
+    <div id="-数字孪生的江湖流-" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#-%e6%95%b0%e5%ad%97%e5%ad%aa%e7%94%9f%e7%9a%84%e6%b1%9f%e6%b9%96%e6%b5%81-" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>数字孪生的江湖上，门派众多。但是总体上可以分为如下几个流派：GIS流、游戏流、仿真流和不入流。</p>
+
+<h3 class="relative group"><strong>GIS流</strong>
+    <div id="gis流" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#gis%e6%b5%81" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>　　GIS流是一个传统门派，主要的势力范围在政府业务中，比如智慧城市、国土资源、水利环保等。在传统的GIS业务中，也分为了数据生产、加工、处理（比如传统的各种测绘业务）、GIS数据平台或者工具（比如国外的<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=ArcGIS&amp;zhida_source=entity"  target="_blank" rel="noreferrer">ArcGIS</a>、国内的<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=%E8%B6%85%E5%9B%BE&amp;zhida_source=entity"  target="_blank" rel="noreferrer">超图</a>、<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=MapGIS&amp;zhida_source=entity"  target="_blank" rel="noreferrer">MapGIS</a>等），以及遍布各个行业的强GIS（对比数字孪生中的弱GIS要求）行业应用。然而随着传统GIS业务的日薄西山，寻找新场景，新业务和新方向成为了行业的共识。数字孪生(元宇宙)的出现，让传统的GIS行业好像找到了救命稻草，以前很多传统的GIS行业企业也把原来的GIS平台改头换面，迅速推出了数字孪生平台。数字孪生的GIS流的势力范围除了在原来固有的智慧城市、国土资源、水利环保、应急指挥等领域外，也逐步拓展到了智慧园区、工程建设等<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=BIM%2BGIS&amp;zhida_source=entity"  target="_blank" rel="noreferrer">BIM+GIS</a>结合的弱GIS应用领域。传统GIS中的测绘业务，摇身一变，成为了新型测绘，将测绘的范围从以前的室外场景拓展到了室内、地下等场景，伴随着自然资源部印发的《关于全面推进<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=%E5%AE%9E%E6%99%AF%E4%B8%89%E7%BB%B4%E4%B8%AD%E5%9B%BD&amp;zhida_source=entity"  target="_blank" rel="noreferrer">实景三维中国</a>建设的通知》的建设要求，国内的城市建模项目也是层出不穷。</p>
+<p>　　由于在数字孪生的弱GIS应用场景中，用户总是以业务优先，因为传统的GIS流出现了传统GIS优势无法发挥，用户业务又不懂的尴尬境地，因此经过几年的探索后，GIS流仍然主要活跃在传统的势力范围里，尤其是最近几年国家在水利设施、灌区建设和流域治理等领域的大力投入，数字孪生水利/灌区/流域成为了当红炸子鸡。但是和行业小伙伴交流下来，所谓的数字孪生水利/灌区/流域其实更多是传统的GIS项目披上了一层数字孪生虚伪的外衣，而内在仍然是换汤不换药，不知道几年下来，还会是怎样的光景。</p>
+
+<h3 class="relative group"><strong>游戏流</strong>
+    <div id="游戏流" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%b8%b8%e6%88%8f%e6%b5%81" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>　　游戏流属于互联网新贵的没落贵族。实在想不通游戏流放着好好的游戏赛道不走，硬要来挤我们这条又堵又窄，前途还不明朗的小赛道。往往进入数字孪生的游戏流玩家，要么是被小扎的元宇宙梦想给忽悠了，要么就是实在挤不上游戏那辆高速列车，然后被《三体》中降维打击的思想给毒害了。游戏流的玩家往往都是身怀UE、Unity等原来在在游戏领域大杀四方的重量级大杀器，以超逼真照片级场景孪生为噱头，往往在数字孪生城市、数字孪生园区、智慧旅游、智慧工厂等可视化领域横行无忌。真实的场景、震撼的视效、科幻般的转场和精美的UI，很容易得到政企客户的青睐。尤其在目前很多智慧类项目中，在绝大部分的客户认知中，都将数字孪生等同于了数字孪生可视化，因此有很多人都投靠到了游戏流，比如国内北京51world、数字冰雹、上海的漂视、成都的四方、见山科技等等。</p>
+<p>　　此外，由于原来游戏引擎本身就能提供第一人称的沉浸感能力，在AR/VR/MR应用场景中，游戏流基本上是完全统治了这些场景。</p>
+<p>　　原来的游戏引擎，更注重的是三维能力，包括场景构建、三维渲染、物理模拟、视觉光效等，但是随着元宇宙/数字孪生应用的兴起，这些引擎为了拓展它们在元宇宙或者数字孪生场景中的应用能力，也逐渐集成了GIS能力，能够导入了地图数据，能够支持地形高程，也具备了某些空间分析能力。目前国内主流的所谓具有自主知识产权的数字孪生引擎，绝大部分都是基于UE或者Unity引擎进行二次开发后，包装的平台。</p>
+<p>　　虽然在数字孪生可视化应用领域，从效果上来看，游戏流占据了较强的优势，但是由于本身游戏流厂家本身成本较高，因此很多游戏流厂家一般也盯规模相对较大的一些项目，尤其是在政府主导的行业领域。随着数字孪生应用的深入，单一的可视化已经无法满足客户需求的情况下，游戏流厂家的劣势和弊端也逐渐显现出来了：1、传统游戏流厂家擅长于三维场景效果，但是他们本身不懂IT业务或者信息化业务，所以三维场景如何结合用户业务缺乏经验。2、游戏引擎本身往往开发语言都是C或者C#，技术栈上和目前主流企业信息化系统的技术栈不同，以前只是独立的可视化平台还没有什么问题，但是当数字孪生场景需要和客户业务系统深度融合的时候，存在了先天无法融合的缺陷。3、当前在国产化是主流趋势的情况下，基于国外游戏引擎的数字孪生平台如何迁移到当前的国产化平台的问题也是一个难点。</p>
+
+<h3 class="relative group"><strong>仿真流</strong>
+    <div id="仿真流" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bb%bf%e7%9c%9f%e6%b5%81" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>　　仿真流也是一个传统的，在专业领域的专业玩家。</p>
+<p>　　仿真，是在数字空间，通过构建物理模型和仿真算法，在数字空间中模拟物理对象的过程，以进行分析和研究的一门科学。其实从广义上来讲，游戏也算是对物理世界的一种仿真过程。但是我们这里指的更多是专业领域的专业仿真，比如风洞中的气流仿真、污染物扩散、核聚变中的等离子燃烧、火箭发动机燃烧室的燃烧过程等。记得以前我们以前读书的时候，有一门课程就是学习力学的非线性仿真分析。仿真软件是专业度极高的软件了，目前主流通用的仿真软件有用于非线性分析的<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=Ansys&amp;zhida_source=entity"  target="_blank" rel="noreferrer">Ansys</a>，用于力学或者电磁仿真分析的<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=Simulia&amp;zhida_source=entity"  target="_blank" rel="noreferrer">Simulia</a>，工厂仿真的<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=Plant&#43;SImulation&amp;zhida_source=entity"  target="_blank" rel="noreferrer">Plant SImulation</a>，用于信号分析和仿真的<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=Matlab&amp;zhida_source=entity"  target="_blank" rel="noreferrer">Matlab</a>等，仍然是我们在工程应用中很绕过的一些应用。</p>
+<p>　　仿真流就是一些传统做仿真的企业通过将业务衍生到数字孪生领域而加入的企业，比如传统的<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=%E8%A5%BF%E9%97%A8%E5%AD%90&amp;zhida_source=entity"  target="_blank" rel="noreferrer">西门子</a>、<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=%E8%BE%BE%E7%B4%A2&amp;zhida_source=entity"  target="_blank" rel="noreferrer">达索</a>这些传统的工业巨头就是如此，国内则包括了源于Ansys的<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=%E5%AE%89%E4%B8%96%E4%BA%9A%E5%A4%AA&amp;zhida_source=entity"  target="_blank" rel="noreferrer">安世亚太</a>、深圳的<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=%E5%8D%81%E6%B2%A3%E7%A7%91%E6%8A%80&amp;zhida_source=entity"  target="_blank" rel="noreferrer">十沣科技</a>等。他们在做数字孪生中，会重点强调自己在数字孪生应用的仿真和预测模型能力。在实际的应用中，确实有很多客户也会提一些场景中的仿真和预测的需求，这部分往往也是客户会认为具备业务应用潜力的一个方向。但是由于很多复杂场景的专业仿真由于计算要求高，而且仿真周期长，所以采用离线仿真的方式，并不是适合和数字孪生进行结合。所以目前很多客户提的仿真需求都是针对简单的场景，并且要求通过在线仿真的方式，和现场真实情况进行对比分析，并结合一定的数据分析和预测算法，实现一些仿真和孪生的初步尝试。</p>
+
+<h3 class="relative group"><strong>不入流</strong>
+    <div id="不入流" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%b8%8d%e5%85%a5%e6%b5%81" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>　　数字孪生中，其实更多是做行业信息化的企业转型进入到数字孪生赛道，他们数量众多，大小不一，没有深厚的家学背景，只是凭借着他们在某些行业内的积累，野蛮生长，所以我们把他们统称为不入流。海极也算是不入流的一员。</p>
+<p>　　在不入流中，可能名气最大的就是<a href="https://zhida.zhihu.com/search?content_id=247606889&amp;content_type=Article&amp;match_order=1&amp;q=%E4%BC%98%E9%94%98&amp;zhida_source=entity"  target="_blank" rel="noreferrer">优锘</a>了，它们从以前机房运维起家，然后乘上了元宇宙/数字孪生的风潮，喊出看懂新空间的口号，在市场上得到资本的青睐，努力做着数字孪生产品化的尝试。我从很早就开始跟踪优锘的进展了，从他们网站改版，搬到新办公室，从低代码的ThingJs到零代码的ThingJs-X，打造数字孪生生态的森友会，我个人很喜欢他们对产品的大胆尝试，并且逐渐体系化。我们自身其实也是优锘的合作伙伴，和他们合作了几个项目。之前我已经预见到了他们在产品化上可能会遭受的挫折，但是没想到这个过程如此之快，所以不禁让人唏嘘。</p>
+<p>　　不入流的玩家还有很多，在此不一一列举了。</p>
+
+<h3 class="relative group">「 总结 」
+    <div id="-总结-" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#-%e6%80%bb%e7%bb%93-" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>　　所以在这个鱼龙混杂的数字孪生江湖中，不乏有信念，有追求的梦想家，也有挂羊头，卖狗肉的投机者；有怀揣产品梦想执着的创业者，也有贩卖概念，靠忽悠跟风的生意人。现在的数字孪生就像莎士比亚笔下的哈姆雷特，一万个人有一万种不同的理解。有的人认为它是革命性技术，能够带领下一波的技术革命；有的人认为它只是更好看的一个大屏，除了好看没有卵用。我们身在其中的从业者，也犹如身处欧洲中世纪的千年黑暗，需要靠自己一点点去摸索，去思考，去总结，去提升。</p>
+<p>-&ndash;</p>
+<p>原创申明：</p>
+<p>本文作者：菜花自留地</p>
+<p>欢迎一切非商业行为的转载，请标明文章出处；如果商业转载，请联系作者本人。</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/%E6%A1%88%E4%BE%8B%E4%BA%91%E6%B5%B7%E6%9E%81%E7%9A%84%E4%BA%A7%E5%93%81%E5%8C%96%E4%B9%8B%E8%B7%AF%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E5%AE%9E%E8%B7%B5/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;案例云：海极的产品化之路的思考与实践
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2022-09-11T00:00:00&#43;08:00">2022-09-11</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+            <a
+              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/%E6%88%91%E7%9A%84-2024-%E5%B9%B4-%E8%BF%9F%E5%88%B0%E7%9A%84%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
+              <span class="leading-6">
+                我的 2024 年-迟到的年度总结&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+              </span>
+            </a>
+            
+              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2025-02-15T12:50:24&#43;08:00">2025-02-15</time>
+              </span>
+            
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="返回顶部"
+    title="返回顶部">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  
+  <div class="flex items-center gap-4 pb-6">
+    <a
+      href="https://github.com/FindTreasureIsland"
+      target="_blank"
+      rel="me noopener noreferrer"
+      aria-label="GitHub"
+      title="GitHub"
+      class="text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></a
+    >
+    <a
+      href="https://x.com/splitwrite"
+      target="_blank"
+      rel="me noopener noreferrer"
+      aria-label="X"
+      title="X"
+      class="text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></span></a
+    >
+  </div>
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2026
+          CRIO SONGO
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 强力驱动
+      </p>
+    
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  role="dialog"
+  aria-modal="true"
+  aria-label="搜索"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          aria-label="搜索"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="搜索"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="关闭 (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+    
+    
+  </body>
+  
+  
+</html>
